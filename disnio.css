@@ -1,0 +1,9 @@
+.vinculos{
+    color :black;
+    font-weight: normal;
+    cursor: pointer;
+    text-decoration: none;
+}
+.vinculos:hover{
+    text-decoration: underline solid lightblue;
+}
