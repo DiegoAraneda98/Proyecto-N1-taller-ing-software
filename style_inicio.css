@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.d-item{
+    height: 500px;
+}
+
+.d-img{
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
+.navbar-nav .nav-item {
+    margin-right: 50px; /* O el valor que prefieras */
+}
