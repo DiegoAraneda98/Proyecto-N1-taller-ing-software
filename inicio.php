@@ -18,7 +18,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <img src="img/main-logo.svg" class="rounded float-start p-1 " alt="...">
+        <img src="img/main-logo.svg" class="rounded float-start p-1" alt="logo ucsc">
         <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
           <li class="nav-item ">
             <a class="nav-link active " aria-current="page" href="#">Inicio</a>
