@@ -13,6 +13,19 @@
     filter: brightness(0.9);
 }
 
-.navbar-nav .nav-item {
-    margin-right: 50px; /* O el valor que prefieras */
+
+.logo{
+    width: 150px !important;
+}
+
+ul > li {
+    margin-left: 20px;
+}
+
+ul > li .ml{
+    margin-right: 20px;
+}
+
+.border{
+    border: 20px solid red;
 }
