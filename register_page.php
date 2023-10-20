@@ -27,7 +27,7 @@
         </div>
         <div class="row d-flex align-items-center">
 
-            <div class="col-4 offset-4 d-flex justify-content-center mt-5">
+            <div class="col-4 offset-4 d-flex justify-content-center ">
                 <div class="bg-white  p-5 rounded-5 text-secondary shadow " style="width: 25rem">
                     <form action="" method="post">
                         <?php
