@@ -35,7 +35,7 @@
                 <a class="nav-link active" aria-current="page" href="#">Perfil</a>
               </li>
               <li class="nav-item ml">
-                <a class="nav-link active" aria-current="page" href="#">Cerrar sesión</a>
+                <a class="nav-link active" aria-current="page" href="controlador/controlador_logout.php">Cerrar sesión</a>
               </li>
             </ul>
 
