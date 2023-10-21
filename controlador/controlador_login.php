@@ -2,20 +2,20 @@
 include(__DIR__ . '/../modelo/conexion.php');
 session_start();
 if (!empty($_POST["login"])) {
-    if (!empty($_POST["correo"]) and !empty($_POST["contraseña"])) {
+    if (!empty($_POST["rut"]) and !empty($_POST["contraseña"])) {
 
-        $correo = stripslashes($_REQUEST['correo']);
-        $correo = mysqli_real_escape_string($conexion, $correo);
+        $rut = stripslashes($_REQUEST['rut']);
+        $rut = mysqli_real_escape_string($conexion, $rut);
 
         $contraseña = stripslashes($_REQUEST['contraseña']);
         $contraseña = mysqli_real_escape_string($conexion, $contraseña);
 
-        $sql = "SELECT * FROM usuarios WHERE correo = '$correo' AND contraseña = '" . md5($contraseña) . "' ";
+        $sql = "SELECT * FROM usuarios WHERE run = '$rut' AND contraseña = '" . md5($contraseña) . "' ";
         $result = mysqli_query($conexion, $sql) or die(mysqli_error());
         $rows = mysqli_num_rows($result);
         echo "Número de filas: " . $rows;
         if ($rows == 1) {
-            $_SESSION['correo'] = $correo;
+            $_SESSION['run'] = $rut;
             header("Location: inicio.php");
         } else {
             echo "No se logea";

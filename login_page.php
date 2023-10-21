@@ -36,10 +36,10 @@
 
                     <form action="" method="post">
                         <div class="text-center fs-1 fw-bold fs-4">¡Bienvenido a la plataforma de aforo vehicular!</div>
-                        <div class="p mt-4">Correo Institucional</div>
+                        <div class="p mt-4">Rut</div>
                         <div class="input-group mt-1">
-                            <input class="form-control bg-light" type="email" name="correo"
-                                placeholder="Correo Institucional" required />
+                            <input class="form-control bg-light" type="text" name="rut"
+                                placeholder="Ingrese su rut sin digito verificador" required />
                         </div>
 
                         <div class="p mt-4">Contraseña</div>
