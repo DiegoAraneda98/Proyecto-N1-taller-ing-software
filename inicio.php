@@ -8,7 +8,7 @@
     href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAhFBMVEX+/v7w8PDjy83dn6PakJXYJjHYIi3dmJzk1tfaKzXn3Nzftbfiu73gUVreQkvcOUPjY2rcO0TiW2PkaHD99fbfSlPxsrXqi5H77O354+T4293lb3bwq7DslZrrkJXuo6f1yMvoe4H31tjzwMPbMTv2ztDpg4nneH7i4uLc3NzRz8/Lt7lL0WTHAAAA4UlEQVR4Ae2ShYGEMAAE94T9RyK4u0P/9b27FnA3EJ94gMPx9CvHA3A4G/wV4+aAW5N/YFqw+SfOu3AVhDAphSKV1i5per4wSEM8JM9CgJARYsYBkFCmAGKGGYD8k+ADRVmxRtOWwkjRlYX6JPQoST4InUdqJAPJT0IGn+TjFOjCFg3fhATeozBi4iPm3GHMkb4LDca2Q1whaf2Jfi4mpCpA4c/hs+AFABCbzWMy9ABQsQ0ek2eBKm9zYdLQVZWb4VTGHkk5lZO8nPfg/CdYin+gFhxsyV+RDrCs2/4r27rcA5gKJeq3KHdpAAAAAElFTkSuQmCC" />
   <title>Inicio</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="style_inicio.css">
+  <link rel="stylesheet" href="css/style_inicio.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
 </head>
@@ -70,13 +70,13 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active d-item">
-              <img src="img/foto1_inicio.png" class="d-block w-100 d-img" alt="slider 1">
+              <img src="img/carousel-1.png" class="d-block w-100 d-img" alt="slider 1">
             </div>
             <div class="carousel-item d-item">
-              <img src="img/foto2_inicio.jpg" class="d-block w-100 d-img" alt="slider 2">
+              <img src="img/carousel-2.jpg" class="d-block w-100 d-img" alt="slider 2">
             </div>
             <div class="carousel-item d-item">
-              <img src="..." class="d-block w-100 d-img" alt="...">
+              <img src="img/carousel-3.jpg" class="d-block w-100 d-img" alt="...">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
