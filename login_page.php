@@ -27,25 +27,25 @@
         </div>
         <div class="row d-flex align-items-center ">
             <div class="col-4 offset-4 d-flex justify-content-center ">
+                <?php
+                include "modelo/conexion.php";
+                include "controlador/controlador_login.php";
+                ?>
                 <div class="bg-white mt-5 p-5 rounded-5 text-secondary shadow " style="width: 25rem">
-                    
-                        <?php
-                        include "modelo/conexion.php";
-                        include "controlador/controlador_login.php";
 
-                        ?>
-                        <form action="" method="post">
+
+                    <form action="" method="post">
                         <div class="text-center fs-1 fw-bold fs-4">¡Bienvenido a la plataforma de aforo vehicular!</div>
                         <div class="p mt-4">Correo Institucional</div>
                         <div class="input-group mt-1">
                             <input class="form-control bg-light" type="email" name="correo"
-                                placeholder="Correo Institucional" />
+                                placeholder="Correo Institucional" required />
                         </div>
 
                         <div class="p mt-4">Contraseña</div>
                         <div class="input-group mt-1">
                             <input class="form-control bg-light" type="password" name="contraseña"
-                                placeholder="Contraseña" />
+                                placeholder="Contraseña" required />
                         </div>
 
                         <div class="btn w-100 mt-3 shadow-sm rojo">

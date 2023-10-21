@@ -2,7 +2,10 @@
 
 
 $conexion = mysqli_connect("localhost","root","","prueba");
-$conexion -> set_charset("utf8");
 
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
 
 ?>
