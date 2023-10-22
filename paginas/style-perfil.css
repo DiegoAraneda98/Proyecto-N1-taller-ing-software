@@ -4,12 +4,11 @@
 }
 
 .fondo-perfil{
-    background-image: url("img-perfil.jpg");
+    background-image: url("fondo_perfil_admin_vehiculos.png"); 
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100hv;
+    height: 100vh;
 }
-
 .logo{
     width: 150px !important;
 }
@@ -20,4 +19,13 @@ ul > li {
 
 ul > li .ml{
     margin-right: 20px;
+}
+
+.rojo{
+    background-color: #d6092c;
+}
+
+.imagen-perfil{
+    width: 200px;
+    border-radius: 50%;
 }
