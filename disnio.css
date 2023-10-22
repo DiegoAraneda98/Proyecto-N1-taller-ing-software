@@ -1,9 +1,11 @@
-.vinculos{
-    color :black;
-    font-weight: normal;
-    cursor: pointer;
-    text-decoration: none;
+.logo{
+    width: 150px !important;
 }
-.vinculos:hover{
-    text-decoration: underline solid lightblue;
+
+ul > li {
+    margin-left: 20px;
+}
+
+ul > li .ml{
+    margin-right: 20px;
 }
