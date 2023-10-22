@@ -28,16 +28,16 @@
         <div class="row d-flex align-items-center">
 
             <div class="col-4 offset-4 d-flex justify-content-center ">
-                <div class="bg-white  p-5 rounded-5 text-secondary shadow " style="width: 25rem">
+                <div class="bg-white p-5 rounded-5 text-secondary shadow " style="width: 26rem">
                     <form action="" method="post">
                         <?php
                         include("modelo/conexion.php");
                         include("controlador/controlador_registrar_usuario.php");
                         ?>
-                        <div class="text-center fs-1 fw-bold fs-4">¡Vamos allá!</div>
+                        <div class="text-center fw-bold fs-4">¡Vamos allá!</div>
                         <div class="p mt-3">Rut</div>
                         <div class="input-group ">
-                            <input class="form-control bg-light" type="text" name="rut" placeholder="123456789" />
+                            <input class="form-control bg-light" type="text" name="rut" placeholder="Sin puntos, ni digito verificador" />
                         </div>
 
                         <div class="p mt-3">Nombre</div>
@@ -51,16 +51,20 @@
                                 placeholder="Correo@ucsc.cl" />
                         </div>
 
-                        <div class="p mt-3">Telefono celular</div>
+                        <div class="p mt-3">¿Que usuario es?</div>
                         <div class="input-group ">
-                            <input class="form-control bg-light" type="tel" name="telefono"
-                                placeholder="912345678" />
+                            <select class="form-select bg-light" name="tipo_usuario">
+                                <option selected>Seleccione su tipo</option>
+                                <option value="Institucional">Institucional</option>
+                                <option value="Invitado">Invitado</option>
+                                <option value="Guardia">Guardia</option>
+                            </select>
                         </div>
 
                         <div class="p mt-3">Contraseña</div>
                         <div class="input-group ">
                             <input class="form-control bg-light" type="password" name="contraseña"
-                                placeholder="***********" />
+                                placeholder="Introduzca su contraseña" />
                         </div>
 
                         <div class="btn w-100 mt-3 shadow-sm rojo">
