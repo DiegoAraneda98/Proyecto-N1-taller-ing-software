@@ -27,13 +27,12 @@
         </div>
         <div class="row d-flex align-items-center ">
             <div class="col-4 offset-4 d-flex justify-content-center ">
+                
+                <div class="bg-white mt-3 p-5 rounded-5 text-secondary shadow " style="width: 25rem">
                 <?php
                 include "modelo/conexion.php";
                 include "controlador/controlador_login.php";
                 ?>
-                <div class="bg-white mt-3 p-5 rounded-5 text-secondary shadow " style="width: 25rem">
-
-
                     <form action="" method="post">
                         <div class="text-center fw-bold fs-4">¡Bienvenido a la plataforma de aforo vehicular!</div>
                         <div class="p mt-4">Rut</div>
@@ -48,9 +47,8 @@
                                 placeholder="Contraseña" required />
                         </div>
 
-                         <button type="submit" class="btn rojo text-white fw-semibold w-100 mt-4" name="login" >Iniciar Sesion</button>
-                           <!--  <input type="submit" value="Iniciar Sesion" name="login"
-                                class="btn rojo text-white fw-semibold w-100 mt-4 "> -->
+                           <input type="submit" value="Iniciar Sesion" name="login"
+                                class="btn rojo text-white fw-semibold w-100 mt-4 "> 
                         
                     </form>
                 </div>

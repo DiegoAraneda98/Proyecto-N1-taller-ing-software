@@ -5,6 +5,7 @@ if (!empty($_POST["registro"])) { //si el boton es presionado, validar datos que
         echo '<div class="alert alert-danger" role="alert"> Uno de los campos está vacio!!</div>';
     } else {
         $rut = stripslashes($_REQUEST['rut']);
+        $rut = mysqli_real_escape_string($conexion, $rut);
 
         $nombre = stripslashes($_REQUEST['nombre']);
 

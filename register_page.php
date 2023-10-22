@@ -26,9 +26,8 @@
             </div>
         </div>
         <div class="row d-flex align-items-center">
-
             <div class="col-4 offset-4 d-flex justify-content-center ">
-                <div class="bg-white p-5 rounded-5 text-secondary shadow " style="width: 26rem">
+                <div class="bg-white p-4 rounded-5 text-secondary shadow " style="width: 26rem">
                     <form action="" method="post">
                         <?php
                         include("modelo/conexion.php");

@@ -11,17 +11,19 @@ if (!empty($_POST["login"])) {
         $contraseña = stripslashes($_REQUEST['contraseña']);
         $contraseña = mysqli_real_escape_string($conexion, $contraseña);
 
-        $sql = "SELECT * FROM usuarios WHERE run = '$rut' AND contraseña = '" . md5($contraseña) . "' ";
+        $sql = "SELECT * FROM usuarios WHERE run = '$rut' AND contraseña = '" . md5($contraseña). "' ";
+       /*  echo "Consulta SQL: $sql"; */
         $result = mysqli_query($conexion, $sql) ;
         $rows = mysqli_num_rows($result);
 
-        echo "Número de filas: " . $rows;
+       /*  echo "Número de filas: " . $rows; */
         
         if ($rows == 1) {
             $_SESSION['run'] = $rut;
-            header("Location: incio.php");
+            
+            header("Location: inicio.php");
         } else {
-            echo "No se logea";
+            echo '<div class="alert alert-danger text-center" role="alert"> Usuario o contraseña incorrectos</div>';
         }
 
     } else {
