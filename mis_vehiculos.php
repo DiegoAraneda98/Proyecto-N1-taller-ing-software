@@ -49,41 +49,55 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-10 bg-white offset-1 mt-5">
-                    <div class="h2 p-3">Mis vehiculos</div>
-                    <div class="table-responsive">
-                        <table class="table table-hover">
+                    <div class="h2 p-3 text-secondary ">Mis vehiculos</div>
+                    <div class="table-responsive shadow">
+                        <table class="table table-hover text-center">
                             <thead>
                                 <tr>
                                     <th scope="col">Patente</th>
                                     <th scope="col">Modelo</th>
                                     <th scope="col">Color</th>
-                                    <th scope="col">Fecha Ingreso</th>
                                     <th scope="col">Opciones</th>
                                 </tr>
                             </thead>
                             <tbody class="table-group-divider">
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td><i class="bi bi-pencil-fill"></i>
-                                        <i class="bi bi-pencil-fill"></i>
-                                    </td>
+                                <?php
+                                require_once("modelo/conexion.php");
+                                $sql = "SELECT * FROM vehiculos";
+                                $resultado = mysqli_query($conexion, "$sql");
 
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td colspan="2">Larry the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
+                                while ($row = mysqli_fetch_assoc($resultado)) {
+
+                                    echo "<tr>";
+                                    echo "<td>" . $row["patente"] . "</td>";
+                                    echo "<td>" . $row["modelo"] . "</td>";
+                                    echo "<td>" . $row["color"] . "</td>";
+
+
+                                    echo "<td>";
+                                    echo "<a href='editar.php?id_enviado=" . $row["id"] . "'>";
+                                    echo "<button class = 'btn btn-sm' data-toggle='modal' data-target='#eliminar'><i class='bi bi-pencil-fill'></i></button>";
+                                    echo "</a>";
+
+
+                                    echo "<a href='eliminar.php?id_enviado=" . $row["id"] . "'>";
+                                    echo "<button class = 'btn btn-sm ' data-toggle='modal' data-target='#eliminar' ><i class='bi bi-trash-fill'></i></button>";
+                                    echo "</a>";
+                                    echo "</td>";
+
+                                    echo "</tr>";
+
+                                }
+                                ?>
+
                             </tbody>
                         </table>
+                        <div class="d-flex justify-content-end mt-5">
+                            <button type="submit" class="btn rojo text-white fw-semibold  mb-4" name="añadir"
+                                data-bs-toggle="modal" data-bs-target="#nuevomodal">Añadir vehiculo</button>
+                            
+                        </div>
+
                     </div>
                 </div>
 
@@ -92,7 +106,7 @@
 
     </div>
 
-
+    <?php include 'controlador/nuevomodal.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

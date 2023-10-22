@@ -31,11 +31,11 @@
                 include "modelo/conexion.php";
                 include "controlador/controlador_login.php";
                 ?>
-                <div class="bg-white mt-5 p-5 rounded-5 text-secondary shadow " style="width: 25rem">
+                <div class="bg-white mt-3 p-5 rounded-5 text-secondary shadow " style="width: 25rem">
 
 
                     <form action="" method="post">
-                        <div class="text-center fs-1 fw-bold fs-4">¡Bienvenido a la plataforma de aforo vehicular!</div>
+                        <div class="text-center fw-bold fs-4">¡Bienvenido a la plataforma de aforo vehicular!</div>
                         <div class="p mt-4">Rut</div>
                         <div class="input-group mt-1">
                             <input class="form-control bg-light" type="text" name="rut"
@@ -48,10 +48,10 @@
                                 placeholder="Contraseña" required />
                         </div>
 
-                        <div class="btn w-100 mt-3 shadow-sm rojo">
-                            <input type="submit" value="Iniciar Sesion" name="login"
-                                class="btn rojo text-white fw-semibold w-100 ">
-                        </div>
+                         <button type="submit" class="btn rojo text-white fw-semibold w-100 mt-4" name="login" >Iniciar Sesion</button>
+                           <!--  <input type="submit" value="Iniciar Sesion" name="login"
+                                class="btn rojo text-white fw-semibold w-100 mt-4 "> -->
+                        
                     </form>
                 </div>
             </div>
