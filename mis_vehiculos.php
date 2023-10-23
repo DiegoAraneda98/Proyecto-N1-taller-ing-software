@@ -50,13 +50,15 @@
             <div class="row">
                 <div class="col-10 bg-white offset-1 mt-5">
                     <div class="h2 p-3 text-secondary ">Mis vehiculos</div>
-                    <div class="table-responsive shadow">
+                    <div class="table-responsive shadow  overflow-y-auto " style="max-height: 400px;">
                         <table class="table table-hover text-center">
                             <thead>
                                 <tr>
                                     <th scope="col">Patente</th>
                                     <th scope="col">Modelo</th>
                                     <th scope="col">Color</th>
+                                    <th scope="col">Tipo de vehiculo</th>
+                                    <th scope="col">Fecha Ingreso</th>
                                     <th scope="col">Opciones</th>
                                 </tr>
                             </thead>
@@ -72,11 +74,12 @@
                                     echo "<td>" . $row["patente"] . "</td>";
                                     echo "<td>" . $row["modelo"] . "</td>";
                                     echo "<td>" . $row["color"] . "</td>";
-
+                                    echo "<td>" . $row["tipo_vehiculo"] . "</td>";
+                                    echo "<td>" . $row["fecha_ingreso"] . "</td>";
 
                                     echo "<td>";
-                                    echo "<a href='editar.php?id_enviado=" . $row["id"] . "'>";
-                                    echo "<button class = 'btn btn-sm' data-toggle='modal' data-target='#eliminar'><i class='bi bi-pencil-fill'></i></button>";
+                                    echo "<a href=#?id_enviado=" . $row["id"] . "'>";
+                                    echo "<button class = 'btn btn-sm' data-bs-toggle='modal' data-bs-target='#editarmodal'><i class='bi bi-pencil-fill'></i></button>";
                                     echo "</a>";
 
 
@@ -107,6 +110,7 @@
     </div>
 
     <?php include 'controlador/nuevomodal.php'; ?>
+    <?php include 'controlador/editarmodal.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

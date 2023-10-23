@@ -1,21 +1,19 @@
-<?php 
+<?php
 
 require '../modelo/conexion.php';
 
-
+$id_recibido = $_POST["id"];
 $patente = $conexion->real_escape_string($_POST['patente']);
 $modelo = $conexion->real_escape_string($_POST['modelo']);
 $color = $conexion->real_escape_string($_POST['color']);
 $tipo_vehiculo = $conexion->real_escape_string($_POST['tipo_vehiculo']);
 
 
-$sql = "INSERT INTO vehiculos (patente, modelo, color, tipo_vehiculo, fecha_ingreso) VALUES ('$patente', '$modelo', '$color', '$tipo_vehiculo', NOW()) ";
-
-
-if($conexion->query($sql)){
-    echo "EXITO";
-}
+$update = "UPDATE vehiculos SET patente='$patente', modelo='$modelo', color='$color', tipo_vehiculo = 'tipo_vehiculo' WHERE id='$id_recibido';";
+$resultado = mysqli_query($conexion, $update);
 
 header('Location: ../mis_vehiculos.php');
 
+
 ?>
+
