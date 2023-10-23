@@ -19,8 +19,10 @@ if (!empty($_POST["login"])) {
        /*  echo "Número de filas: " . $rows; */
         
         if ($rows == 1) {
+           /*  $fila = mysqli_fetch_assoc($result);
+            $tipo_usuario = $fila['tipo_usuario'];
+            echo "Número de filas: " . $rows;  */
             $_SESSION['run'] = $rut;
-            
             header("Location: inicio.php");
         } else {
             echo '<div class="alert alert-danger text-center" role="alert"> Usuario o contraseña incorrectos</div>';
