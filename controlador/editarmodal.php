@@ -11,17 +11,17 @@
                 <form action="controlador/editar.php" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="patente" class="form-label">Patente:</label>
-                        <input type="text" name="patente" id="patente" class="form-control" value=<?php echo $patente ?>>
+                        <input type="text" name="patente" id="patente" class="form-control" >
                     </div>
 
                     <div class="mb-3">
                         <label for="modelo" class="form-label">Modelo:</label>
-                        <input type="text" name="modelo" id="modelo " class="form-control" value=<?php echo $modelo ?>>
+                        <input type="text" name="modelo" id="modelo " class="form-control" >
                     </div>
 
                     <div class="mb-3">
                         <label for="color" class="form-label">Color:</label>
-                        <input type="text" name="color" id="color " class="form-control" value=<?php echo $color ?>>
+                        <input type="text" name="color" id="color " class="form-control">
                     </div>
 
                     <div class="mb-3">

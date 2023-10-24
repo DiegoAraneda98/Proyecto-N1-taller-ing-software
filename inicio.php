@@ -29,7 +29,7 @@
                 <a class="nav-link active" aria-current="page" href="#">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Mis vehiculos</a>
+                <a class="nav-link active" aria-current="page" href="mis_vehiculos.php">Mis vehiculos</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Perfil</a>

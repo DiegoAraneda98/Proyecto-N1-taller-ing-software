@@ -36,7 +36,7 @@
                                     <a class="nav-link active" aria-current="page" href="#">Perfil</a>
                                 </li>
                                 <li class="nav-item ml">
-                                    <a class="nav-link active" aria-current="page" href="#">Cerrar sesión</a>
+                                    <a class="nav-link active" aria-current="page" href="controlador/controlador_logout.php">Cerrar sesión</a>
                                 </li>
                             </ul>
 
@@ -78,12 +78,12 @@
                                     echo "<td>" . $row["fecha_ingreso"] . "</td>";
 
                                     echo "<td>";
-                                    echo "<a href=#?id_enviado=" . $row["id"] . "'>";
+                                    echo "<a href=#'>";
                                     echo "<button class = 'btn btn-sm' data-bs-toggle='modal' data-bs-target='#editarmodal'><i class='bi bi-pencil-fill'></i></button>";
                                     echo "</a>";
 
 
-                                    echo "<a href='eliminar.php?id_enviado=" . $row["id"] . "'>";
+                                    echo "<a href='eliminar.php'>";
                                     echo "<button class = 'btn btn-sm ' data-toggle='modal' data-target='#eliminar' ><i class='bi bi-trash-fill'></i></button>";
                                     echo "</a>";
                                     echo "</td>";
@@ -95,13 +95,14 @@
 
                             </tbody>
                         </table>
-                        <div class="d-flex justify-content-end mt-5">
+                        
+                    </div>
+                    <div class="d-flex justify-content-end mt-5">
                             <button type="submit" class="btn rojo text-white fw-semibold  mb-4" name="añadir"
                                 data-bs-toggle="modal" data-bs-target="#nuevomodal">Añadir vehiculo</button>
                             
                         </div>
 
-                    </div>
                 </div>
 
             </div>
