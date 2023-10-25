@@ -9,6 +9,9 @@
             </div>
             <div class="modal-body">
                 <form action="controlador/editar.php" method="post" enctype="multipart/form-data">
+
+                <input type="hidden" id="id" name="id">
+
                     <div class="mb-3">
                         <label for="patente" class="form-label">Patente:</label>
                         <input type="text" name="patente" id="patente" class="form-control" >
@@ -27,7 +30,7 @@
                     <div class="mb-3">
                         <label for="tipo_vehiculo" class="form-label">Tipo de vehiculo:</label>
                         <div class="input-group ">
-                            <select class="form-select " name="tipo_vehiculo">
+                            <select class="form-select " id="tipo_vehiculo" name="tipo_vehiculo">
                                 <option selected>Seleccione su tipo vehiculo</option>
                                 <option value="Auto">Auto</option>
                                 <option value="Motocicleta">Motocicleta</option>

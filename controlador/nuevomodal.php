@@ -36,9 +36,9 @@
                         </div>
                     </div>
 
-                    <div class="">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    <div class="d-flex justify-content-end ">
+                        <button type="submit" class="btn text-white boton1 rojo">Guardar</button>
+                        <button type="button" class="btn  text-white boton2 rojo" data-bs-dismiss="modal">Cerrar</button>
                     </div>
                 </form>
             </div>

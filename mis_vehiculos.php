@@ -81,11 +81,11 @@
 
                                     echo "<td>";
                                     echo "<a href=#'>";
-                                    echo "<button class = 'btn btn-sm' data-bs-toggle='modal' data-bs-target='#editarmodal'><i class='bi bi-pencil-fill'></i></button>";
+                                    echo "<button class='btn btn-sm' data-bs-toggle='modal' data-bs-target='#editarmodal' data-bs-id='" . $row['id_vehiculo'] . "'><i class='bi bi-pencil-fill'></i></button>";
                                     echo "</a>";
 
 
-                                    echo "<a href='eliminar.php'>";
+                                    echo "<a href='controlador/eliminar.php?id_enviado=".$row["id_vehiculo"]."'>";
                                     echo "<button class = 'btn btn-sm ' data-toggle='modal' data-target='#eliminar' ><i class='bi bi-trash-fill'></i></button>";
                                     echo "</a>";
                                     echo "</td>";
@@ -100,7 +100,7 @@
                         
                     </div>
                     <div class="d-flex justify-content-end mt-5">
-                            <button type="submit" class="btn rojo text-white fw-semibold  mb-4" name="añadir"
+                            <button type="submit" class="btn rojo text-white fw-semibold  mb-4 añadir_vehiculo" name="añadir"
                                 data-bs-toggle="modal" data-bs-target="#nuevomodal">Añadir vehiculo</button>
                             
                         </div>
@@ -114,7 +114,7 @@
 
     <?php include 'controlador/nuevomodal.php'; ?>
     <?php include 'controlador/editarmodal.php'; ?>
-
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
