@@ -19,10 +19,8 @@
                 <img src="img/main-logo.svg" class="img-fluid p-2 " alt="logo_ucsc">
             </div>
             <div class="col-6 d-flex justify-content-end">
-                <p class="text-start align-self-center fw-semibold m-2 p-4 ">Tienes una cuenta</p>
-                <a class="btn text-white align-self-center fw-semibold rojo" href="login_page.php" role="button">Iniciar
-                    Sesión</a>
-
+                <p class="text-start align-self-center fw-semibold m-2 p-4 fs-5">Tienes una cuenta</p>
+                <a class="btn text-white align-self-center fw-semibold rojo" href="login_page.php" role="button">Iniciar Sesión</a>
             </div>
         </div>
         <div class="row d-flex align-items-center">

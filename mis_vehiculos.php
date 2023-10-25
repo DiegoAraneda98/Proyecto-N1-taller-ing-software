@@ -65,7 +65,9 @@
                             <tbody class="table-group-divider">
                                 <?php
                                 require_once("modelo/conexion.php");
-                                $sql = "SELECT * FROM vehiculos";
+                                require 'controlador/controlador_login.php';
+                                $id_usuario = $_SESSION['id_usuario'];
+                                $sql = "SELECT * FROM vehiculos WHERE id_usuario = $id_usuario";
                                 $resultado = mysqli_query($conexion, "$sql");
 
                                 while ($row = mysqli_fetch_assoc($resultado)) {
