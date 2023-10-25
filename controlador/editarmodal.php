@@ -19,12 +19,12 @@
 
                     <div class="mb-3">
                         <label for="modelo" class="form-label">Modelo:</label>
-                        <input type="text" name="modelo" id="modelo " class="form-control" >
+                        <input type="text" name="modelo" id="modelo" class="form-control" >
                     </div>
 
                     <div class="mb-3">
                         <label for="color" class="form-label">Color:</label>
-                        <input type="text" name="color" id="color " class="form-control">
+                        <input type="text" name="color" id="color" class="form-control">
                     </div>
 
                     <div class="mb-3">
