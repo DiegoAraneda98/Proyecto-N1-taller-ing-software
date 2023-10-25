@@ -115,6 +115,41 @@
     <?php include 'controlador/nuevomodal.php'; ?>
     <?php include 'controlador/editarmodal.php'; ?>
    
+
+    <script>
+        let editarmodal =document.getElementById('editarmodal')
+
+        editarmodal.addEventListener('shown.bs.modal', event => {
+            let button =event.relatedTarget
+            let id =button.getAttribute('data-bs-id')
+
+            let inputId =editarmodal.querySelector('.modal-body #id')
+            let inputPatente =editarmodal.querySelector('.modal-body #patente')
+            let inputModelo =editarmodal.querySelector('.modal-body #modelo')
+            let inputColor =editarmodal.querySelector('.modal-body #color')
+            let inputTipo_vehiculo =editarmodal.querySelector('.modal-body #tipo_vehiculo')
+
+            let url = "getVehiculos.php"
+            let formData = new FormData()
+            formData.append('id', id)
+
+            fetch(url, {
+                method: "POST",
+                body:formData
+            }).then(response => response.json())
+            .then(data => {
+                inputId.value = data.id
+                inputPatente.value = data.patente
+                inputModelo.value = data.modelo
+                inputColor.value = data.color
+                inputTipo_vehiculo.value = data.tipo_vehiculo
+            }).catch(err => console.log(err))
+           
+        })
+
+
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>

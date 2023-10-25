@@ -8,7 +8,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="controlador/editar.php" method="post" enctype="multipart/form-data">
+                <form action="" method="post" enctype="multipart/form-data">
 
                 <input type="hidden" id="id" name="id">
 
