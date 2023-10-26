@@ -1,3 +1,22 @@
+<?php 
+$conexion = mysqli_connect("localhost","root","","safedrive");
+
+$id_recibido = $_POST["id_enviado"];
+$consulta = "SELECT nombre, correo, telefono FROM usuarios WHERE id=". $id_recibido.";";
+
+$resultado = mysqli_query($conexion, $consulta);
+
+
+while($row = mysqli_fetch_array($resultado)){
+
+  $nombre = $row["nombre"];
+  $correo = $row["correo"];
+  $telefono = $row["telefono"];
+
+}
+?>
+
+
 <!doctype html>
 <html lang="es">
 
@@ -50,7 +69,7 @@
     <div class="container-fluid">
       <div class="row bg-light m-5">
         <div class="h2 p-3">Mi perfil</div>
-        <div class="col-4 d-flex justify-content-center flex-wrap  mt-2 border bg-white">
+        <div class="col-4 d-flex justify-content-center flex-wrap  mt-2">
           <div class="card text-center rounded-0 bg-body-secondary" style="width: 25rem;">
             <div class="d-flex justify-content-center mt-5">
               <div class="rounded-circle bg-white h-100">
@@ -71,50 +90,57 @@
             </div>
           </div>
         </div>
-        <div class="col-4 d-flex justify-content-center mt-2 border bg-white">
+        <div class="col-4 d-flex justify-content-center mt-2">
           
           <div class="card mb-5 rounded-0 " style="width: 34rem;">
             <div class="card-body">
 
               <p class="h5 text-secondary mt-5">Información personal</p>
-              <div class="input-group mb-4 mt-4">
-                <input type="text" class="form-control rounded-0" aria-label="Username" aria-describedby="basic-addon1"
-                  placeholder="Nombre">
+              <div class="p-mt-2">Nombre:
+                <div class="input-group mb-4 mt-2">
+                  <input type="text" class="form-control rounded-0" aria-label="Username" aria-describedby="basic-addon1"
+                    value=<?php echo $nombre?> readonly>
+                </div>
               </div>
 
-              <div class="input-group mb-5">
-                <input type="text" class="form-control rounded-0" aria-label="Username" aria-describedby="basic-addon1"
-                  placeholder="Apellidos">
+              <div class="p-mt-2">Apellido:
+                <div class="input-group mb-5 mt-2">
+                  <input type="text" class="form-control rounded-0" aria-label="Username" aria-describedby="basic-addon1"
+                    value="" readonly>
+                </div>
               </div>
 
-              <p class="h5 text-secondary mb-4">Información de contacto</p>
-              <div class="input-group mb-4">
-                <input type="text" class="form-control rounded-0" aria-label="Username" aria-describedby="basic-addon1"
-                  placeholder="E-mail">
+              <p class="h5 text-secondary ">Información de contacto</p>
+              <div class="p-mt-2">E-Mail:
+                <div class="input-group mb-4 mt-2">
+                  <input type="text" class="form-control rounded-0" aria-label="Username" aria-describedby="basic-addon1"
+                    value=<?php echo $email?> readonly>
+                </div>
               </div>
 
-
-              <div class="input-group mb-4">
-                <input type="text" class="form-control rounded-0" aria-label="Username" aria-describedby="basic-addon1"
-                  placeholder="Celular">
+              <div class="p-mt-2">Teléfono:
+                <div class="input-group mb-4 mt-2">
+                  <input type="text" class="form-control rounded-0" aria-label="Username" aria-describedby="basic-addon1"
+                    value=<?php echo $telefono?> readonly>
+                </div>
               </div>
 
               <div class="d-grid gap-2 d-md-flex justify-content-center mt-5">
-                <button class="btn btn-danger text-white d-flex justify-content-center  rojo w-50"
-                  type="submit">EDITAR DATOS</button>
+                
+                <a href="" class="btn btn-danger text-white d-flex justify-content-center  rojo w-50" data-bs-toggle="modal" data-bs-target="#editarDatos">EDITAR DATOS</a>
               </div>
 
 
             </div>
           </div>
         </div>
-        <div class="col-4 d-flex justify-content-center flex-wrap mt-2 border bg-white">
+        <div class="col-4 d-flex justify-content-center flex-wrap mt-2">
           <div class="card rounded-0 " style="width: 34rem;">
             <div class="card-body">
               <p class="h5 text-secondary mt-5">Constraseña actual</p>
               <div class="input-group mt-4">
-                <input type="text" class="form-control rounded-0" placeholder="Contraseña" aria-label="Recipient's username"
-                  aria-describedby="button-addon2">
+                <input type="password" class="form-control rounded-0" value="" aria-label="Recipient's username"
+                  aria-describedby="button-addon2" readonly>
                 <button class="btn btn-secondary " type="button" id="button-addon2"><i class="bi bi-eye"></i></button>
               </div>
 
@@ -131,8 +157,9 @@
               </div>
 
               <div class="d-flex justify-content-center mt-5">
-                <button class="btn btn-danger text-white text-center rojo w-50" type="submit">EDITAR
-                  CONTRASEÑA</button>
+                <a href="#" class="btn btn-danger text-white d-flex justify-content-center  rojo w-50" data-bs-toggle="modal" data-bs-target="#editarContraseña">EDITAR
+                  CONTRASEÑA</a>
+              
               </div>
 
             </div>
@@ -160,6 +187,11 @@
       </div>
     </div>
 
+    <?php 
+    include 'editarDatos.php'; 
+    include 'editarContraseña.php';
+    
+    ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
