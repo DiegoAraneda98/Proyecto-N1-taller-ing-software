@@ -38,7 +38,7 @@
                         <div class="p mt-4">Rut</div>
                         <div class="input-group mt-1">
                             <input class="form-control bg-light" type="text" name="rut"
-                                placeholder="Ingrese su rut sin digito verificador" required />
+                                placeholder="Ingrese su rut sin digito verificador" maxlength="8"  onkeydown=filtro()  required />
                         </div>
 
                         <div class="p mt-4">Contraseña</div>
@@ -57,5 +57,5 @@
         </div>
     </div>
 </body>
-
+<script src="verificaciones.js"></script>
 </html>
