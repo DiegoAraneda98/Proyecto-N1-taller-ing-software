@@ -9,30 +9,32 @@
       <div class="modal-body">
         <form action="guarda.php" method="post" enctype="multipart/form-data">
 
-            <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre:</label>
-                <input type="text" name="nombre" id="nombre" class="form-control" required>
-            </div>
+          <input type="hidden" id="id" name="id">
 
-            <div class="mb-3">
-                <label for="apellido" class="form-label">Apellido:</label>
-                <input type="text" name="apellido" id="apellido" class="form-control" required>
-            </div>
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" class="form-control" required>
+          </div>
 
-            <div class="mb-3">
-                <label for="email" class="form-label">E-Mail:</label>
-                <input type="text" name="email" id="email" class="form-control" required>
-            </div>
+          <div class="mb-3">
+            <label for="apellido" class="form-label">Apellido:</label>
+            <input type="text" name="apellido" id="apellido" class="form-control" required>
+          </div>
 
-            <div class="mb-3">
-                <label for="telefono" class="form-label">Teléfono:</label>
-                <input type="text" name="telefono" id="telefono" class="form-control" required>
-            </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">E-Mail:</label>
+            <input type="text" name="email" id="email" class="form-control" required>
+          </div>
 
-            <div class="d-flex justify-content-end">
-                <button type="submit" class="btn btn-danger rojo btn-1">Guardar</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
+          <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono:</label>
+            <input type="text" name="telefono" id="telefono" class="form-control" required>
+          </div>
+
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-danger rojo btn-1">Guardar</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
         </form>
       </div>
     </div>
