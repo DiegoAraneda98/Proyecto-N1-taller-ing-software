@@ -6,6 +6,7 @@ require 'modelo/conexion.php';
 $id = $conexion->real_escape_string($_POST['id']);
 
 $sql = "SELECT id_vehiculo,patente,modelo,color,tipo_vehiculo FROM vehiculos WHERE id_vehiculo = $id LIMIT 1 ";
+
 $resultado = $conexion->query($sql);
 $row = $resultado->num_rows;
 

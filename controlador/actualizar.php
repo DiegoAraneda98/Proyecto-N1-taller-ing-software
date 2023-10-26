@@ -2,6 +2,7 @@
 
 require '../modelo/conexion.php';
 
+
 $id = $conexion->real_escape_string($_POST["id"]);
 $patente = $conexion->real_escape_string($_POST["patente"]);
 $modelo = $conexion->real_escape_string($_POST["modelo"]);
