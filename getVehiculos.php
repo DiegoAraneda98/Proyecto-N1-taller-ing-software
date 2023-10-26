@@ -12,8 +12,10 @@ $row = $resultado->num_rows;
 $vehiculos = [];
 if($row> 0){
 
-    $vehiculos = $resultado->fetch_assoc();
+    $vehiculos = $resultado->fetch_array();
 }
+
+
 
 echo json_encode($vehiculos, JSON_UNESCAPED_UNICODE);
 ?>

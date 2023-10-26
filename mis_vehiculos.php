@@ -80,7 +80,7 @@
                                     echo "<td>" . $row["fecha_ingreso"] . "</td>";
 
                                     echo "<td>";
-                                    echo "<a href=#'>";
+                                    echo "<a href='#'>";
                                     echo "<button class='btn btn-sm' data-bs-toggle='modal' data-bs-target='#editarmodal' data-bs-id='" . $row['id_vehiculo'] . "'><i class='bi bi-pencil-fill'></i></button>";
                                     echo "</a>";
 
@@ -115,7 +115,7 @@
     <?php include 'controlador/nuevomodal.php'; ?>
     <?php include 'controlador/editarmodal.php'; ?>
    
-
+                             
     <script>
         let editarmodal =document.getElementById('editarmodal')
 

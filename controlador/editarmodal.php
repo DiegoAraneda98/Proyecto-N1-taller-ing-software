@@ -1,6 +1,5 @@
 <div class="modal fade" id="editarmodal" tabindex="-1" aria-labelledby="editarmodalLabel" aria-hidden="true">
  
-
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -8,9 +7,9 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="actualizar.php" method="post" enctype="multipart/form-data">
+                <form action="controlador/actualizar.php" method="post" enctype="multipart/form-data">
 
-                <input type="hidden" id="id" name="id">
+                    <input type="hidden" id="id" name="id">
 
                     <div class="mb-3">
                         <label for="patente" class="form-label">Patente:</label>
@@ -44,7 +43,7 @@
 
                     <div class="">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <button type="submit" class="btn btn-primary">Guardar modifacion</button>
                     </div>
                 </form>
             </div>
