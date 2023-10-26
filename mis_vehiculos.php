@@ -143,6 +143,7 @@
                 inputModelo.value = data.modelo
                 inputColor.value = data.color
                 inputTipo_vehiculo.value = data.tipo_vehiculo
+                console.log(data.id)
             }).catch(err => console.log(err))
            
         })
