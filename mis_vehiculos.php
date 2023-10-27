@@ -102,7 +102,7 @@
 
                     </div>
                     <?php include 'controlador/editarmodal.php'; ?>
-
+                    <?php include 'controlador/nuevomodal.php'; ?>
                     <div class="d-flex justify-content-end mt-5">
                         <button type="submit" class="btn rojo text-white fw-semibold  mb-4 añadir_vehiculo"
                             name="añadir" data-bs-toggle="modal" data-bs-target="#nuevomodal">Añadir vehiculo</button>
@@ -116,7 +116,7 @@
 
     </div>
 
-    <?php include 'controlador/nuevomodal.php'; ?>
+    
     <script src="editar_vehiculos.js"></script>                            
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
