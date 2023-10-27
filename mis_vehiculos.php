@@ -81,7 +81,7 @@
 
                                     echo "<td>";
                                     echo "<a href='#'>";
-                                    echo "<button class='btn btn-sm' data-bs-toggle='modal' data-bs-target='#editarmodal' data-bs-id='" . $row['id_vehiculo'] . "'><i class='bi bi-pencil-fill'></i></button>";
+                                    echo "<button class='btn btn-sm' data-bs-toggle='modal' data-bs-target='#editarmodal' data-role='update' data- id='" . $row['id_vehiculo'] . "' name='edit' ><i class='bi bi-pencil-fill'></i></button>";
                                     echo "</a>";
 
 
@@ -117,35 +117,9 @@
    
                              
     <script>
-        let editarmodal =document.getElementById('editarmodal')
-
-        editarmodal.addEventListener('shown.bs.modal', event => {
-            let button =event.relatedTarget
-            let id =button.getAttribute('data-bs-id')
-
-            let inputId =editarmodal.querySelector('.modal-body #id')
-            let inputPatente =editarmodal.querySelector('.modal-body #patente')
-            let inputModelo =editarmodal.querySelector('.modal-body #modelo')
-            let inputColor =editarmodal.querySelector('.modal-body #color')
-            let inputTipo_vehiculo =editarmodal.querySelector('.modal-body #tipo_vehiculo')
-
-            let url = "getVehiculos.php"
-            let formData = new FormData()
-            formData.append('id', id)
-
-            fetch(url, {
-                method: "POST",
-                body:formData
-            }).then(response => response.json())
-            .then(data => {
-                inputId.value = data.id
-                inputPatente.value = data.patente
-                inputModelo.value = data.modelo
-                inputColor.value = data.color
-                inputTipo_vehiculo.value = data.tipo_vehiculo
-                console.log(data.id)
-            }).catch(err => console.log(err))
-           
+        
+        $(document).ready(function(){
+            $(document).on('click', 'a[data-role=update]')
         })
 
     </script>
