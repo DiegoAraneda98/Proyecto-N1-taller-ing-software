@@ -7,10 +7,9 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="controlador/actualizar.php" method="post" enctype="multipart/form-data">
+                <form action="#" method="post" enctype="multipart/form-data">
 
-                    <input type="hidden" id="id" name="id">
-
+                    
                     <div class="mb-3">
                         <label for="patente" class="form-label">Patente:</label>
                         <input type="text" name="patente" id="patente" class="form-control" >
@@ -40,10 +39,12 @@
                             </select>
                         </div>
                     </div>
+                    <input type="hidden" id="id_vehiculo" class="form-control" >
 
-                    <div class="">
+                    <div class="modal-footer">
+                        
+                        <a href="#" id="save" class="btn btn-primary" data-dismiss="modal">Guardar modificación</a>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="submit" class="btn btn-primary">Guardar modifacion</button>
                     </div>
                 </form>
             </div>
