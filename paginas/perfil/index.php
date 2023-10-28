@@ -119,7 +119,7 @@ while ($row = mysqli_fetch_array($resultado)) {
 
               <div class="d-grid gap-2 d-md-flex justify-content-center mt-5">
 
-                <a href="" class="btn btn-danger text-white d-flex justify-content-center  rojo w-50" data-bs-toggle="modal" data-bs-target="#editarDatos" data-bs-id= "$row[id]">EDITAR DATOS</a>
+                <a href="#" class="btn btn-danger text-white d-flex justify-content-center  rojo w-50" data-bs-toggle="modal" data-bs-target="#editarDatos" data-id= "<?php echo $row['id'] ;?>" >EDITAR DATOS</a>
               </div>
 
 
@@ -180,37 +180,7 @@ while ($row = mysqli_fetch_array($resultado)) {
 
     ?>
 
-    <script>
-      let editarDatos = document.getElementById('editarDatos')
 
-      editarmodal.addEventListener('shown.bs.modal', event => {
-        let button = event.relatedTarget
-        let id = button.getAttribute('data-bs-id')
-
-        let inputId = editarDatos.querySelector('.modal-body #id')
-        let inputNombre = editarDatos.querySelector('.modal-body #nombre')
-        let inputEmail = editarDatos.querySelector('.modal-body #email')
-        let inputTelefono = editarDatos.querySelector('.modal-body #telefono')
-      
-
-        let url = "getUsuarios.php"
-        let formData = new FormData()
-        formData.append('id', id)
-
-        fetch(url, {
-            method: "POST",
-            body: formData
-          }).then(response => response.json())
-          .then(data => {
-            inputId.value = data.id
-            inputPatente.value = data.patente
-            inputModelo.value = data.modelo
-            inputColor.value = data.color
-            inputTipo_vehiculo.value = data.tipo_vehiculo
-          }).catch(err => console.log(err))
-
-      })
-    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
