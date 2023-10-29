@@ -19,8 +19,10 @@
                 <input type="text" name="nuevaContraseña" id="nuevaContraseña" class="form-control" required>
             </div>
 
+            <input type="hidden" id ="idUsuario" class="form-control">
+
             <div class="d-flex justify-content-end">
-                <button type="submit" class="btn btn-danger rojo btn-1">Guardar</button>
+                <a href="" id="save"class="btn btn-danger rojo btn-1" >Guardar</a>
                 <button type="button" class="btn btn-secondary btn-2" data-bs-dismiss="modal">Cerrar</button>
             </div>
         </form>
