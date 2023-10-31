@@ -5,11 +5,11 @@ $consulta = "SELECT * FROM usuarios";
 $resultado = mysqli_query($conexion, $consulta);
 
 if ($row = mysqli_fetch_array($resultado)) {
-  $id = $row["id_usuario"];
-  $nombre = $row["nombre"];
-  $correo = $row["correo"];
-  $telefono = $row["telefono"];
-  $contraseña = $row["contraseña"];
+    $id = $row["id_usuario"];
+    $nombre = $row["nombre"];
+    $correo = $row["correo"];
+    $telefono = $row["telefono"];
+    $contraseña = $row["contraseña"];
 }
 ?>
 
@@ -61,31 +61,52 @@ if ($row = mysqli_fetch_array($resultado)) {
         </div>
 
         <div class="container-fluid">
+            
             <div class="row bg-light m-5">
+
                 <div class="h2 p-3">Mi perfil</div>
-                <div class="col-4 d-flex justify-content-center flex-wrap mt-2">
-                    <div class="card text-center rounded-0 bg-body-secondary" style="width: 25rem;">
-                        <div class="d-flex justify-content-center mt-5">
-                            <div class="rounded-circle bg-white h-100">
+include
+                <div class="col-12 col-md-4 d-flex justify-content-center flex-wrap  mb-5">
+
+                    <div class="card text-center rounded-0 bg-body-secondary" style="width: 20rem;  height: 20rem;">
+
+                        <div class="d-flex justify-content-center mt-5 flex-wrap">
+                            <div class="rounded-circle bg-white h-70">
                                 <img src="1077114.png" class="img-fluid imagen-perfil m-5">
                             </div>
-                        </div>
-                        <div class="card-body d-flex align-items-end justify-content-center">
-                            <button type="button" class="btn btn-outline-danger text-white rojo w-100 p-3">SUBIR IMAGEN <i
+
+                            <div class="card-body d-flex align-items-end justify-content-center">
+                            <button type="button" class="btn btn-outline-danger text-white rojo w-100 p-3 ">SUBIR IMAGEN <i
                                     class="bi bi-upload text-end"></i></button>
+                            </div>
                         </div>
                     </div>
-                    <div class="card mt-4 mb-5 rounded-0" style="width: 25rem;">
-                        <img src="..." class="card-img-top" alt="...">
+                    <div class="card mt-4 mb-1 rounded-0" style="width: 30rem; height: 21rem;">
+                        
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">RUT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mark</td>
+      <td>1234</td>
+   
+    </tr>
+    <tr>
+      <td>Jacob</td>
+      <td>12345</td>
+    </tr>
+  </tbody>
+</table>
                         </div>
                     </div>
                 </div>
-                <div class="col-4 d-flex justify-content-center mt-2">
+                <div class="col-12 col-md-4 d-flex justify-content-center mt-2">
                     <div class="card mb-5 rounded-0" style="width: 34rem;">
                         <div class="card-body">
                             <form action="#" method="POST" id="<?php echo $id ?>">
@@ -117,7 +138,7 @@ if ($row = mysqli_fetch_array($resultado)) {
                                 </div>
                                 <div class="d-grid gap-2 d-md-flex justify-content-center mt-5">
                                     <a href="#" class="btn btn-danger text-white d-flex justify-content-center rojo w-50"
-                                        data-bs-toggle="modal" data-role="update" data-id="<?php echo $id ?>">EDITAR
+                                        data-bs-toggle="modal" data-role="update-datos" data-id="<?php echo $id ?>">EDITAR
                                         DATOS</a>
                                        
                                 </div>
@@ -127,7 +148,7 @@ if ($row = mysqli_fetch_array($resultado)) {
                         </div>
                     </div>
                 </div>
-                <div class="col-4 d-flex justify-content-center flex-wrap mt-2">
+                <div class="col-12 col-md-4 d-flex justify-content-center flex-wrap mt-2">
                     <div class="card rounded-0" style="width: 34rem;">
                         <div class="card-body">
                             <p class="h5 text-secondary mt-5">Contraseña actual</p>
@@ -136,16 +157,7 @@ if ($row = mysqli_fetch_array($resultado)) {
                                     aria-describedby="button-addon2" readonly>
                                 <button class="btn btn-secondary" type="button" id="eye"><i class="bi bi-eye"></i></button>
                             </div>
-                            <p class="h5 text-secondary mt-4">Nueva contraseña</p>
-                            <div class="input-group mt-4">
-                                <input type="password" class="form-control rounded-0" aria-label="Password"
-                                    aria-describedby="button-addon2" placeholder="Nueva contraseña">
-                            </div>
-                            <p class="h5 text-secondary mt-4">Repite la nueva contraseña</p>
-                            <div class="input-group mt-4">
-                                <input type="password" class="form-control rounded-0" aria-label="Password"
-                                    aria-describedby="button-addon2" placeholder="Repite la nueva contraseña">
-                            </div>
+                            
                             <div class="d-flex justify-content-center mt-5">
                                 <a href="#" class="btn btn-danger text-white d-flex justify-content-center rojo w-50"
                                     data-bs-toggle="modal" data-bs-target="#editarContraseña">EDITAR CONTRASEÑA</a>
@@ -172,10 +184,48 @@ if ($row = mysqli_fetch_array($resultado)) {
             </div>
         </div>
 
-        <?php include 'editarDatos.php'; include 'editarContraseña.php'; ?>
+        <?php include 'editarDatos.php';
+        include 'editarContraseña.php'; ?>
      
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <script>
+            $(document).ready(function(){
+            $(document).on('click', 'a[data-role=update-datos]', function(){
+              var id = $(this).data('id');
+              var nombre = $('#' + id).find('input[data-target=nombre]').val();
+              var correo = $('#' + id).find('input[data-target=correo]').val();
+              var telefono = $('#' + id).find('input[data-target=telefono]').val();
+        
+              $('#nombre').val(nombre);
+              $('#correo').val(correo);
+              $('#telefono').val(telefono);
+              $('#idUsuario').val(id);
+              $('#editarDatos').modal('toggle');
+              });
+
+              $('#save-datos').click(function(){
+                var id = $('#idUsuario').val();
+                var nombre = $('#nombre').val();
+                var correo = $('#correo').val();
+                var telefono = $('#telefono').val();
+
+                $.ajax({
+                  url    : 'actualizarPerfil.php',
+                  method : 'post',
+                  data   : {nombre : nombre , correo : correo, telefono : telefono, id : id},
+                  success : function(response){
+                              $('#' + id).children('input[data-target=nombre]').text(nombre);
+                              $('#' + id).children('input[data-target=correo]').text(correo);
+                              $('#' + id).children('input[data-target=telefono]').text(telefono);
+                              $('#editarDatos').modal('toggle');
+                  }
+                });
+
+              });
+            });
+        </script>
+
+     <!--    <script>
             $(document).ready(function(){
             $(document).on('click', 'a[data-role=update]', function(){
               var id = $(this).data('id');
@@ -210,23 +260,8 @@ if ($row = mysqli_fetch_array($resultado)) {
 
               });
             });
-        </script>
+        </script> -->
 
-        <script>
-          var eye = document.getElementById('eye');
-          var input = document.getElementById('input');
-
-          eye.addEventListener("click", function(){
-            if(input.type == "password"){
-              input.type = "text";
-              eye.style.opacity = 0.8
-            }else{
-              input.type = "password"
-              eye.style.opacity = 0.2
-            }
-
-          })
-
-        </script>
+   
     </body>
 </html>

@@ -8,7 +8,7 @@ $telefono = $_POST['telefono'];
 $contraseña = $_POST['contraseña'];
 $id = $_POST['id'];
 
-$update = "UPDATE usuarios SET nombre='$nombre', correo= '$correo', telefono = '$telefono', contraseña = '$contraseña' WHERE id_usuario='$id'";
+$update = "UPDATE usuarios SET nombre='$nombre', correo= '$correo', telefono = '$telefono' WHERE id_usuario='$id'";
 $resultado = mysqli_query($conexion,$update);
 
 if($resultado) { 

@@ -31,7 +31,7 @@
           <input type="hidden" id ="idUsuario" class="form-control">
 
           <div class="d-flex justify-content-end">
-            <a href="" id="save"class="btn btn-danger rojo btn-1" >Guardar</a>
+            <a href="" id="save-datos"class="btn btn-danger rojo btn-1" >Guardar</a>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
           </div>
 

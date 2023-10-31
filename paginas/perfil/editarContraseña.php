@@ -7,22 +7,30 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="guarda.php" method="post" enctype="multipart/form-data">
+        <form action="#" method="post">
 
             <div class="mb-3">
                 <label for="contraseña" class="form-label">Nueva Contraseña:</label>
-                <input type="text" name="contraseña" id="contraseña" class="form-control" required>
+                <div class="input-group mt-2">
+                                <input id="input"type="password" class="form-control rounded-0" value="" aria-label="Recipient's username"
+                                    aria-describedby="button-addon2" readonly>
+                                <button class="btn btn-secondary" type="button" id="eye"><i class="bi bi-eye"></i></button>
+                            </div>
             </div>
 
-            <div class="mb-3">
+            <div class="mb-4">
                 <label for="nuevaContraseña" class="form-label">Repita la nueva contraseña:</label>
-                <input type="text" name="nuevaContraseña" id="nuevaContraseña" class="form-control" required>
+                <div class="input-group mt-2">
+                                <input id="input"type="password" class="form-control rounded-0" value="" aria-label="Recipient's username"
+                                    aria-describedby="button-addon2" readonly>
+                                <button class="btn btn-secondary" type="button" id="eye"><i class="bi bi-eye"></i></button>
+                            </div>
             </div>
 
             <input type="hidden" id ="idUsuario" class="form-control">
 
             <div class="d-flex justify-content-end">
-                <a href="" id="save"class="btn btn-danger rojo btn-1" >Guardar</a>
+                <a href="" id="save-password"class="btn btn-danger rojo btn-1" >Guardar</a>
                 <button type="button" class="btn btn-secondary btn-2" data-bs-dismiss="modal">Cerrar</button>
             </div>
         </form>
@@ -30,3 +38,4 @@
     </div>
   </div>
 </div>
+
