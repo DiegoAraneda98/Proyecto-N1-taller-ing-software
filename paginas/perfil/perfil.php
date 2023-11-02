@@ -89,8 +89,8 @@ if ($row = mysqli_fetch_array($resultado)) {
                     <div class="card mt-4 mb-1 rounded-0" style="width: 30rem; height: 21rem;">
 
                         <div class="card-body">
-                            <div class="table-responsive shadow overflow-y-auto" style="max-height: 310px;" >
-                                <table class="table table-hover text-center" >
+                            <div class="table-responsive shadow overflow-y-auto" style="max-height: 310px;">
+                                <table class="table table-hover text-center">
                                     <!--  php require __DIR__ . '/../auth/actions/controlador_login.php';  -->
                                     <thead>
                                         <tr>
@@ -101,32 +101,32 @@ if ($row = mysqli_fetch_array($resultado)) {
                                     </thead>
                                     <tbody class="table-group-divider">
                                         <?php
-                                require __DIR__ . '/../../modelo/conexion.php';
+                                        require __DIR__ . '/../../modelo/conexion.php';
 
-                                /* $id_usuario = $_SESSION['id_usuario']; */
-                                $sql = "SELECT * FROM invitados ";
-                                $resultado = mysqli_query($conexion, "$sql");
+                                        /* $id_usuario = $_SESSION['id_usuario']; */
+                                        $sql = "SELECT * FROM invitados ";
+                                        $resultado = mysqli_query($conexion, "$sql");
 
-                                while ($row = mysqli_fetch_assoc($resultado)) {
+                                        while ($row = mysqli_fetch_assoc($resultado)) {
 
-                                    echo "<tr id='{$row["id_invitado"]}'>";
-                                    echo "<td data-target='run'>" . $row["run"] . "</td>";
-                                    echo "<td data-target='nombre'>" . $row["nombre"] . "</td>";
-                                    echo "<td>";
-                                   /*  echo "<a href='#' class='btn btn-sm' data-role='update' data-id_vehiculo='" . $row['id_vehiculo'] . "'>";
-                                    echo "<i class='bi bi-pencil-fill'></i>";
-                                    echo "</a>"; */
+                                            echo "<tr id='{$row["id_invitado"]}'>";
+                                            echo "<td data-target='run'>" . $row["run"] . "</td>";
+                                            echo "<td data-target='nombre'>" . $row["nombre"] . "</td>";
+                                            echo "<td>";
+                                            /*  echo "<a href='#' class='btn btn-sm' data-role='update' data-id_vehiculo='" . $row['id_vehiculo'] . "'>";
+                                             echo "<i class='bi bi-pencil-fill'></i>";
+                                             echo "</a>"; */
 
 
-                                    echo "<a href='actions/eliminarInvitado.php?id_enviado=" . $row["id_invitado"] . "'>";
-                                    echo "<button class = 'btn btn-sm ' data-toggle='modal' data-target='#eliminar' ><i class='bi bi-trash-fill'></i></button>";
-                                    echo "</a>";
-                                    echo "</td>";
+                                            echo "<a href='actions/eliminarInvitado.php?id_enviado=" . $row["id_invitado"] . "'>";
+                                            echo "<button class = 'btn btn-sm ' data-toggle='modal' data-target='#eliminar' ><i class='bi bi-trash-fill'></i></button>";
+                                            echo "</a>";
+                                            echo "</td>";
 
-                                    echo "</tr>";
+                                            echo "</tr>";
 
-                                }
-                                ?>
+                                        }
+                                        ?>
 
                                     </tbody>
                                 </table>
@@ -243,6 +243,7 @@ if ($row = mysqli_fetch_array($resultado)) {
         <script src="editar_Datos.js"></script>
         <script src="editar_Contraseña.js"></script>
         <script src="mostrarContraseña.js"></script>
+    </div>
 </body>
 
 </html>
