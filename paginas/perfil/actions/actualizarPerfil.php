@@ -1,6 +1,7 @@
 <?php 
 
-require '../../modelos/conexion.php';
+require '../../../modelo/conexion.php';
+
 
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
@@ -12,7 +13,7 @@ $update = "UPDATE usuarios SET nombre='$nombre', apellido = '$apellido', correo=
 $resultado = mysqli_query($conexion,$update);
 
 if($resultado) { 
-    header ('Location: index.php');
+    header ('Location: ../perfil.php');
     
 } 
 ?>

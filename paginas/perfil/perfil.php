@@ -27,7 +27,7 @@ if ($row = mysqli_fetch_array($resultado)) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style-perfil.css">
+    <link rel="stylesheet" href="../../css/style-perfil.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
@@ -77,7 +77,7 @@ if ($row = mysqli_fetch_array($resultado)) {
 
                         <div class="d-flex justify-content-center mt-5 flex-wrap">
                             <div class="rounded-circle bg-white h-70">
-                                <img src="1077114.png" class="img-fluid imagen-perfil m-5">
+                                <img src="../../img/perfil_defualt.png" class="img-fluid imagen-perfil m-5">
                             </div>
 
                             <div class="card-body d-flex align-items-end justify-content-center">
@@ -89,25 +89,48 @@ if ($row = mysqli_fetch_array($resultado)) {
                     <div class="card mt-4 mb-1 rounded-0" style="width: 30rem; height: 21rem;">
 
                         <div class="card-body">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Nombre</th>
-                                        <th scope="col">RUT</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Mark</td>
-                                        <td>1234</td>
+                            <div class="table-responsive shadow overflow-y-auto" style="max-height: 310px;" >
+                                <table class="table table-hover text-center" >
+                                    <!--  php require __DIR__ . '/../auth/actions/controlador_login.php';  -->
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Rut</th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Opciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="table-group-divider">
+                                        <?php
+                                require __DIR__ . '/../../modelo/conexion.php';
 
-                                    </tr>
-                                    <tr>
-                                        <td>Jacob</td>
-                                        <td>12345</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                /* $id_usuario = $_SESSION['id_usuario']; */
+                                $sql = "SELECT * FROM invitados ";
+                                $resultado = mysqli_query($conexion, "$sql");
+
+                                while ($row = mysqli_fetch_assoc($resultado)) {
+
+                                    echo "<tr id='{$row["id_invitado"]}'>";
+                                    echo "<td data-target='run'>" . $row["run"] . "</td>";
+                                    echo "<td data-target='nombre'>" . $row["nombre"] . "</td>";
+                                    echo "<td>";
+                                   /*  echo "<a href='#' class='btn btn-sm' data-role='update' data-id_vehiculo='" . $row['id_vehiculo'] . "'>";
+                                    echo "<i class='bi bi-pencil-fill'></i>";
+                                    echo "</a>"; */
+
+
+                                    echo "<a href='actions/eliminarInvitado.php?id_enviado=" . $row["id_invitado"] . "'>";
+                                    echo "<button class = 'btn btn-sm ' data-toggle='modal' data-target='#eliminar' ><i class='bi bi-trash-fill'></i></button>";
+                                    echo "</a>";
+                                    echo "</td>";
+
+                                    echo "</tr>";
+
+                                }
+                                ?>
+
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -185,18 +208,24 @@ if ($row = mysqli_fetch_array($resultado)) {
                     </div>
                     <div class="card mt-4 mb-5 rounded-0" style="width: 34rem;">
                         <div class="card-body">
-                            <div class="input-group mt-3">
-                                <input type="text" class="form-control rounded-0" aria-label="Username"
-                                    aria-describedby="basic-addon1" placeholder="Nombre Invitado">
-                            </div>
-                            <div class="input-group mt-4">
-                                <input type="text" class="form-control rounded-0" aria-label="Username"
-                                    aria-describedby="basic-addon1" placeholder="RUT">
-                            </div>
-                            <div class="d-flex justify-content-center mt-4">
-                                <button class="btn btn-danger text-white d-flex justify-content-center rojo w-50"
-                                    type="submit">AÑADIR INVITADO</button>
-                            </div>
+                            <form action="actions/añadirInvitado.php" method="POST">
+
+                                <div class="input-group mt-3">
+                                    <input id="nombreInvitado" name="nombreInvitado" type="text"
+                                        class="form-control rounded-0" aria-label="Username"
+                                        aria-describedby="basic-addon1" placeholder="Nombre Invitado">
+                                </div>
+                                <div class="input-group mt-4">
+                                    <input id="rutInvitado" name="rutInvitado" type="text"
+                                        class="form-control rounded-0" aria-label="Username"
+                                        aria-describedby="basic-addon1" placeholder="RUT">
+                                </div>
+                                <div class="d-flex justify-content-center mt-4">
+                                    <button name="añadir"
+                                        class="btn btn-danger text-white d-flex justify-content-center rojo w-50"
+                                        type="submit">AÑADIR INVITADO</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -210,91 +239,9 @@ if ($row = mysqli_fetch_array($resultado)) {
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
         </script>
 
-        <script>
-        $(document).ready(function() {
-            $(document).on('click', 'a[data-role=update-datos]', function() {
-                var id = $(this).data('id');
-                var nombre = $('#' + id).find('input[data-target=nombre]').val();
-                var apellido = $('#' + id).find('input[data-target=apellido]').val();
-                var correo = $('#' + id).find('input[data-target=correo]').val();
-                var telefono = $('#' + id).find('input[data-target=telefono]').val();
 
-                $('#nombre').val(nombre);
-                $('#apellido').val(apellido);
-                $('#correo').val(correo);
-                $('#telefono').val(telefono);
-                $('#idUsuario').val(id);
-                $('#editarDatos').modal('toggle');
-            });
-
-            $('#save-datos').click(function() {
-                var id = $('#idUsuario').val();
-                var nombre = $('#nombre').val();
-                var apellido = $('#apellido').val();
-                var correo = $('#correo').val();
-                var telefono = $('#telefono').val();
-
-                $.ajax({
-                    url: 'actualizarPerfil.php',
-                    method: 'post',
-                    data: {
-                        nombre: nombre,
-                        apellido: apellido,
-                        correo: correo,
-                        telefono: telefono,
-                        id: id
-                    },
-                    success: function(response) {
-                        $('#' + id).children('input[data-target=nombre]').text(nombre);
-                        $('#' + id).children('input[data-target=apellido]').text(apellido);
-                        $('#' + id).children('input[data-target=correo]').text(correo);
-                        $('#' + id).children('input[data-target=telefono]').text(telefono);
-                        $('#editarDatos').modal('toggle');
-                    }
-                });
-
-            });
-        });
-        </script>
-
-        <script>
-        $(document).ready(function() {
-            $(document).on('click', 'a[data-role=update-password]', function() {
-                var id = $(this).data('id');
-
-                $('#idUsuario').val(id);
-                $('#editarContrasena').modal('toggle');
-
-            });
-
-            $('#save-password').click(function() {
-                var id = $('#idUsuario').val();
-                var nuevaContrasena = $('#nuevaContrasena').val();
-                var repetirNuevaContrasena = $('#repetirNuevaContrasena').val();
-
-                if (nuevaContrasena !== repetirNuevaContrasena) {
-                    window.alert("Contraseñas distintas");
-                    
-                } else {
-                    $.ajax({
-                        url: 'actualizaContrasena.php',
-                        method: 'post',
-                        data: {
-                            nuevaContrasena: nuevaContrasena,
-                            id: id
-                        },
-                        success: function(response) {
-                            $('#' + id).children('input[data-target=contraseña]').text(
-                                contraseña);
-                            $('#editarContrasena').modal('toggle');
-                        }
-                    });
-                }
-
-            });
-        });
-        </script>
-
+        <script src="editar_Datos.js"></script>
+        <script src="editar_Contraseña.js"></script>
         <script src="mostrarContraseña.js"></script>
 </body>
 

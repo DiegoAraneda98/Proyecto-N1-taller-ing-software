@@ -1,5 +1,5 @@
 <?php
-require '../../modelos/conexion.php';
+require '../../../modelo/conexion.php';
 
 
 $nuevaContrasena = $_POST['nuevaContrasena'];
@@ -13,7 +13,7 @@ $update = "UPDATE usuarios SET contraseña = '$nuevaContrasena' WHERE id_usuario
 $resultado = mysqli_query($conexion, $update);
 
 if ($resultado) {
-    header('Location: index.php');
+    header('Location: perfil.php');
 } else {
     echo "Error al actualizar la contraseña: " . mysqli_error($conexion);
 }

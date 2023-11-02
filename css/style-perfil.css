@@ -4,7 +4,7 @@
 }
 
 .fondo-perfil{
-    background-image: url("fondo_perfil_admin_vehiculos.png"); 
+    background-image: url("../img/fondo_perfil_admin_vehiculos.png"); 
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
