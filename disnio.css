@@ -1,11 +1,12 @@
-.logo{
-    width: 150px !important;
+.fondo{
+    background-image: url(ing/fondo_perfil_admin_vehiculos.png);
 }
-
-ul > li {
-    margin-left: 20px;
+.iz{
+    align-content: center;
+    display: inline-block;
+    
 }
+.de{
 
-ul > li .ml{
-    margin-right: 20px;
+    align-content: center;
 }
