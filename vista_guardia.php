@@ -12,7 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
-    
+
     <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
@@ -58,15 +58,16 @@
 
                             <style>
                                 #preview {
-                                    width: 500px;
-                                    height: 500px;
+                                    width: 100%;
+                                    height: 100%;
                                     margin: 0px auto;
                                 }
                             </style>
                             <center>
-                                <p class="login-box-msg"> <i class="glyphicon glyphicon-camera"></i> ¡Lector QR!</p>
+                                <button id="toggleCamera" onclick="toggleCamera()" class="btn btn-danger">Encender lector QR</button>
                             </center>
-                            <video id="preview" width="100%" style="border-radius:10px;"></video>
+                            <video id="preview" width="100%" style="border-radius:10px;" class="d-none"></video>
+
                             <br>
                             <br>
                             <?php
@@ -159,30 +160,6 @@
             </div>
         </div>
 
-        <!-- Cámara/Scanner -->
-        <script>
-            var scanner = new Instascan.Scanner({
-                video: document.getElementById('preview'),
-                scanPeriod: 5,
-                mirror: false
-            });
-            Instascan.Camera.getCameras().then(function(cameras) {
-                if (cameras.length > 0) {
-                    scanner.start(cameras[0]);
-                } else {
-                    console.error('No se han encontrado cámaras.')
-                    alert('No camaras encontradas.');
-                }
-            }).catch(function(e) {
-                alert(e);
-            });
-
-            scanner.addListener('scan', function(c) {
-                document.getElementById('text').value = c;
-                document.forms[0].submit();
-            });
-        </script>
-
         <!-- Exportar tablas -->
         <script>
             function Export() {
@@ -212,8 +189,59 @@
             });
         </script>
 
+        <!-- Cámara/Scanner -->
+        <script>
+            var scanner = null; // Variable global para almacenar el objeto Instascan.Scanner
 
+            function toggleCamera() {
+                var divVideo = document.getElementById('divvideo');
 
+                if (scanner === null) {
+                    // Si el escáner aún no se ha inicializado, inicialízalo
+                    scanner = new Instascan.Scanner({
+                        video: document.getElementById('preview'),
+                        scanPeriod: 5,
+                        mirror: true
+                    });
+
+                    Instascan.Camera.getCameras().then(function(cameras) {
+                        if (cameras.length > 0) {
+                            scanner.start(cameras[0]);
+                            document.getElementById('preview').classList.remove('d-none'); // Mostrar el video
+
+                            // Ajustar el tamaño del div al 100% del área de la cámara
+                            divVideo.style.width = '100%';
+                            divVideo.style.height = '100%';
+                        } else {
+                            console.error('No se han encontrado cámaras.');
+                            alert('No se encontraron cámaras.');
+                        }
+                    }).catch(function(e) {
+                        alert(e);
+                    });
+
+                    scanner.addListener('scan', function(c) {
+                        document.getElementById('text').value = c;
+                        document.forms[0].submit();
+                    });
+
+                    // Cambiar el texto del botón
+                    document.getElementById('toggleCamera').textContent = 'Apagar lector QR';
+                } else {
+                    // Si el escáner ya está inicializado, apágalo
+                    scanner.stop();
+                    scanner = null; // Restablece el objeto scanner
+                    document.getElementById('toggleCamera').textContent = 'Encender lector QR'; // Cambiar el texto del botón
+
+                    // Restablecer el tamaño del div al 100% del área
+                    divVideo.style.width = '100%';
+                    divVideo.style.height = '100%';
+
+                    // Ocultar el video
+                    document.getElementById('preview').classList.add('d-none');
+                }
+            }
+        </script>
 
 </body>
 
