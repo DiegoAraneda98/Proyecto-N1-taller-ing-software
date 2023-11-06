@@ -17,7 +17,7 @@ $(document).ready(function() {
 
         } else {
             $.ajax({
-                url: 'actions/actualizaContrasena.php',
+                url: ' pages/perfil/actions/actualizaContrasena.php',
                 method: 'post',
                 data: {
                     nuevaContrasena: nuevaContrasena,
@@ -27,6 +27,7 @@ $(document).ready(function() {
                     $('#' + id).children('input[data-target=contraseña]').text(
                         contraseña);
                     $('#editarContrasena').modal('toggle');
+                    location.reload(true);
                 }
             });
         }
