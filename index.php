@@ -8,23 +8,31 @@
     <link rel="stylesheet" href="disnio.css">
   </head>
   <body>
-    <div class="container-fluid">
-      <div class="row">
-       <form action="añadir_contacto.php" method="post">
-        <div class="iz">
+    <div class="container-fluid fondo">
+    <form action="añadir_contacto.php" method="post">  
+    <div class="row">
+       
+        <div class="col-md-4">
           <h1>Encuesta:</h1>
             Nombre:
             <input type="text" name="Nombre" id="">
+            <br>
             RUT:
             <input type="text" name="Rut" id="">
+            <br>
             correo:
             <input type="email" name="correo" id="">
+            <br>
             Telefono:
             <input type="text" name="Telefono" id="">
+            <br>
+            <br>
             Sujerencia:
-            <input type="text" name="sujerencia" id="">
+            <br>
+            <textarea name="sug" id="suge" cols="55" rows="4"></textarea>
         </div>
-        <div class="de">
+          <div class="row">
+          <div class="col-md-4">
           Interfaz:
           <select  id="inter" class="form-control">
             <option value="5">Muy Buena</option>
@@ -43,6 +51,11 @@
             <option value="1">Lenta</option>
 
           </select>
+          <div class="col-md-12">
+          <button type="button" class="btn btn-info" id="saveForm" onclick="saveForm">Guardar Encuesta</button>
+        <button type="button" class="btn btn-danger" id="clearForm">Limpiar formulario</button>
+          </div>
+          </div>
         </div>
        </form>
       </div>

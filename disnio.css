@@ -1,12 +1,8 @@
 .fondo{
-    background-image: url(ing/fondo_perfil_admin_vehiculos.png);
-}
-.iz{
-    align-content: center;
-    display: inline-block;
-    
-}
-.de{
+    background-image: url(img/fondo_perfil_admin_vehiculos.png);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
-    align-content: center;
 }
