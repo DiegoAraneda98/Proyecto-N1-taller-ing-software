@@ -1,6 +1,6 @@
 <?php
 $page = isset($_GET['p']) ? $_GET['p'] : '';
-require($_SERVER['DOCUMENT_ROOT'] . '/xampp/pregunta_profe/pages/auth/actions/controlador_login.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/xampp/Proyecto-N1-taller-ing-software/pages/auth/actions/controlador_login.php');
 
 
 if ($navbarType === 'type1') {
@@ -112,6 +112,7 @@ if ($navbarType === 'type1') {
   <div class="dropdown-menu" aria-labelledby="mantenedoresDropdown">
     <a class="dropdown-item ' . ($page === 'admin/admin_vehiculos' ? 'active' : '') . '" href="index.php?p=admin/admin_vehiculos">Vehiculos</a>
     <a class="dropdown-item ' . ($page === 'admin/admin' ? 'active' : '') . '" href="index.php?p=admin/admin">Usuarios</a>
+    <a class="dropdown-item ' . ($page === 'admin/admin_tipo_usuario' ? 'active' : '') . '" href="index.php?p=admin/admin_tipo_usuario">Tipo usuario</a>
   </div>
 </li>';
   }
