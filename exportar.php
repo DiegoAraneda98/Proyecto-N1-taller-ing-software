@@ -10,26 +10,25 @@ $conn = new mysqli($server,$username,$password,$dbname);
 if($conn->connect_error){
     die("Connection failed" .$conn->connect_error);
 }
-$filename = 'Historial'.date('Y-m-d').'.csv';
+$filename = 'Historial_'.date('Y-m-d').'.csv';
 
-$query = "SELECT * FROM table_attendance";
+$query = "SELECT * FROM historial";
 $result = mysqli_query($conn,$query);
 
 $array = array();
 
 $file = fopen($filename,"w");
-$array = array("ID","STUDENT ID","TIME IN ","TIME OUT","LOG DATE","STATUS");
+$array = array("rut","nombre","correo","patente","hora_ingreso");
 fputcsv($file,$array);
 
 while($row = mysqli_fetch_array($result)){
-    $ID =$row['ID'];
-    $STUDENTID =$row['STUDENTID'];
-    $TIMEIN =$row['TIMEIN'];
-    $TIMEOUT =$row['TIMEOUT'];
-    $LOGDATE =$row['LOGDATE'];
-    $STATUS =$row['STATUS'];
+    $rut =$row['Rut'];
+    $nombre =$row['Nombre'];
+    $correo =$row['Correo'];
+    $patente =$row['Patente'];
+    $hora_ingreso =$row['Hora ingreso'];
 
-    $array = array($ID,$STUDENTID,$TIMEIN,$TIMEOUT,$LOGDATE,$STATUS);
+    $array = array("rut","nombre","correo","patente","hora_ingreso");
     fputcsv($file,$array);
 }
 fclose($file);

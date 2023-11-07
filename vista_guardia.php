@@ -151,7 +151,7 @@
                                 </table>
                                 <tr>
                                     <div class="table-button">
-                                        <button type="button" class="btn btn-danger">Exportar tabla</button>
+                                        <button type="button" class="btn btn-danger" id="exportarButton ">Exportar tabla</button>
                                     </div>
                                 </tr>
                             </div>
@@ -164,16 +164,29 @@
 
         <!-- Exportar tablas -->
         <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Asegúrate de que el botón exista antes de intentar agregar el evento
+                var exportButton = document.getElementById('exportButton');
+                if (exportButton) {
+                    exportButton.addEventListener('click', function() {
+                        Export();
+                    });
+                }
+            });
+        </script>
+
+        <script>
             function Export() {
-                var conf = confirm("Please confirm if you wish to proceed in exporting the attendance in to Excel File");
+                var conf = confirm("Por favor confirmar que desea proceder a exportar el historial de acceso vehicular.");
+                window.open("exportar.php", '_blank');
                 if (conf == true) {
-                    window.open("export.php", '_blank');
+
                 }
             }
         </script>
 
         <!-- Exportar tablas -->
-        <script>
+        <!--         <script>
             $(function() {
                 $("#example1").DataTable({
                     "responsive": true,
@@ -189,11 +202,11 @@
                     "responsive": true,
                 });
             });
-        </script>
+        </script> -->
 
 
 
-            
+
         <!-- Cámara/Scanner -->
         <script>
             var scanner = null; // Variable global para almacenar el objeto Instascan.Scanner
