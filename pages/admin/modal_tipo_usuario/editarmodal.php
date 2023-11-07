@@ -16,11 +16,11 @@
                     </div>
 
 
-                    <input type="hidden" id="id_tipoUsuario" name="id_tipoUsuario" class="form-control" >
+                    <input type="hidden" id="id_tipo" name="id_tipo" class="form-control" >
 
                     <div class="modal-footer">
                         
-                        <a href="#" id="save-tipo-usuario" class="btn btn-primary" data-dismiss="modal">Guardar modificación</a>
+                        <a href="#" id="save_tipo" class="btn btn-primary" data-dismiss="modal">Guardar modificación</a>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     </div>
                 </form>

@@ -30,7 +30,7 @@
                                     
 
                                     echo "<td>";
-                                    echo "<a href='#' class='btn btn-sm' data-role='update-tipo-usuario' data-id_tipoUsuario='" . $row['id_tipoUsuario'] . "'>";
+                                    echo "<a href='#' class='btn btn-sm' data-role='update_tipo' data-id_tipo='" . $row['id_tipoUsuario'] . "'>";;
                                     echo "<i class='bi bi-pencil-fill'></i>";
                                     echo "</a>";
 
