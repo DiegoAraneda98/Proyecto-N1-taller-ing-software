@@ -3,16 +3,12 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-danger">
-                <h1 class="modal-title fs-5 text-white" id="editarmodaltipoUsuarioLabel">Editar usuario</h1>
+                <h1 class="modal-title fs-5 text-white" id="editarmodaltipoUsuarioLabel">Editar tipo de usuario</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="#" method="post" enctype="multipart/form-data">
 
-                    <div class="mb-3">
-                        <label for="tipo_usuario" class="form-label">id_tipoUsuario:</label>
-                        <input type="text" name="tipo_usuario" id="tipo_usuario" class="form-control" >
-                    </div>
 
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre:</label>
@@ -20,7 +16,7 @@
                     </div>
 
 
-                    <input type="hidden" id="id_tipoUsuario" class="form-control" >
+                    <input type="hidden" id="id_tipoUsuario" name="id_tipoUsuario" class="form-control" >
 
                     <div class="modal-footer">
                         

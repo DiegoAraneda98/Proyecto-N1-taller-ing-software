@@ -7,6 +7,8 @@ $(document).ready(function () {
         var color = $('#' + id).children('td[data-target=color]').text();
         var tipo_vehiculo = $('#' + id).children('td[data-target=tipo_vehiculo]').text();
 
+
+
         $('#patente').val(patente);
         $('#modelo').val(modelo);
         $('#color').val(color);

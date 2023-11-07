@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-10 bg-white offset-1 mt-5">
-                    <div class="h2 p-3 text-secondary ">Usuarios</div>
+                    <div class="h2 p-3 text-secondary ">Tipos de usuarios</div>
                     <div class="table-responsive shadow  overflow-y-auto " style="max-height: 400px;">
                         <table class="table table-hover text-center">
                             
@@ -25,7 +25,7 @@
                                 while ($row = mysqli_fetch_assoc($resultado)) {
 
                                     echo "<tr id='{$row["id_tipoUsuario"]}'>";
-                                    echo "<td data-target='id_usuario'>" . $row["id_tipoUsuario"] . "</td>";
+                                    echo "<td data-target='id_tipoUsuario'>" . $row["id_tipoUsuario"] . "</td>";
                                     echo "<td data-target='nombre'>" . $row["nombre"] . "</td>";
                                     
 
@@ -35,7 +35,7 @@
                                     echo "</a>";
 
 
-                                    echo "<a href='index.php?p=/admin/actions_tipo_usuarios/admin_deletetipoUsuario&id_enviado=" . $row["id_tipoUsuario"] . "'>";
+                                    echo "<a href='index.php?p=/admin/actions_tipo_usuario/admin_deletetipoUsuario&id_enviado=" . $row["id_tipoUsuario"] . "'>";
                                     echo "<button class = 'btn btn-sm ' data-toggle='modal' data-target='#eliminar' ><i class='bi bi-trash-fill'></i></button>";
                                     echo "</a>";
                                     echo "</td>";
