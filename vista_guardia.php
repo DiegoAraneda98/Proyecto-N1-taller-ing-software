@@ -53,6 +53,7 @@
                             <style>
                                 #divvideo {
                                     box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+                                    position: relative;
                                 }
                             </style>
 
@@ -61,6 +62,7 @@
                                     width: 100%;
                                     height: 100%;
                                     margin: 0px auto;
+                                    object-fit: cover;
                                 }
                             </style>
                             <center>
@@ -189,6 +191,9 @@
             });
         </script>
 
+
+
+            
         <!-- Cámara/Scanner -->
         <script>
             var scanner = null; // Variable global para almacenar el objeto Instascan.Scanner
@@ -198,20 +203,28 @@
 
                 if (scanner === null) {
                     // Si el escáner aún no se ha inicializado, inicialízalo
-                    scanner = new Instascan.Scanner({
-                        video: document.getElementById('preview'),
-                        scanPeriod: 5,
-                        mirror: true
-                    });
-
                     Instascan.Camera.getCameras().then(function(cameras) {
                         if (cameras.length > 0) {
+                            scanner = new Instascan.Scanner({
+                                video: document.getElementById('preview'),
+                                scanPeriod: 5,
+                                mirror: true
+                            });
+
                             scanner.start(cameras[0]);
                             document.getElementById('preview').classList.remove('d-none'); // Mostrar el video
 
                             // Ajustar el tamaño del div al 100% del área de la cámara
                             divVideo.style.width = '100%';
                             divVideo.style.height = '100%';
+
+                            // Cambiar el texto del botón
+                            document.getElementById('toggleCamera').textContent = 'Apagar lector QR';
+
+                            scanner.addListener('scan', function(c) {
+                                document.getElementById('text').value = c;
+                                document.forms[0].submit();
+                            });
                         } else {
                             console.error('No se han encontrado cámaras.');
                             alert('No se encontraron cámaras.');
@@ -219,14 +232,6 @@
                     }).catch(function(e) {
                         alert(e);
                     });
-
-                    scanner.addListener('scan', function(c) {
-                        document.getElementById('text').value = c;
-                        document.forms[0].submit();
-                    });
-
-                    // Cambiar el texto del botón
-                    document.getElementById('toggleCamera').textContent = 'Apagar lector QR';
                 } else {
                     // Si el escáner ya está inicializado, apágalo
                     scanner.stop();
