@@ -12,7 +12,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
@@ -132,16 +135,16 @@
                                                     <?php echo $row['run']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $row['nombre']; ?>
+                                                    <?php echo $row['run']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $row['correo']; ?>
+                                                    <?php echo $row['run']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $row['patente']; ?>
+                                                    <?php echo $row['run']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $row('hora_ingreso'); ?>
+                                                    <?php echo $row['run']; ?>
                                                 </td>
                                             </tr>
                                         <?php
@@ -151,7 +154,7 @@
                                 </table>
                                 <tr>
                                     <div class="table-button">
-                                        <button type="button" class="btn btn-danger" id="exportarButton ">Exportar tabla</button>
+                                        <button type="button" class="btn btn-danger" id="exportarButton" onclick="Export()">Exportar tabla</button>
                                     </div>
                                 </tr>
                             </div>
@@ -177,35 +180,12 @@
 
         <script>
             function Export() {
-                var conf = confirm("Por favor confirmar que desea proceder a exportar el historial de acceso vehicular.");
-                window.open("exportar.php", '_blank');
+                var conf = confirm("Porfavor confirmar si desea realmente exportar la tabla.");
                 if (conf == true) {
-
+                    window.open("exportar.php", '_blank');
                 }
             }
         </script>
-
-        <!-- Exportar tablas -->
-        <!--         <script>
-            $(function() {
-                $("#example1").DataTable({
-                    "responsive": true,
-                    "autoWidth": false,
-                });
-                $('#example2').DataTable({
-                    "paging": true,
-                    "lengthChange": false,
-                    "searching": false,
-                    "ordering": true,
-                    "info": true,
-                    "autoWidth": false,
-                    "responsive": true,
-                });
-            });
-        </script> -->
-
-
-
 
         <!-- Cámara/Scanner -->
         <script>
