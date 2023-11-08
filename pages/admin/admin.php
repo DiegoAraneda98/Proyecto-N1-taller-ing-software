@@ -9,7 +9,7 @@
                             
                             <thead>
                                 <tr>
-                                    <th scope="col">id_usuario</th>
+                                    <th scope="col">Id usuario</th>
                                     <th scope="col">Run</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Apellido</th>
@@ -65,6 +65,10 @@
                         </table>
 
                     </div>
+
+                    <?php
+                    $sqlUsuario = "SELECT * FROM tipo_usuario";
+                    $tipo_usuario = $conexion->query($sqlUsuario); ?>
                     <?php include 'modal_Usuarios/editarmodal.php'; ?>
                     <?php include 'modal_Usuarios/nuevomodal.php'; ?>
                     

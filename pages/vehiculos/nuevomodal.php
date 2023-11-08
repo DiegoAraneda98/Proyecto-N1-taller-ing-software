@@ -5,7 +5,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="nuevomodalLabel">Añadir vehiculo</h1>
+                <h1 class="modal-title fs-5" id="nuevomodalLabel">Añadir vehículo</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -27,7 +27,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="tipo_vehiculo" class="form-label">Tipo de vehiculo:</label>
+                        <label for="tipo_vehiculo" class="form-label">Tipo de vehículo:</label>
                         <div class="input-group">
                             <select class="form-select" name="tipo_vehiculo">
                                 <option selected>Seleccione su tipo vehículo</option>

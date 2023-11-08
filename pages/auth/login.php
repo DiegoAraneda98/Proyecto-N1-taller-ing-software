@@ -13,7 +13,7 @@
     <div class="row d-flex align-items-center ">
         <div class="col-4 offset-4 d-flex justify-content-center ">
 
-            <div class="bg-white mt-3 p-5 rounded-5 text-secondary shadow " style="width: 90%; height: 100%">
+            <div class="bg-white mt-3 p-5 rounded-4 text-secondary shadow " style="width: 90%; height: 100%">
 
                 <form action="" method="post">
                     <?php
@@ -24,7 +24,7 @@
                     <div class="p mt-4">Rut</div>
                     <div class="input-group mt-1">
                         <input class="form-control bg-light" type="text" name="rut"
-                            placeholder="Ingrese su rut sin digito verificador" minlength="8" maxlength="8"
+                            placeholder="Ingrese su Rut sin dígito verificador" minlength="8" maxlength="8"
                             onkeydown=filtro() required />
                     </div>
 
@@ -34,7 +34,7 @@
                             required />
                     </div>
 
-                    <input type="submit" value="Iniciar Sesion" name="login"
+                    <input type="submit" value="Iniciar sesión" name="login"
                         class="btn rojo text-white fw-semibold w-100 mt-4 ">
                     <p class="text-center mt-2">Si olvidaste tu contraseña haz click <a
                             href="https://portal.ucsc.cl/usuario/solicitar_pass">aquí</a></p>

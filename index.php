@@ -22,7 +22,7 @@ switch ($pagina) {
         $navbarType = 'type3';
         break;
 
-    case 'admin/admin' :
+    case 'admin/admin':
         $navbarType = 'type3';
         break;
 
@@ -38,7 +38,9 @@ switch ($pagina) {
         $navbarType = 'type3';
         break;
 
-   
+    case 'admin/admin_establecimientos':
+        $navbarType = 'type3';
+        break;
 }
 
 switch ($pagina) {

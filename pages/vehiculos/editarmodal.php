@@ -5,7 +5,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-danger">
-                <h1 class="modal-title fs-5 text-white" id="editarmodalLabel">Editar vehiculo</h1>
+                <h1 class="modal-title fs-5 text-white" id="editarmodalLabel">Editar vehículo</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -28,10 +28,10 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="tipo_vehiculo" class="form-label">Tipo de vehiculo:</label>
+                        <label for="tipo_vehiculo" class="form-label">Tipo de vehículo:</label>
                         <div class="input-group ">
                             <select class="form-select " id="tipo_vehiculo" name="tipo_vehiculo">
-                                <option selected>Seleccione su tipo vehiculo</option>
+                                <option selected>Seleccione su tipo vehículo</option>
                                 <?php while ($row_vehiculos = $tipo_vehiculo->fetch_assoc()) { ?>
                                     <option value="<?= $row_vehiculos["nombre"] ?>"> <?= $row_vehiculos["nombre"]; ?>
                                  </option>

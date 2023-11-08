@@ -6,12 +6,12 @@
         <div class="col-6 d-flex justify-content-end">
             <p class="text-start align-self-center fw-semibold m-2 p-4 fs-5">Tienes una cuenta</p>
             <a class="btn text-white align-self-center fw-semibold rojo" href="index.php?p=auth/login"
-                role="button">Iniciar Sesión</a>
+                role="button">Iniciar sesión</a>
         </div>
     </div>
     <div class="row d-flex align-items-center">
         <div class="col-4 offset-4 d-flex justify-content-center ">
-            <div class="bg-white p-4 rounded-5 text-secondary shadow " style="width: 100%; height: 100%">
+            <div class="bg-white p-4 rounded-4 text-secondary shadow " style="width: 100%; height: 100%">
                 <form action="" method="post">
                     <?php
                     include("modelo/conexion.php");
@@ -25,10 +25,10 @@
                     <div class="p mt-3">Rut</div>
                     <div class="input-group ">
                         <input class="form-control bg-light" type="text" name="rut" onkeydown=filtro() minlength="8"
-                            maxlength="8" placeholder="Sin puntos, ni digito verificador" />
+                            maxlength="8" placeholder="Sin puntos, ni dígito verificador" />
                     </div>
 
-                    <div class="p mt-3">Nombres</div>
+                    <div class="p mt-3">Nombre</div>
                     <div class="input-group ">
                         <input class="form-control bg-light" type="text" name="nombre" onkeydown=filtroLetras()
                             placeholder="John Doe" />
@@ -40,7 +40,7 @@
                             onblur=validarEmailConDominioUCSC() placeholder="Correo@ucsc.cl" />
                     </div>
 
-                    <div class="p mt-3">¿Que usuario es?</div>
+                    <div class="p mt-3">¿Qué usuario es?</div>
                     <div class="input-group ">
                         <select class="form-select bg-light" name="tipo_usuario">
                         <option selected>Seleccione su tipo usuario</option>

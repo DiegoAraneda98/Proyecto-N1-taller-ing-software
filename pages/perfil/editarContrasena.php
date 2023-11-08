@@ -3,14 +3,14 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="editarContrasenaLabel">Editar Contraseña</h1>
+                <h1 class="modal-title fs-5" id="editarContrasenaLabel">Editar contraseña</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="#" method="post" enctype="multipart/form-data">
 
                     <div class="mb-3">
-                        <label for="nuevaContrasena" class="form-label">Nueva Contraseña:</label>
+                        <label for="nuevaContrasena" class="form-label">Nueva contraseña:</label>
                         <div class="input-group mt-2">
                             <input id="nuevaContrasena" name="nuevaContrasena" type="password"
                                 class="form-control rounded-0" aria-label="Nueva contraseña"
@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="mb-4">
-                        <label for="repetirNuevaContrasena" class="form-label">Repetir Nueva Contraseña:</label>
+                        <label for="repetirNuevaContrasena" class="form-label">Repetir nueva contraseña:</label>
                         <div class="input-group mt-2">
                             <input id="repetirNuevaContrasena" name="repetirNuevaContrasena" type="password"
                                 class="form-control rounded-0" aria-label="Repetir nueva contraseña"

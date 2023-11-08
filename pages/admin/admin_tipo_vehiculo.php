@@ -8,7 +8,7 @@
                         <table class="table table-hover text-center">
                             <thead>
                                 <tr>
-                                    <th scope="col">id_tipo</th>
+                                    <th scope="col">Id vehículo</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Opciones</th>
                                 </tr>
@@ -51,7 +51,7 @@
                     <?php include 'modal_tipo_vehiculo/nuevomodal.php'; ?>
                     
                     <div class="d-flex justify-content-end mt-5">
-                        <button type="submit" class="btn rojo text-white fw-semibold  mb-4 añadir_vehiculo" name="añadir" data-bs-toggle="modal" data-bs-target="#nuevomodaltipoVehiculo">Añadir tipo vehiculo</button>
+                        <button type="submit" class="btn rojo text-white fw-semibold  mb-4 añadir_vehiculo" name="añadir" data-bs-toggle="modal" data-bs-target="#nuevomodaltipoVehiculo">Añadir tipo vehículo</button>
                     </div>
 
                 </div>

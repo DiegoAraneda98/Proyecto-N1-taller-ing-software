@@ -9,7 +9,7 @@
                             
                             <thead>
                                 <tr>
-                                    <th scope="col">id_tipoUsuario</th>
+                                    <th scope="col">Id tipo usuario</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Opciones</th>
                                 </tr>

@@ -32,11 +32,10 @@
                         <label for="tipo_usuario" class="form-label">Tipo de usuario:</label>
                         <div class="input-group ">
                             <select class="form-select " id="tipo_usuario" name="tipo_usuario">
-                                <option selected>Seleccione su tipo usuario</option>
-                                <option value="Guardia">Guardia</option>
-                                <option value="Funcionario">Funcionario</option>
-                                <option value="Estudiante">Estudiante</option>
-                                <option value="Invitado">Invitado</option>
+                            <option selected>Seleccione su tipo usuario</option>
+                                <?php while ($row_usuarios = $tipo_usuario->fetch_assoc()) { ?>
+                                    <option value="<?= $row_usuarios["nombre"]?>"><?= $row_usuarios["nombre"]?></option>
+                                <?php } ?>
                             </select>
                         </div>
                     </div>
