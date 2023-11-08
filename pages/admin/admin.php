@@ -51,8 +51,8 @@
                                     echo "</a>";
 
 
-                                    echo "<a href='index.php?p=/admin/actions_Usuarios/admin_deleteUsuarios&id_enviado=" . $row["id_usuario"] . "'>";
-                                    echo "<button class = 'btn btn-sm ' data-toggle='modal' data-target='#eliminar' ><i class='bi bi-trash-fill'></i></button>";
+                                    echo "<a href='#' class='btn btn-sm' data-role='eliminar' data-id='" . $row['id_usuario'] . "'>";
+                                    echo "<i class='bi bi-trash-fill'></i>";
                                     echo "</a>";
                                     echo "</td>";
 
@@ -71,6 +71,7 @@
                     $tipo_usuario = $conexion->query($sqlUsuario); ?>
                     <?php include 'modal_Usuarios/editarmodal.php'; ?>
                     <?php include 'modal_Usuarios/nuevomodal.php'; ?>
+                    <?php include 'eliminarmodal.php'; ?>
                     
                     <div class="d-flex justify-content-end mt-5">
                         <button type="submit" class="btn rojo text-white fw-semibold  mb-4 añadir_vehiculo" name="añadir" data-bs-toggle="modal" data-bs-target="#nuevomodalAdmin">Añadir usuario</button>
@@ -83,3 +84,4 @@
         
     </div> 
     <script src="js/admin_editar_usuarios.js"></script>                            
+    <script src="js/admin_eliminar_usuarios.js"></script> 

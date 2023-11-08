@@ -40,8 +40,8 @@
                                 echo "</a>";
 
 
-                                echo "<a href='index.php?p=/admin/actions_Vehiculos/admin_deleteVehiculos&id_enviado=" . $row["id_vehiculo"] . "'>";
-                                echo "<button class = 'btn btn-sm ' data-toggle='modal' data-target='#eliminar' ><i class='bi bi-trash-fill'></i></button>";
+                                echo "<a href='#' class='btn btn-sm' data-role='eliminar' data-id='" . $row['id_vehiculo'] . "'>";
+                                echo "<i class='bi bi-trash-fill'></i>";
                                 echo "</a>";
                                 echo "</td>";
 
@@ -58,6 +58,7 @@
                 $tipo_vehiculo = $conexion->query($sqlVehiculo); ?>
                 <?php include 'modal_Vehiculos/editarmodal.php'; ?>
                 <?php include 'modal_Vehiculos/nuevomodal.php'; ?>
+                <?php include 'eliminarmodal.php'; ?>
 
                 <div class="d-flex justify-content-end mt-5">
                     <button type="submit" class="btn rojo text-white fw-semibold  mb-4 añadir_vehiculo" name="añadir"
@@ -71,3 +72,4 @@
 
 </div>
 <script src="js/admin_editar_vehiculos.js"></script>
+<script src="js/admin_eliminar_vehiculos.js"></script>    
