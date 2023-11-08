@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0; 
+    
+}
+
+
+
+.fondo-principal{
+    
+    background-image: url("../img/fondo_login_60.png"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+   
+} 
+
+.rojo{
+    background-color: #d6092c !important ;
+}
+
+
+.fondo-vehiculos{
+    background-image: url("../img/fondo_perfil_admin_vehiculos.png"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.fondo-perfil{
+    background-image: url("../img/fondo_perfil_admin_vehiculos.png"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
