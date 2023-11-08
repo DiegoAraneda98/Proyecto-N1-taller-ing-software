@@ -7,7 +7,7 @@ $(document).ready(function () {
         console.log("Nombre:", nombre);
         $('#nombre').val(nombre);
         $('#id_tipo').val(id);
-        $('#editarmodaltipoUsuario').modal('toggle');
+        $('#editarmodaltipoVehiculo').modal('toggle');
 
     })
 })
@@ -18,7 +18,7 @@ $('#save_tipo').click(function () {
     console.log("ID:", id);
     console.log("Nombre:", nombre);
     $.ajax({
-        url: 'index.php?p=admin/actions_tipo_usuario/admin_updatetipoUsuario',
+        url: 'index.php?p=admin/actions_tipo_vehiculo/admin_updatetipoVehiculo',
         method: 'post',
         data: { nombre: nombre, id: id },
         success: function (response) {
@@ -27,7 +27,7 @@ $('#save_tipo').click(function () {
             } else {
                 
                 $('#' + id).children('td[data-target=nombre]').text(nombre);
-                $('#editarmodaltipoUsuario').modal('toggle');
+                $('#editarmodaltipoVehiculo').modal('toggle');
             }
 
             

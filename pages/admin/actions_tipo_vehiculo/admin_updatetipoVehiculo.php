@@ -7,10 +7,10 @@ $nombre = $conexion->real_escape_string($_POST["nombre"]);
 
 
 
-$update = "UPDATE tipo_usuario SET  nombre='$nombre' WHERE id_tipoUsuario ='$id'";
+$update = "UPDATE tipo_vehiculo SET  nombre='$nombre' WHERE id_tipoVehiculo ='$id'";
 $resultado = mysqli_query($conexion, $update);
 
-header('Location: index.php?p=admin/admin_tipo_usuario');
+header('Location: index.php?p=admin/admin_tipo_vehiculo');
 
 ?>
 

@@ -33,6 +33,12 @@ switch ($pagina) {
     case 'admin/admin_tipo_usuario':
         $navbarType = 'type3';
         break;
+
+    case 'admin/admin_tipo_vehiculo':
+        $navbarType = 'type3';
+        break;
+
+   
 }
 
 switch ($pagina) {
