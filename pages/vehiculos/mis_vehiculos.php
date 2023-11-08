@@ -56,7 +56,7 @@
                             ?>
 
                         </tbody>
-                    </table>
+                    </table> <!-- cierre tabla -->
 
                 </div>
 
