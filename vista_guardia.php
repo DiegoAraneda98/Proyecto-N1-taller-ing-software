@@ -193,7 +193,7 @@
 
             function toggleCamera() {
                 var divVideo = document.getElementById('divvideo');
-
+                const resultadoElement = document.getElementById('dato_QR');
                 if (scanner === null) {
                     // Si el escáner aún no se ha inicializado, inicialízalo
                     Instascan.Camera.getCameras().then(function(cameras) {
