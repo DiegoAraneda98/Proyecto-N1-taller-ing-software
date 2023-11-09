@@ -23,9 +23,9 @@ if (isset($_POST['contenido_QR'])) {
 		// Asignar los datos a las variables
 		$idUsuario = $datosSeparados[0];
 		$patente = $datosSeparados[1];
-
+		$hora_ingreso = 
 		/* Verificación de que el usuario tiene permitido ingresar */
-		$sql = "SELECT * FROM usuarios, vehiculos WHERE id_usuario='$idUsuario' AND patente='$patente";
+		$sql = "SELECT run, nombre, correo, patente FROM usuarios, vehiculos WHERE id_usuario='$idUsuario' AND patente='$patente";
 		
 		$query = $conn->query($sql);
 		if ($query->num_rows > 0) {

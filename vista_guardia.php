@@ -9,17 +9,18 @@
 
     <link rel="stylesheet" href="css/login_register.css">
     <link rel="stylesheet" href="css/style_inicio.css">
+    <link rel="stylesheet" href="css/botones.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
 </head>
 
 <body>
@@ -58,44 +59,24 @@
                                     box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
                                     position: relative;
                                 }
-                            </style>
 
-                            <style>
                                 #preview {
+                                    padding-top: 1%;
+                                    padding-bottom: 1%;
                                     width: 100%;
-                                    height: 100%;
+                                    height: 90%;
                                     margin: 0px auto;
                                     object-fit: cover;
                                 }
                             </style>
                             <center>
-                                <button id="toggleCamera" onclick="toggleCamera()" class="btn btn-danger">Encender lector QR</button>
+                                <button id="toggleCamera" onclick="toggleCamera()" class="btn custom-btn">Encender lector QR</button>
                             </center>
-                            <video id="preview" width="100%" style="border-radius:10px;" class="d-none"></video>
 
+                            <video id="preview" width="100%" style="border-radius:10px;" class="d-none"></video>
                             <br>
                             <br>
                             <?php
-                            if (isset($_SESSION['error'])) {
-                                echo "
-						<div class='alert alert-danger alert-dismissible' style='background:red;color:#fff'>
-						  <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-						  <h4><i class='icon fa fa-warning'></i> Error!</h4>
-						  " . $_SESSION['error'] . "
-						</div>
-					  ";
-                                unset($_SESSION['error']);
-                            }
-                            if (isset($_SESSION['success'])) {
-                                echo "
-						<div class='alert alert-success alert-dismissible' style='background:green;color:#fff'>
-						  <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-						  <h4><i class='icon fa fa-check'></i> Success!</h4>
-						  " . $_SESSION['success'] . "
-						</div>
-					  ";
-                                unset($_SESSION['success']);
-                            }
                             ?>
 
                         </div>
@@ -154,7 +135,7 @@
                                 </table>
                                 <tr>
                                     <div class="table-button">
-                                        <button type="button" class="btn btn-danger" id="exportarButton" onclick="Export()">Exportar tabla</button>
+                                        <button type="button" class="btn custom-btn" id="exportarButton" onclick="Export()">Exportar tabla</button>
                                     </div>
                                 </tr>
                             </div>
@@ -189,13 +170,13 @@
 
         <!-- Cámara/Scanner -->
         <script>
-            var scanner = null; // Variable global para almacenar el objeto Instascan.Scanner
+            var scanner = null; 
 
             function toggleCamera() {
                 var divVideo = document.getElementById('divvideo');
                 const resultadoElement = document.getElementById('dato_QR');
                 if (scanner === null) {
-                    // Si el escáner aún no se ha inicializado, inicialízalo
+                    // Inicializar el scanner si no está encendido
                     Instascan.Camera.getCameras().then(function(cameras) {
                         if (cameras.length > 0) {
                             scanner = new Instascan.Scanner({
@@ -211,7 +192,6 @@
                             divVideo.style.width = '100%';
                             divVideo.style.height = '100%';
 
-                            // Cambiar el texto del botón
                             document.getElementById('toggleCamera').textContent = 'Apagar lector QR';
 
                             scanner.addListener('scan', function(c) {
@@ -226,10 +206,10 @@
                         alert(e);
                     });
                 } else {
-                    // Si el escáner ya está inicializado, apágalo
+                    // Si está encendido, entonces apagar
                     scanner.stop();
                     scanner = null; // Restablece el objeto scanner
-                    document.getElementById('toggleCamera').textContent = 'Encender lector QR'; // Cambiar el texto del botón
+                    document.getElementById('toggleCamera').textContent = 'Encender lector QR';
 
                     // Restablecer el tamaño del div al 100% del área
                     divVideo.style.width = '100%';
