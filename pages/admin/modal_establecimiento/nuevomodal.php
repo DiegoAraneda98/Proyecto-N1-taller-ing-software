@@ -22,7 +22,7 @@
 
                     <div class="mb-3">
                         <label for="cod_comuna" class="form-label">Código comuna:</label>
-                        <input type="text" name="cod_comuna" id="cod_comuna" class="form-control" >
+                        <input type="text" name="cod_comuna" id="cod_comuna" class="form-control"  onkeydown=filtro()>
                     </div>
 
 

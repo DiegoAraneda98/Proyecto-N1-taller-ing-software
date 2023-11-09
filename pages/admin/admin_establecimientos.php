@@ -38,8 +38,8 @@
                                     echo "</a>";
 
 
-                                    echo "<a href='index.php?p=admin/actions_establecimiento/admin_delete_establecimiento&id_enviado=" . $row["cod_establecimiento"] . "'>";
-                                    echo "<button class = 'btn btn-sm ' data-toggle='modal' data-target='#eliminar' ><i class='bi bi-trash-fill'></i></button>";
+                                    echo "<a href='#' class='btn btn-sm' data-role='eliminar' data-id='" . $row['cod_establecimiento'] . "'>";
+                                    echo "<i class='bi bi-trash-fill'></i>";
                                     echo "</a>";
                                     echo "</td>";
 
@@ -52,9 +52,11 @@
                         </table>
 
                     </div>
+
                     <?php include 'modal_establecimiento/editarmodal.php'; ?>
                     <?php include 'modal_establecimiento/nuevomodal.php'; ?>
-                    
+                    <?php include 'eliminarmodal.php'; ?>
+
                     <div class="d-flex justify-content-end mt-5">
                         <button type="submit" class="btn rojo text-white fw-semibold  mb-4 añadir_vehiculo" name="añadir" data-bs-toggle="modal" data-bs-target="#nuevomodalestablecimiento">Añadir establecimiento</button>
                     </div>
@@ -65,4 +67,6 @@
         </div>
         
     </div> 
-    <script src="js/admin_editar_establecimiento.js"></script>                            
+    <script src="js/admin_editar_establecimiento.js"></script>
+    <script src="js/admin_eliminar_establecimiento.js"></script>                               
+    <script src="js/verificaciones.js"></script>

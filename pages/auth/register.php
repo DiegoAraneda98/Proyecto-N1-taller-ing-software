@@ -43,7 +43,7 @@
                     <div class="p mt-3">¿Qué usuario es?</div>
                     <div class="input-group ">
                         <select class="form-select bg-light" name="tipo_usuario">
-                        <option selected>Seleccione su tipo usuario</option>
+                        <option disabled selected>Seleccione su tipo usuario</option>
                                 <?php while ($row_usuarios = $tipo_usuario->fetch_assoc()) { ?>
                                     <option value="<?= $row_usuarios["nombre"]?>"><?= $row_usuarios["nombre"]?></option>
                                 <?php } ?>

@@ -56,7 +56,7 @@
                             ?>
 
                         </tbody>
-                    </table> <!-- cierre tabla -->
+                    </table>
 
                 </div>
 
@@ -81,3 +81,4 @@
 </div>
 <script src="js/editar_vehiculos.js"></script>
 <script src="js/crear_qr.js"></script>
+<script src="js/verifiaciones.js"></script>

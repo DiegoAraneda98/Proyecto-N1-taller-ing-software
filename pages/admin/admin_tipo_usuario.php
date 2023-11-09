@@ -35,8 +35,8 @@
                                     echo "</a>";
 
 
-                                    echo "<a href='index.php?p=/admin/actions_tipo_usuario/admin_deletetipoUsuario&id_enviado=" . $row["id_tipoUsuario"] . "'>";
-                                    echo "<button class = 'btn btn-sm ' data-toggle='modal' data-target='#eliminar' ><i class='bi bi-trash-fill'></i></button>";
+                                    echo "<a href='#' class='btn btn-sm' data-role='eliminar' data-id='" . $row['id_tipoUsuario'] . "'>";
+                                    echo "<i class='bi bi-trash-fill'></i>";
                                     echo "</a>";
                                     echo "</td>";
 
@@ -51,7 +51,7 @@
                     </div>
                     <?php include 'modal_tipo_usuario/editarmodal.php'; ?>
                     <?php include 'modal_tipo_usuario/nuevomodal.php'; ?>
-                    
+                    <?php include 'eliminarmodal.php'; ?>
                     <div class="d-flex justify-content-end mt-5">
                         <button type="submit" class="btn rojo text-white fw-semibold  mb-4 añadir_vehiculo" name="añadir" data-bs-toggle="modal" data-bs-target="#nuevomodaltipoUsuario">Añadir tipo usuario</button>
                     </div>
@@ -63,3 +63,5 @@
         
     </div> 
     <script src="js/admin_editar_tipo_usuario.js"></script>                            
+    <script src="js/admin_eliminar_tipo_usuario.js"></script>   
+    <script src="js/verificaciones.js"></script>
