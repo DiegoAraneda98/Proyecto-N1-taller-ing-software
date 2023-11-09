@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.fondo-perfil {
+    background-image: url("../img/fondo_perfil_admin_vehiculos.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.logo {
+    width: 150px !important;
+}
+
+ul>li {
+    margin-left: 20px;
+}
+
+ul>li .ml {
+    margin-right: 20px;
+}
+
+.rojo {
+    background-color: #d6092c;
+}
+
+.imagen-perfil {
+    width: 70px;
+    border-radius: 50%;
+}
+
+.btn-1 {
+    margin-right: 20px;
+}
+
+
+.btn_editarDatos{
+    
+    transition: all ease-out 0.9s !important;
+}
+.btn_editarDatos:hover{
+    box-shadow: inset 350px 0 0 0 #d6092c !important; 
+    color: white !important;
+}
+
+.mi_perfil{
+    padding-left: 11px !important;
+    padding-top: 11px;
+}
+
+
+.altura{
+    height: 88% !important;
+}
+
+.odometer{
+    font-size: 4em;
+}
