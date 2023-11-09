@@ -14,7 +14,7 @@
                     
                     <div class="mb-3">
                         <label for="patente" class="form-label">Patente:</label>
-                        <input type="text" name="patente" id="patente" class="form-control" pattern="[A-Za-z]{4}+[0-9]{2}">
+                        <input type="text" name="patente" id="patente" class="form-control" pattern="[A-Za-z]{4}[0-9]{2}">
                     </div>
 
                     <div class="mb-3">
