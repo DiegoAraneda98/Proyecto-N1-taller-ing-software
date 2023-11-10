@@ -8,9 +8,12 @@
 }
 
 .d-img{
-    height: 100%;
     object-fit: cover;
     filter: brightness(0.9);
+    max-width: 100%;
+    max-height: 500px; /* Establece la altura máxima deseada */
+    display: block;
+    margin: 0 auto; /* Centra horizontalmente las imágenes */
 }
 
 
@@ -34,3 +37,4 @@ ul > li .ml{
 .añadir_vehiculo{
     margin-right: 10px;
 }
+
