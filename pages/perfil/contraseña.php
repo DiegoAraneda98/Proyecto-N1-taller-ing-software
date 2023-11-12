@@ -1,9 +1,8 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-8">
+            <p class="h5 text-secondary text-start pt-1 mt-3">Seguridad</p>
             <form action="#" method="POST" id="<?php echo $id ?>">
-
-                <p class="h5 text-secondary ">Mi contraseña</p>
 
                 <div class="p-mt-3 text-start">Contraseña actual:
                     <div class="input-group mt-3 w-75">

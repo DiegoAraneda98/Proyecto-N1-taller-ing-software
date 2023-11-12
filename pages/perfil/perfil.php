@@ -29,7 +29,7 @@ if ($row = mysqli_fetch_array($resultado)) {
 
                 <button class="nav-link btn btn-custom mt-3" id="v-pills-profile-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
-                    aria-selected="false">Contraseña</button>
+                    aria-selected="false">Seguridad</button>
 
                 <button class="nav-link btn btn-custom mt-3" id="v-pills-messages-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"

@@ -1,8 +1,8 @@
 <div class="container-fluid  ">
-    <div class="row ">
-        <div class="col-8  " style="height: auto;">
+    <div class="row">
+        <div class="col-8 " style="height: auto;">
             <form action="#" method="POST">
-                <p class="h5 text-secondary text-start pt-1">Información personal</p>
+                <p class="h5 text-secondary text-start pt-1 mt-3">Información personal</p>
                 <div class="p-mt-2 text-start">Rut:
                     <div class="input-group mt-2 w-75">
                         <input name="nombre" id="nombre" type="text" class="form-control rounded-0 "
@@ -60,59 +60,3 @@
 
     </div>
 </div>
-<?php include 'editarContrasena.php'; ?>
-<script src="js/editar_Contraseña.js"></script>
-<script src="js/mostrarContraseña.js"></script>
-<script src="js/verificaciones.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-function guardarDatos() {
-    // Obtén los valores de los campos del formulario
-    var nombre = document.getElementById('nombre').value;
-    var apellido = document.getElementById('apellido').value;
-    var correo = document.getElementById('correo').value;
-    var telefono = document.getElementById('telefono').value;
-
-  
-
-    // Realiza una solicitud AJAX para guardar los datos en el servidor
-    $.ajax({
-        type: "POST",
-        url: "pages/perfil/actions/actualizarPerfil.php",
-        data: {nombre:nombre, apellido: apellido,  correo: correo, telefono: telefono },
-        dataType: "json", // Esperamos una respuesta JSON
-        success: function (response) {
-            if (response.success) {
-                // Los datos se han guardado correctamente, muestra una alerta
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "Los datos se han guardado correctamente",
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-
-                // Redirige al usuario después de mostrar la alerta (opcional)
-                setTimeout(function () {
-                    window.location.href = "index.php?p=perfil/perfil";
-                }, 1500);
-            } else {
-                // Hubo un problema al guardar los datos, muestra una alerta de error
-                Swal.fire({
-                    icon: "error",
-                    title: "Error",
-                    text: "Hubo un problema al guardar los datos."
-                });
-            }
-        },
-        error: function (error) {
-            // En caso de error en la solicitud AJAX, muestra una alerta de error
-            Swal.fire({
-                icon: "error",
-                title: "Error",
-                text: "Hubo un problema al guardar los datos."
-            });
-        }
-    });
-}
-</script>
