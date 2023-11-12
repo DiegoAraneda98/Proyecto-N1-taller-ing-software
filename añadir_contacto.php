@@ -1,4 +1,4 @@
-<?php include("..//BaseDatos/safeconectar.php");
+<?php include("../BaseDatos/conectar.php);
 $einter = $POST_["interfaz"];
 $erapidez = $POST_["rapidez"];
 $rut = $POST_["inputrut"];

@@ -1,6 +1,6 @@
-.fondo{
+body{
     background-image: url(img/fondo_perfil_admin_vehiculos.png);
-    height: 100%;
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
