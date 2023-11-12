@@ -1,6 +1,6 @@
-<div class="container-fluid ">
-    <div class="row">
-        <div class="col-8">
+<div class="container-fluid  ">
+    <div class="row ">
+        <div class="col-8 ">
             <form action="#" method="POST">
                 <p class="h5 text-secondary text-start pt-1">Información personal</p>
                 <div class="p-mt-2 text-start">Rut:

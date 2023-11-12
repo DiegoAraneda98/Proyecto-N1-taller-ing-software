@@ -18,31 +18,32 @@ if ($row = mysqli_fetch_array($resultado)) {
 ?>
 
 <div class="container-fluid  ">
-    <div class="row  text-center bg-light ">
+    <div class="row  text-center bg_edit ">
 
-        <div class="col-2 d-flex align-items-start justify-content-center p-3 rojo text-white" style="height: 500px ; ">
-            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <div class="col-2 d-flex align-items-start justify-content-center p-3 rojo " style="height: 500px;">
+            <div class="nav flex-column nav-pills me-3 " id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
-                <button class="nav-link active mt-2" id="v-pills-home-tab" data-bs-toggle="pill"
+                <button class="nav-link btn btn-custom active mt-3 " id="v-pills-home-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
                     aria-selected="true">Informacion personal</button>
 
-                <button class="nav-link mt-2" id="v-pills-profile-tab" data-bs-toggle="pill"
+                <button class="nav-link btn btn-custom mt-3" id="v-pills-profile-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
                     aria-selected="false">Contraseña</button>
 
-                <button class="nav-link mt-2" id="v-pills-messages-tab" data-bs-toggle="pill"
+                <button class="nav-link btn btn-custom mt-3" id="v-pills-messages-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
                     aria-selected="false">Contacto</button>
 
-                <button class="nav-link mt-2" id="v-pills-settings-tab" data-bs-toggle="pill"
+                <button class="nav-link btn btn-custom mt-3" id="v-pills-settings-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
                     aria-selected="false">No se</button>
             </div>
         </div>
+
         <div class="col-10">
             <div class="h2 mi_perfil text-start">Mi perfil</div>
-            <div class="row bg-light"> <!-- linea divisora -->
+            <div class="row bg_edit"> <!-- linea divisora -->
                 <div class="col-12">
                     <hr class="border border-danger border-1 opacity-50">
                 </div>
@@ -69,4 +70,3 @@ if ($row = mysqli_fetch_array($resultado)) {
         </div>
     </div>
 </div>
-
