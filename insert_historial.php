@@ -41,7 +41,6 @@ if (isset($_POST['id_usuario']) && isset($_POST['patente'])) {
 		echo "No se encontraron datos en vehiculos para la patente $patente y el id_usuario $idUsuario.";
 	}
 } else {
-	// Si no se recibieron datos del código QR
 	echo "No se recibieron datos del código QR.";
 }
 }
