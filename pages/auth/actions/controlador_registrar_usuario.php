@@ -8,6 +8,7 @@ if (!empty($_POST["registro"])) { //si el boton es presionado, validar datos que
         $rut = mysqli_real_escape_string($conexion, $rut);
 
         $nombre = stripslashes($_REQUEST['nombre']);
+        $nombre = mysqli_real_escape_string($conexion, $nombre);
 
         $tipo_usuario = ($_REQUEST['tipo_usuario']);
         $tipo_usuario = mysqli_real_escape_string($conexion,trim($tipo_usuario));
