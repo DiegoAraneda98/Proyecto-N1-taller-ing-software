@@ -251,7 +251,7 @@
                             document.getElementById('toggleCamera').textContent = 'Apagar lector QR';
 
                             scanner.addListener('scan', function(contenidoQR) {
-                                const datosSeparados = contenidoQR.split('-');
+                                const datosSeparados = contenidoQR.split(' ');
 
                                 // Verificar si se obtuvieron dos partes
                                 if (datosSeparados.length === 2) {
@@ -277,7 +277,7 @@
                                         xhr.send(params);
                                     }
 
-                                    
+
                                 } else {
                                     resultadoElement.innerHTML = 'Formato de código QR no válido.';
                                 }

@@ -26,7 +26,7 @@
         // Manejar el evento de escaneo
         scanner.addListener('scan', function(contenidoQR) {
             // Separar los datos utilizando el guion como separador
-            const datosSeparados = contenidoQR.split('-');
+            const datosSeparados = contenidoQR.split(' ');
 
             // Verificar si se obtuvieron dos partes
             if (datosSeparados.length === 2) {
