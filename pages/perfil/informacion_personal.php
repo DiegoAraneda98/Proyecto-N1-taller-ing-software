@@ -1,6 +1,6 @@
 <div class="container-fluid  ">
     <div class="row ">
-        <div class="col-8 ">
+        <div class="col-8  " style="height: auto;">
             <form action="#" method="POST">
                 <p class="h5 text-secondary text-start pt-1">Información personal</p>
                 <div class="p-mt-2 text-start">Rut:
@@ -45,7 +45,7 @@
             </form>
         </div>
 
-        <div class="col-4">
+        <div class="col-4" style="height: auto;">
             <div class="card text-center rounded-0 bg-body-secondary" style="width: 100%;  height: 70%;">
                 <div class="d-flex justify-content-center mt-4 flex-wrap">
                     <div class="rounded-circle bg-white h-70">

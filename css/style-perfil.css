@@ -81,6 +81,10 @@ ul>li .ml {
     background-color: #f1e6e8;
 }
 
-.altura{
-    min-height: 100% !important;
-}
+.full-height-row {
+    height: 100vh;
+    overflow-y: hidden !important;
+  }
+
+
+ 
