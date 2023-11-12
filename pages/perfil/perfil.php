@@ -18,9 +18,9 @@ if ($row = mysqli_fetch_array($resultado)) {
 ?>
 
 <div class="container-fluid ">
-    <div class="row  text-center bg_edit full-height-row ">
+    <div class="row  text-center bg_edit h-100 ">
 
-        <div class="col-2 d-flex align-items-start justify-content-center p-3 rojo " style="height: auto;">
+        <div class="col-2 d-flex align-items-start justify-content-center p-3 rojo border border-black border-2 border-start-0 ">
             <div class="nav flex-column nav-pills me-3 " id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
                 <button class="nav-link btn btn-custom active mt-3 " id="v-pills-home-tab" data-bs-toggle="pill"
