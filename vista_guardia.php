@@ -170,7 +170,7 @@
 
         <!-- Cámara/Scanner -->
         <script>
-            var scanner = null; 
+            var scanner = null;
 
             function toggleCamera() {
                 var divVideo = document.getElementById('divvideo');
