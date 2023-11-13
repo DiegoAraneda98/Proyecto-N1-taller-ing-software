@@ -19,7 +19,7 @@ switch ($pagina) {
         break;
 
     case 'perfil/perfil':
-        $navbarType = 'type4';
+        $navbarType = 'type3';
         break;
 
     case 'admin/admin':

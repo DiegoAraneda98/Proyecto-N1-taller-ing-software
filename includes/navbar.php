@@ -88,7 +88,7 @@ if ($navbarType === 'type1') {
   if (!isset($_SESSION['tipo_usuario'])){
     header("Location: index.php?p=auth/login");
   }
-  echo ' <div class="container-fluid fondo-perfil"> <!-- extenseo, con foto-->
+  echo ' <div class="container-fluid fondo-perfil"> <!-- extenso, con foto-->
   <div class="row bg-light">
       <div class="col-12">
           <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -197,7 +197,7 @@ if ($navbarType === 'type1') {
     header("Location: index.php?p=auth/login");
   }
 
-  echo ' <div class="container-fluid"> <!-- nav bar home-->
+  echo ' <div class="container-fluid"> <!-- admin guardia-->
   <div class="row bg-light">
       <div class="col-10 offset-1">
           <nav class="navbar navbar-expand-lg bg-body-tertiary">
