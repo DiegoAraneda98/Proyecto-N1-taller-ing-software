@@ -1,8 +1,12 @@
 <?php
 $page = isset($_GET['p']) ? $_GET['p'] : '';
-session_start();
+
+session_start();    
 
 if ($navbarType === 'type1') {
+  if (!isset($_SESSION['tipo_usuario'])){
+    header("Location: index.php?p=auth/login");
+  }
   echo ' <div class="container-fluid"> <!-- nav bar inicio(Centrado)-->
   <div class="row bg-light">
       <div class="col-10 offset-1">
@@ -48,6 +52,9 @@ if ($navbarType === 'type1') {
       </div>
   </div>';
 } elseif ($navbarType === 'type2') {
+  if (!isset($_SESSION['tipo_usuario'])){
+    header("Location: index.php?p=auth/login");
+  }
   echo ' <div class="container-fluid"> <!-- nav bar home-->
   <div class="row bg-light">
       <div class="col-10 offset-1">
@@ -78,6 +85,9 @@ if ($navbarType === 'type1') {
       </div>
   </div>';
 } elseif ($navbarType === 'type3') {
+  if (!isset($_SESSION['tipo_usuario'])){
+    header("Location: index.php?p=auth/login");
+  }
   echo ' <div class="container-fluid fondo-perfil"> <!-- extenseo, con foto-->
   <div class="row bg-light">
       <div class="col-12">
@@ -129,6 +139,9 @@ if ($navbarType === 'type1') {
       </div>
   </div>';
 } elseif ($navbarType === 'type4') {
+  if (!isset($_SESSION['tipo_usuario'])){
+    header("Location: index.php?p=auth/login");
+  }
   echo ' <div class="container-fluid">   <!-- arreglado-->
   <div class="row ">
     <div class="col-12">
@@ -180,6 +193,9 @@ if ($navbarType === 'type1') {
   </div>
 </div>';
 } elseif ($navbarType === 'type5') {
+  if (!isset($_SESSION['tipo_usuario'])){
+    header("Location: index.php?p=auth/login");
+  }
 
   echo ' <div class="container-fluid"> <!-- nav bar home-->
   <div class="row bg-light">

@@ -17,6 +17,8 @@ if ($row = mysqli_fetch_array($resultado)) {
 }
 ?>
 
+
+
 <div class="container-fluid fondo-perfil_perfil ">
     <div class="row  text-center bg_edit ">
 
