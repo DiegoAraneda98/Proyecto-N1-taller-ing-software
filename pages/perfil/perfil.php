@@ -17,10 +17,10 @@ if ($row = mysqli_fetch_array($resultado)) {
 }
 ?>
 
-<div class="container-fluid fondo-perfil_perfil  ">
-    <div class="row  text-center bg_edit">
+<div class="container-fluid fondo-perfil_perfil ">
+    <div class="row  text-center bg_edit ">
 
-        <div class="col-2 d-flex align-items-start justify-content-center p-3 rojo border border-black border-2 border-start-0 ">
+        <div class="col-2 d-flex align-items-start justify-content-center p-3 rojo  ">
             <div class="nav flex-column nav-pills me-3 " id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
                 <button class="nav-link btn btn-custom active mt-3 " id="v-pills-home-tab" data-bs-toggle="pill"
@@ -41,7 +41,7 @@ if ($row = mysqli_fetch_array($resultado)) {
             </div>
         </div>
 
-        <div class="col-10">
+        <div class="col-10 border ">
             <div class="h2 mi_perfil text-start">Mi perfil</div>
 
             <div class="row bg_edit"> <!-- linea divisora -->
@@ -50,7 +50,7 @@ if ($row = mysqli_fetch_array($resultado)) {
                 </div>
             </div>
             
-            <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-content " id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
                     aria-labelledby="v-pills-home-tab" tabindex="0">
                     <?php include('informacion_personal.php'); ?>
