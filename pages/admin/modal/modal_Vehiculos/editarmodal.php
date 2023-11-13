@@ -9,7 +9,7 @@
             <div class="modal-body">
                 <form action="#" method="post" enctype="multipart/form-data">
 
-                <div class="mb-3">
+                    <div class="mb-3">
                         <label for="patente" class="form-label">Patente:</label>
                         <input type="text" name="patente" id="patente" class="form-control" >
                     </div>

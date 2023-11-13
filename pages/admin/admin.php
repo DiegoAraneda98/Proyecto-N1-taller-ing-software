@@ -1,29 +1,29 @@
-
 <div class="container-fluid">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-10 bg-white offset-1 mt-5">
-                    <div class="h2 p-3 text-secondary ">Usuarios</div>
-                    <div class="table-responsive shadow  overflow-y-auto " style="max-height: 400px;">
-                        <table class="table table-hover text-center">
-                            
-                            <thead>
-                                <tr>
-                                    <th scope="col">Id usuario</th>
-                                    <th scope="col">Run</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Apellido</th>
-                                    <th scope="col">Correo</th>
-                                    <th scope="col">Tipo de usuario</th>
-                                    <th scope="col">Teléfono</th>
-                                    <th scope="col">Salud</th>
-                                    <th scope="col">Foto</th>
-                                    <th scope="col">Contraseña</th>
-                                    <th scope="col">Opciones</th>
-                                </tr>
-                            </thead>
-                            <tbody class="table-group-divider">
-                                <?php
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-10 bg-white offset-1 mt-5">
+                <div class="h2 p-3 text-secondary ">Usuarios</div>
+                <hr class="border border-danger border-1 opacity-50">
+                <div class="table-responsive shadow  overflow-y-auto " style="max-height: 400px;">
+                    <table class="table table-hover text-center">
+
+                        <thead>
+                            <tr>
+                                <th scope="col">Id usuario</th>
+                                <th scope="col">Run</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">Correo</th>
+                                <th scope="col">Tipo de usuario</th>
+                                <th scope="col">Teléfono</th>
+                                <th scope="col">Salud</th>
+                                <th scope="col">Foto</th>
+                                <th scope="col">Contraseña</th>
+                                <th scope="col">Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <?php
                                 require __DIR__ . '/../../modelo/conexion.php';
                                 
                                 
@@ -61,27 +61,28 @@
                                 }
                                 ?>
 
-                            </tbody>
-                        </table>
-
-                    </div>
-
-                    <?php
-                    $sqlUsuario = "SELECT * FROM tipo_usuario";
-                    $tipo_usuario = $conexion->query($sqlUsuario); ?>
-                    <?php include 'modal/modal_Usuarios/editarmodal.php'; ?>
-                    <?php include 'modal/modal_Usuarios/nuevomodal.php'; ?>
-                    <?php include 'eliminarmodal.php'; ?>
-                    
-                    <div class="d-flex justify-content-end mt-5">
-                        <button type="submit" class="btn rojo text-white fw-semibold  mb-4 añadir_vehiculo" name="añadir" data-bs-toggle="modal" data-bs-target="#nuevomodalAdmin">Añadir usuario</button>
-                    </div>
+                        </tbody>
+                    </table>
 
                 </div>
 
+                <?php
+                    $sqlUsuario = "SELECT * FROM tipo_usuario";
+                    $tipo_usuario = $conexion->query($sqlUsuario); ?>
+                <?php include 'modal/modal_Usuarios/editarmodal.php'; ?>
+                <?php include 'modal/modal_Usuarios/nuevomodal.php'; ?>
+                <?php include 'eliminarmodal.php'; ?>
+
+                <div class="d-flex justify-content-end mt-5">
+                    <button type="submit" class="btn rojo text-white fw-semibold  mb-4 añadir_vehiculo" name="añadir"
+                        data-bs-toggle="modal" data-bs-target="#nuevomodalAdmin">Añadir usuario</button>
+                </div>
+
             </div>
+
         </div>
-        
-    </div> 
-    <script src="js/admin_editar_usuarios.js"></script>                            
-    <script src="js/admin_eliminar_usuarios.js"></script> 
+    </div>
+
+</div>
+<script src="js/admin_editar_usuarios.js"></script>
+<script src="js/admin_eliminar_usuarios.js"></script>

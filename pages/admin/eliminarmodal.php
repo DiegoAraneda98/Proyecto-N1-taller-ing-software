@@ -18,10 +18,8 @@
 
                 <form action="eliminar.php" method="post">
 
-                    <div class="modal-footer ">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button id="delete" type="button" class="btn btn-danger">Eliminar</button>
-                    </div>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button id="delete" type="button" class="btn btn-danger">Eliminar</button>
 
                 </form>
             </div>
