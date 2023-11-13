@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/../../../modelo/conexion.php';
+require __DIR__ . '/../../../../modelo/conexion.php';
 
 
 $run = $conexion->real_escape_string($_POST["run"]);

@@ -56,8 +56,8 @@
                 </div>
                 <?php $sqlVehiculo = "SELECT * FROM tipo_vehiculo";
                 $tipo_vehiculo = $conexion->query($sqlVehiculo); ?>
-                <?php include 'modal_Vehiculos/editarmodal.php'; ?>
-                <?php include 'modal_Vehiculos/nuevomodal.php'; ?>
+                <?php include 'modal/modal_Vehiculos/editarmodal.php'; ?>
+                <?php include 'modal/modal_Vehiculos/nuevomodal.php'; ?>
                 <?php include 'eliminarmodal.php'; ?>
 
                 <div class="d-flex justify-content-end mt-5">

@@ -18,7 +18,7 @@ $('#save_tipo').click(function () {
     console.log("ID:", id);
     console.log("Nombre:", nombre);
     $.ajax({
-        url: 'index.php?p=admin/actions_tipo_usuario/admin_updatetipoUsuario',
+        url: 'index.php?p=admin/actions/actions_tipo_usuario/admin_updatetipoUsuario',
         method: 'post',
         data: { nombre: nombre, id: id },
         success: function (response) {

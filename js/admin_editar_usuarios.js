@@ -41,7 +41,7 @@ $('#save-usuario').click(function () {
     var contraseña = $('#contraseña').val();
 
     $.ajax({
-        url: 'pages/admin/actions_Usuarios/admin_updateUsuarios.php',
+        url: 'pages/admin/actions/actions_Usuarios/admin_updateUsuarios.php',
         method: 'post',
         data: { run: run, nombre: nombre, apellido: apellido, correo : correo, tipo_usuario: tipo_usuario, telefono : telefono, salud : salud, foto : foto, contraseña : contraseña, id: id },
         success: function (response) {

@@ -7,7 +7,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="index.php?p=admin/actions_tipo_vehiculo/admin_savetipoVehiculo" method="post" enctype="multipart/form-data">
+                <form action="index.php?p=admin/actions/actions_tipo_vehiculo/admin_savetipoVehiculo" method="post" enctype="multipart/form-data">
 
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre:</label>

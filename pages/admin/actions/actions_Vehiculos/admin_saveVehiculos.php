@@ -1,7 +1,7 @@
 <?php
 
-require __DIR__ . '/../../../modelo/conexion.php';
-require __DIR__ . '/../../auth/actions/controlador_login.php';
+require __DIR__ . '/../../../../modelo/conexion.php';
+require __DIR__ . '/../../../auth/actions/controlador_login.php';
 
 $patente = $conexion->real_escape_string($_POST["patente"]);
 $modelo = $conexion->real_escape_string($_POST["modelo"]);

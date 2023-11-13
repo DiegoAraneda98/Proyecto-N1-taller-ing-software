@@ -25,7 +25,7 @@ $('#save_tipo').click(function () {
     console.log("Nombre:", nombre);
     console.log("Nombre:", direccion);
     $.ajax({
-        url: 'index.php?p=admin/actions_establecimiento/admin_update_establecimiento',
+        url: 'index.php?p=admin/actions/actions_establecimiento/admin_update_establecimiento',
         method: 'post',
         data: { nombre: nombre, direccion:direccion, id: id },
         success: function (response) {

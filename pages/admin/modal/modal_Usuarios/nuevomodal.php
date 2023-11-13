@@ -7,7 +7,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="index.php?p=/admin/actions_Usuarios/admin_saveUsuarios" method="post" enctype="multipart/form-data">
+                <form action="index.php?p=/admin/actions/actions_Usuarios/admin_saveUsuarios" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="run" class="form-label">Run:</label>
                         <input type="text" name="run" id="run" class="form-control">

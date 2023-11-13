@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/../../../modelo/conexion.php';
+require __DIR__ . '/../../../../modelo/conexion.php';
 
 $id = $conexion->real_escape_string($_POST["id"]);
 $run = $conexion->real_escape_string($_POST["run"]);
@@ -17,7 +17,7 @@ $contraseña = $conexion->real_escape_string($_POST["contraseña"]);
 $update = "UPDATE usuarios SET run='$run', nombre='$nombre', apellido='$apellido', correo = '$correo' , tipo_usuario = '$tipo_usuario' , telefono = '$telefono' , salud = '$salud' , foto = '$foto' , contraseña = '$contraseña' WHERE id_usuario ='$id'";
 $resultado = mysqli_query($conexion, $update);
 
-header('Location: ../../../index.php?p=admin/admin');
+header('Location: ../../../../index.php?p=admin/admin');
 
 ?>
 

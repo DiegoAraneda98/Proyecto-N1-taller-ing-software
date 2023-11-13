@@ -17,7 +17,7 @@ $('#delete').click(function () {
     console.log("ID:", id);
 
     $.ajax({
-        url: 'index.php?p=admin/actions_tipo_vehiculo/admin_deletetipoVehiculo',
+        url: 'index.php?p=admin/actions/actions_tipo_vehiculo/admin_deletetipoVehiculo',
         method: 'post',
         data: { id: id },
         success: function (response) {

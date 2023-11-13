@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/../../../modelo/conexion.php';
+require __DIR__ . '/../../../../modelo/conexion.php';
 
 
 $id = $conexion->real_escape_string($_POST["id"]);
@@ -13,7 +13,7 @@ $tipo_vehiculo = $conexion->real_escape_string($_POST["tipo_vehiculo"]);
 $update = "UPDATE vehiculos SET patente='$patente', modelo='$modelo', color='$color', tipo_vehiculo = '$tipo_vehiculo' WHERE id_vehiculo='$id'";
 $resultado = mysqli_query($conexion, $update);
 
-header('Location: ../../../index.php?p=admin/admin_vehiculos');
+header('Location: ../../../../index.php?p=admin/admin_vehiculos');
 
 ?>
 
