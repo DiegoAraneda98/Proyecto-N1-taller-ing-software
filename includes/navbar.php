@@ -1,6 +1,6 @@
 <?php
 $page = isset($_GET['p']) ? $_GET['p'] : '';
-
+session_start();
 
 if ($navbarType === 'type1') {
   echo ' <div class="container-fluid"> <!-- nav bar inicio(Centrado)-->
