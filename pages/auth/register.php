@@ -11,7 +11,7 @@
     </div>
     <div class="row d-flex align-items-center">
         <div class="col-4 offset-4 d-flex justify-content-center ">
-            <div class="bg-white p-4 rounded-4 text-secondary shadow " style="width: 100%; height: 100%">
+            <div class="bg-white p-4 rounded-3 text-secondary shadow mt-2 " style="width: 100%; height: 100%">
                 <form action="" method="post">
                     <?php
                     include("modelo/conexion.php");

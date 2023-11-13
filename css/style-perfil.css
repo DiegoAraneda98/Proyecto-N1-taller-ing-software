@@ -31,15 +31,6 @@ ul>li .ml {
 }
 
 
-.btn_editarDatos{
-    
-    transition: all ease-out 0.9s !important;
-}
-.btn_editarDatos:hover{
-    box-shadow: inset 350px 0 0 0 #d6092c !important; 
-    color: white !important;
-}
-
 .mi_perfil{
     padding-left: 11px !important;
     padding-top: 11px;

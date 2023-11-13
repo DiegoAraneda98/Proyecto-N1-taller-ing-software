@@ -1,6 +1,5 @@
 <?php
 $page = isset($_GET['p']) ? $_GET['p'] : '';
-require($_SERVER['DOCUMENT_ROOT'] . '/xampp/Proyecto-N1-taller-ing-software/pages/auth/actions/controlador_login.php');
 
 
 if ($navbarType === 'type1') {

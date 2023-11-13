@@ -1,6 +1,6 @@
 <div class="container-fluid  ">
     <div class="row">
-        <div class="col-8 " >
+        <div class="col-8 ">
             <form action="#" method="POST">
                 <p class="h5 text-secondary text-start pt-1 mt-3">Información personal</p>
                 <div class="p-mt-2 text-start">Rut:
@@ -33,13 +33,13 @@
                             value="<?php echo $apellido ?>">
                     </div>
                 </div>
-                
-                
+
+
                 <div class="d-grid gap-2 d-md-flex justify-content-center align-items-center mb-4">
                     <button
-                        class="btn btn_editarDatos border-secondary rounded-0 text-black d-flex justify-content-center fw-semibold bg-light"
+                        class="btn custom-btn border-secondary rounded-0 text-black d-flex justify-content-center fw-semibold bg-light"
                         onclick="guardarDatos()" type="button">Guardar datos</button>
-                 
+
                 </div>
 
             </form>
@@ -52,10 +52,11 @@
                         <img src="img/perfil_defualt.png" class="img-fluid imagen-perfil m-5">
                     </div>
                 </div>
-                
+
             </div>
-            <button type="button" class="btn btn-outline-danger text-white rojo mt-2 w-50">Subir imagen <i
-                        class="bi bi-upload text-end"></i></button>
+            <button type="button"
+                class="btn custom-btn border-secondary rounded-0 text-black d-flex justify-content-center fw-semibold bg-light mt-2 w-50">Subir
+                imagen</button>
         </div>
 
     </div>

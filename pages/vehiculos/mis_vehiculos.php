@@ -69,7 +69,7 @@
 
 
                 <div class="d-flex justify-content-end mt-5">
-                    <button type="submit" class="btn rojo text-white fw-semibold  mb-4 añadir_vehiculo" name="añadir"
+                    <button type="submit" class="btn custom-btn border-secondary rounded-0 text-black d-flex justify-content-center fw-semibold   mb-4 añadir_vehiculo" name="añadir"
                         data-bs-toggle="modal" data-bs-target="#nuevomodal">Añadir vehículo</button>
                 </div>
 
