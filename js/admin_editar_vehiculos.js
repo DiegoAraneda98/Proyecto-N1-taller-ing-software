@@ -27,7 +27,7 @@ $('#save-vehiculos').click(function () {
     var tipo_vehiculo = $('#tipo_vehiculo').val();
 
     $.ajax({
-        url: 'pages/admin/actions_Vehiculos/admin_updateVehiculos.php',
+        url: 'pages/admin/actions/actions_Vehiculos/admin_updateVehiculos.php',
         method: 'post',
         data: { patente: patente, modelo: modelo, color: color, tipo_vehiculo: tipo_vehiculo, id: id },
         success: function (response) {

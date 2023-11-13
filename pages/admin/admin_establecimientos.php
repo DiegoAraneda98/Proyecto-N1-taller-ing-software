@@ -53,8 +53,8 @@
 
                     </div>
 
-                    <?php include 'modal_establecimiento/editarmodal.php'; ?>
-                    <?php include 'modal_establecimiento/nuevomodal.php'; ?>
+                    <?php include 'modal/modal_establecimiento/editarmodal.php'; ?>
+                    <?php include 'modal/modal_establecimiento/nuevomodal.php'; ?>
                     <?php include 'eliminarmodal.php'; ?>
 
                     <div class="d-flex justify-content-end mt-5">
@@ -69,4 +69,3 @@
     </div> 
     <script src="js/admin_editar_establecimiento.js"></script>
     <script src="js/admin_eliminar_establecimiento.js"></script>                               
-    <script src="js/verificaciones.js"></script>

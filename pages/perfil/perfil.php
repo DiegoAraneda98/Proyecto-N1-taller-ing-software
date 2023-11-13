@@ -17,8 +17,8 @@ if ($row = mysqli_fetch_array($resultado)) {
 }
 ?>
 
-<div class="container-fluid ">
-    <div class="row  text-center bg_edit h-100 ">
+<div class="container-fluid fondo-perfil_perfil  ">
+    <div class="row  text-center bg_edit">
 
         <div class="col-2 d-flex align-items-start justify-content-center p-3 rojo border border-black border-2 border-start-0 ">
             <div class="nav flex-column nav-pills me-3 " id="v-pills-tab" role="tablist" aria-orientation="vertical">

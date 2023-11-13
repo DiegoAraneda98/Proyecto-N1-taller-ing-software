@@ -48,8 +48,8 @@
                         </table>
 
                     </div>
-                    <?php include 'modal_tipo_vehiculo/editarmodal.php'; ?>
-                    <?php include 'modal_tipo_vehiculo/nuevomodal.php'; ?>
+                    <?php include 'modal/modal_tipo_vehiculo/editarmodal.php'; ?>
+                    <?php include 'modal/modal_tipo_vehiculo/nuevomodal.php'; ?>
                     <?php include 'eliminarmodal.php'; ?>
                     
                     <div class="d-flex justify-content-end mt-5">
@@ -64,4 +64,3 @@
     </div> 
     <script src="js/admin_editar_tipo_vehiculo.js"></script>  
     <script src="js/admin_eliminar_tipo_vehiculo.js"></script>                           
-    <script src="js/verificaciones.js"></script>

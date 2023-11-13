@@ -28,8 +28,8 @@ if (!empty($_POST["login"])) {
         
             // Redireccionar según el tipo de usuario
 
-            if ( $_SESSION['tipo_usuario'] == ' Guardia') {
-                header("Location: index.php?p=Guardia");  // Página para administradores
+            if ( $_SESSION['tipo_usuario'] == 'Guardia') {
+                header("Location: index.php?p=Guardia/vista_guardia");  // Página para administradores
                
             } elseif ( $_SESSION['tipo_usuario'] == ' Institucional') {
 

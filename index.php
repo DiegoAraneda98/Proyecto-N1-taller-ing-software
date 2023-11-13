@@ -41,6 +41,10 @@ switch ($pagina) {
     case 'admin/admin_establecimientos':
         $navbarType = 'type3';
         break;
+
+        case 'guardia/vista_guardia':
+            $navbarType = 'type5';
+            break;
 }
 
 switch ($pagina) {

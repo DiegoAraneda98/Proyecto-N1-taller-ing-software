@@ -69,8 +69,8 @@
                     <?php
                     $sqlUsuario = "SELECT * FROM tipo_usuario";
                     $tipo_usuario = $conexion->query($sqlUsuario); ?>
-                    <?php include 'modal_Usuarios/editarmodal.php'; ?>
-                    <?php include 'modal_Usuarios/nuevomodal.php'; ?>
+                    <?php include 'modal/modal_Usuarios/editarmodal.php'; ?>
+                    <?php include 'modal/modal_Usuarios/nuevomodal.php'; ?>
                     <?php include 'eliminarmodal.php'; ?>
                     
                     <div class="d-flex justify-content-end mt-5">
@@ -85,4 +85,3 @@
     </div> 
     <script src="js/admin_editar_usuarios.js"></script>                            
     <script src="js/admin_eliminar_usuarios.js"></script> 
-    <script src="js/verificaciones.js"></script>

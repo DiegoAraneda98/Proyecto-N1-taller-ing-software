@@ -7,7 +7,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="pages/admin/actions_tipo_usuario/admin_savetipoUsuario.php" method="post" enctype="multipart/form-data">
+                <form action="pages/admin/actions/actions_tipo_usuario/admin_savetipoUsuario.php" method="post" enctype="multipart/form-data">
                     
 
                     <div class="mb-3">

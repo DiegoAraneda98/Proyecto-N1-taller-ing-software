@@ -1,8 +1,8 @@
-.fondo-perfil {
+.fondo-perfil_perfil {
     background-image: url("../img/fondo_perfil_admin_vehiculos.png");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 90.4vh;
 }
 
 .logo {
@@ -57,6 +57,7 @@ ul>li .ml {
 .btn-custom{
     color: white !important;
 }
+
 /* Estilo personalizado para los botones seleccionados */
 .btn-custom.active,
 .btn-custom:active,

@@ -22,6 +22,3 @@
             alert('El email debe contener el dominio "ucsc.cl".');
         }
     }
-
-
-   

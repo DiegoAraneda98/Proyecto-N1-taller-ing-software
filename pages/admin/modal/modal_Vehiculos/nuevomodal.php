@@ -9,7 +9,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="index.php?p=/admin/actions_Vehiculos/admin_saveVehiculos" method="post"
+                <form action="index.php?p=/admin/actions/actions_Vehiculos/admin_saveVehiculos" method="post"
                     enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="patente" class="form-label">Patente:</label>
