@@ -19,8 +19,8 @@
                 <form action="eliminar.php" method="post">
 
                     
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button id="delete" type="button" class="btn btn-danger">Eliminar</button>
+                        <button type="button" class="btn text-white rojo" data-bs-dismiss="modal">Cerrar</button>
+                        <button id="delete" type="button" class="btn text-white rojo">Eliminar</button>
                     
 
                 </form>

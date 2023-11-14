@@ -1,33 +1,45 @@
 $(document).ready(function() {
-    $(document).on('click', 'a[data-role=update-password]', function() {
-        var id = $(this).data('id');
-
-        $('#idUsuario').val(id);
-        $('#editarContrasena').modal('toggle');
-
-    });
-
     $('#save-password').click(function() {
         var id = $('#idUsuario').val();
-        var nuevaContrasena = $('#nuevaContrasena').val();
-        var repetirNuevaContrasena = $('#repetirNuevaContrasena').val();
+        var contraseña_actual = $('#contraseña_actual').val();
+        var nuevaContraseña = $('#nuevaContraseña').val();
+        var repetirNuevaContraseña = $('#repetirNuevaContrasena').val();
 
-        if (nuevaContrasena !== repetirNuevaContrasena) {
-            window.alert("Contraseñas distintas");
+        
+        console.log(id);
+        console.log(contraseña_actual);
+        console.log(nuevaContraseña);
+        console.log(repetirNuevaContraseña);
+
+        if (nuevaContraseña !== repetirNuevaContraseña) {
+            Swal.fire({
+                position: "top-end",
+                icon: "error",
+                title: "Las contraseñas no son iguales",
+                showConfirmButton: false,
+                timer: 1500
+            });
 
         } else {
             $.ajax({
                 url: ' pages/perfil/actions/actualizaContrasena.php',
                 method: 'post',
                 data: {
-                    nuevaContrasena: nuevaContrasena,
-                    id: id
+                    nuevaContraseña: nuevaContraseña,
+                    id: id,
+                    contraseña_actual:contraseña_actual,
+                    repetirNuevaContraseña:repetirNuevaContraseña
+
                 },
                 success: function(response) {
-                    $('#' + id).children('input[data-target=contraseña]').text(
-                        contraseña);
-                    $('#editarContrasena').modal('toggle');
-                    location.reload(true);
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Contraseña cambiada",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    
                 }
             });
         }
