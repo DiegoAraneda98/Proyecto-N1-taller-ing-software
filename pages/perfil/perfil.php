@@ -20,38 +20,28 @@ if ($row = mysqli_fetch_array($resultado)) {
 
 
 <div class="container-fluid border">
-    <div class="row text-center bg_edit ">
+    <div class="row text-center bg-light mt-3">
 
         <div class="col-12">
-            <div class="row bg_edit"> <!-- linea divisora -->
-                <div class="col-12">
-                    <hr class="border border-danger border-1 opacity-50">
-                </div>
-            </div>
-
             <div class="h2 mi_perfil text-start">Mi perfil</div>
-
-            <div class="row bg_edit"> <!-- linea divisora -->
-                <div class="col-12">
-                    <hr class="border border-danger border-1 opacity-50">
-                </div>
-            </div>
+            <hr class="border border-danger border-1 opacity-50">
         </div>
 
-        <div class="col-2 d-flex align-items-start justify-content-center rojo  " style="max-height: 100%">
-            <div class="nav flex-column nav-pills me-3 " id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+        <div class="col-2 d-flex align-items-start justify-content-center rojo  border border-black margin ">
+            <div class="nav flex-column nav-pills  ml-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
                 <button class="nav-link btn btn-custom active mt-3 " id="v-pills-home-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
-                    aria-selected="true">Informacion personal</button>
+                    aria-selected="true"><i class="bi bi-person-fill"></i>  Informacion personal</button>
 
                 <button class="nav-link btn btn-custom mt-3" id="v-pills-profile-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
-                    aria-selected="false">Seguridad</button>
+                    aria-selected="false"><i class="bi bi-key-fill"></i>  Seguridad</button>
 
                 <button class="nav-link btn btn-custom mt-3" id="v-pills-messages-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
-                    aria-selected="false">Contacto</button>
+                    aria-selected="false"><i class="bi bi-person-lines-fill"></i> Contacto</button>
 
                 <button class="nav-link btn btn-custom mt-3" id="v-pills-settings-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
@@ -59,7 +49,7 @@ if ($row = mysqli_fetch_array($resultado)) {
             </div>
         </div>
 
-        <div class="col-10 border ">
+        <div class="col-9 border margin">
 
 
             <div class="tab-content " id="v-pills-tabContent">
@@ -83,4 +73,5 @@ if ($row = mysqli_fetch_array($resultado)) {
             </div>
         </div>
     </div>
+
 </div>

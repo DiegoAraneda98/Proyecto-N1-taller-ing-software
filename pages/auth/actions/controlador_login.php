@@ -27,13 +27,13 @@ if (!empty($_POST["rut"]) or !empty($_POST["contraseña"])) {
 
         // Redireccionar según el tipo de usuario
 
-        if ($_SESSION['tipo_usuario'] == 'Guardia') {
+        if ($_SESSION['tipo_usuario'] == 'Guardia' or $_SESSION['tipo_usuario'] == ' Guardia') {
             header("Location: index.php?p=Guardia/vista_guardia");
 
-        } elseif ($_SESSION['tipo_usuario'] == 'Institucional') {
+        } elseif ($_SESSION['tipo_usuario'] == 'Institucional' or $_SESSION['tipo_usuario'] == ' Institucional') {
             header("Location: index.php?p=inicio");
 
-        } elseif ($_SESSION['tipo_usuario'] == 'admin') {
+        } elseif ($_SESSION['tipo_usuario'] == 'admin'  or $_SESSION['tipo_usuario'] == ' admin' ) {
             header("Location: index.php?p=admin/admin");
 
         }
