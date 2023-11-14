@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-8 ">
         <form action="#" method="POST">
-            <p class="h5 text-secondary text-start pt-1 mt-3">Información personal</p>
+            <p class="h2 text-secondary text-start pt-1 mt-3">Información personal</p>
             <div class="mt-3 text-start">Rut:
                 <div class="input-group mt-2 w-75">
                     <input name="rut" id="rut" type="text" class="form-control rounded-0 " aria-label="Username"
@@ -24,16 +24,16 @@
                 </div>
             </div>
 
-          
 
-                <div class="input-group mt-4 d-flex justify-content-end align-items-end w-75 ">
-                    <button class="btn custom-btn border-secondary rounded-0 text-black fw-semibold bg-light"
-                        onclick="guardarDatos()" type="button">
-                        Guardar datos
-                    </button>
-                </div>
 
-           
+            <div class="input-group mt-4 d-flex justify-content-end align-items-end w-75 ">
+                <button class="btn custom-btn border-secondary rounded-0 text-black fw-semibold bg-light"
+                    onclick="guardarDatos()" type="button">
+                    Guardar datos
+                </button>
+            </div>
+
+
 
         </form>
     </div>
@@ -56,5 +56,3 @@
     </div>
 
 </div>
-
-

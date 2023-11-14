@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-8">
-            <p class="h5 text-secondary text-start pt-1 mt-3">Seguridad</p>
+            <p class="h2 text-secondary text-start pt-1 mt-3">Seguridad</p>
             <form action="#" method="POST" id="<?php echo $id ?>">
 
                 <div class="p-mt-3 text-start">Contraseña actual:
@@ -25,10 +25,14 @@
                     </div>
                 </div>
 
-                <input type="hidden" id="idUsuario" name="idUsuario" class="form-control">
-
+                <div class="input-group mt-3 d-flex justify-content-end align-items-end w-75 ">
                 <a href="#" class="btn custom-btn border-secondary rounded-0 text-black bg-light fw-semibold mb-5"
                     id="save-password"  data-id="<?php echo $id ?>">Editar contraseña</a>
+            </div>
+
+                <input type="hidden" id="idUsuario" name="idUsuario" class="form-control">
+
+                
             </form>
         </div>
     </div>
