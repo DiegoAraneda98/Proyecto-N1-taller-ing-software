@@ -1,12 +1,14 @@
 <?php
 require '../../../phpqrcode/qrlib.php'; 
 
+require __DIR__ . '/../../auth/actions/controlador_login.php';
+
 // Obtén el id_vehiculo y la patente de la solicitud POST
-$id_vehiculo = $_POST['id_vehiculo'];
+$id_usuario = $_SESSION['id_usuario'];
 $patente = $_POST['patente'];
 
 // Genera el contenido del código QR con id_vehiculo y patente
-$contenido = 'ID del vehículo: ' . $id_vehiculo . "\nPatente: " . $patente;
+$contenido = $id_usuario. " " .$patente;
 
 // Configuración del QR
 $tamanio = 20;

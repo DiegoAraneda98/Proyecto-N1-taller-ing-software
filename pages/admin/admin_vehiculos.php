@@ -23,7 +23,9 @@
                             require __DIR__ . '/../../modelo/conexion.php';
 
 
-                            $sql = "SELECT * FROM vehiculos";
+                            $sql = "SELECT v.id_vehiculo,u.id_usuario, u.nombre, v.patente, v.modelo, v.color, v.tipo_vehiculo, v.fecha_ingreso 
+                                    FROM usuarios u 
+                                    JOIN vehiculos v ON u.id_usuario = v.id_usuario;";
                             $resultado = mysqli_query($conexion, "$sql");
 
                             while ($row = mysqli_fetch_assoc($resultado)) {

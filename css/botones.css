@@ -1,0 +1,17 @@
+    /* Establece un estilo inicial para el botón */
+    .custom-btn {
+        background-color: #fff;
+        color: #000000;
+        transition: background-color 0.7s ease !important; /* Transición de color durante 0.7 segundos */
+        border: 1px solid #000 !important; 
+        cursor: pointer; 
+    }
+
+    /* Al pasar el ratón sobre el botón, cambia el color */
+    .custom-btn:hover {
+        background-color: #d6092c  !important;
+        color: #fff  !important;
+    }
+
+
+   /*  btn custom-btn border-secondary rounded-0 text-black d-flex justify-content-center fw-semibold */

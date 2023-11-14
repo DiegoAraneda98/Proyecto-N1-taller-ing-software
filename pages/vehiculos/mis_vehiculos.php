@@ -1,10 +1,13 @@
+
+
 <div class="container-fluid">
     <div class="container-fluid">
         <div class="row">
             <div class="col-10 bg-white offset-1 mt-5">
                 <div class="h2 p-3 text-secondary ">Mis vehículos</div>
-                <div class="table-responsive shadow  overflow-y-auto " style="max-height: 400px;">
-                    <table class="table table-hover text-center">
+                <div class="border border-danger border-1 opacity-50 mb-5"></div>
+                <div class="table-responsive shadow  overflow-y-auto mt-3 border border-3" style="max-height: 400px;">
+                    <table class="table table-hover text-center ">
                         <?php require __DIR__ . '/../auth/actions/controlador_login.php'; ?>
                         <thead>
                             <tr>
@@ -48,7 +51,7 @@
                                 echo "<i class='bi bi-qr-code'></i>";
                                 echo "</a>";
 
-                             
+
 
                                 echo "</tr>";
 
@@ -69,8 +72,9 @@
 
 
                 <div class="d-flex justify-content-end mt-5">
-                    <button type="submit" class="btn rojo text-white fw-semibold  mb-4 añadir_vehiculo" name="añadir"
-                        data-bs-toggle="modal" data-bs-target="#nuevomodal">Añadir vehículo</button>
+                    <button type="submit"
+                        class="btn custom-btn border-secondary rounded-0 text-black d-flex justify-content-center fw-semibold   mb-4 añadir_vehiculo"
+                        name="añadir" data-bs-toggle="modal" data-bs-target="#nuevomodal">Añadir vehículo</button>
                 </div>
 
             </div>
@@ -81,3 +85,4 @@
 </div>
 <script src="js/editar_vehiculos.js"></script>
 <script src="js/crear_qr.js"></script>
+<script src="js/verifiaciones.js"></script>

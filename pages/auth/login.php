@@ -13,12 +13,12 @@
     <div class="row d-flex align-items-center ">
         <div class="col-4 offset-4 d-flex justify-content-center ">
 
-            <div class="bg-white mt-3 p-5 rounded-4 text-secondary shadow " style="width: 90%; height: 100%">
-
-                <form action="" method="post">
-                    <?php
-                    include "modelo/conexion.php";
-                    include "actions/controlador_login.php";
+            <div class="bg-white  p-5 rounded-4 text-secondary shadow " style="width: 100%; height: 100%">
+                
+                <form action="#" method="post">
+                    <?php 
+                    include("modelo/conexion.php");
+                    include("actions/controlador_login.php");
                     ?>
                     <div class="text-center fw-bold fs-4">¡Bienvenido a la plataforma de aforo vehicular!</div>
                     <div class="p mt-4">Rut</div>
@@ -37,7 +37,7 @@
                     <input type="submit" value="Iniciar sesión" name="login"
                         class="btn rojo text-white fw-semibold w-100 mt-4 ">
                     <p class="text-center mt-2">Si olvidaste tu contraseña haz click <a
-                            href="https://portal.ucsc.cl/usuario/solicitar_pass">aquí</a></p>
+                            href="index.php?p=auth/reset_contraseña">aquí</a></p>
                 </form>
             </div>
         </div>

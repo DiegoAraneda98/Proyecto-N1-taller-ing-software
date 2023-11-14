@@ -19,7 +19,7 @@ switch ($pagina) {
         break;
 
     case 'perfil/perfil':
-        $navbarType = 'type3';
+        $navbarType = 'type4';
         break;
 
     case 'admin/admin':
@@ -40,6 +40,18 @@ switch ($pagina) {
 
     case 'admin/admin_establecimientos':
         $navbarType = 'type3';
+        break;
+
+    case 'admin/admin_comunas':
+        $navbarType = 'type3';
+        break;
+        
+    case 'admin/admin_regiones':
+        $navbarType = 'type3';
+        break;
+
+    case 'guardia/vista_guardia':
+        $navbarType = 'type5';
         break;
 }
 

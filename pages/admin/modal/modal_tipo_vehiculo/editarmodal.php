@@ -11,7 +11,7 @@
 
                 <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre:</label>
-                        <input type="text" name="nombre" id="nombre" class="form-control" >
+                        <input type="text" name="nombre" id="nombre" class="form-control" onkeydown=filtroLetras() >
                     </div>
 
             
@@ -19,8 +19,8 @@
 
                     <div class="modal-footer">
                         
-                        <a href="#" id="save_tipo" class="btn btn-primary" data-dismiss="modal">Guardar modificación</a>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <a href="#" id="save_tipo" class="btn text-white rojo" data-dismiss="modal">Guardar modificación</a>
+                        <button type="button" class="btn text-white rojo" data-bs-dismiss="modal">Cerrar</button>
                     </div>
                 </form>
             </div>

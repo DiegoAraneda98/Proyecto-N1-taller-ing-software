@@ -14,7 +14,7 @@
                     
                     <div class="mb-3">
                         <label for="patente" class="form-label">Patente:</label>
-                        <input type="text" name="patente" id="patente" class="form-control" >
+                        <input type="text" name="patente" id="patente" class="form-control" pattern="[A-Za-z]{4}[0-9]{2}">
                     </div>
 
                     <div class="mb-3">
@@ -31,7 +31,7 @@
                         <label for="tipo_vehiculo" class="form-label">Tipo de vehículo:</label>
                         <div class="input-group ">
                             <select class="form-select " id="tipo_vehiculo" name="tipo_vehiculo">
-                                <option selected>Seleccione su tipo vehículo</option>
+                                <option disabled selected>Seleccione su tipo vehículo</option>
                                 <?php while ($row_vehiculos = $tipo_vehiculo->fetch_assoc()) { ?>
                                     <option value="<?= $row_vehiculos["nombre"] ?>"> <?= $row_vehiculos["nombre"]; ?>
                                  </option>
