@@ -1,15 +1,9 @@
 $(document).ready(function() {
     $('#save-password').click(function() {
-        var id = $('#idUsuario').val();
+        var id = $(this).data('id'); 
         var contraseña_actual = $('#contraseña_actual').val();
         var nuevaContraseña = $('#nuevaContraseña').val();
         var repetirNuevaContraseña = $('#repetirNuevaContrasena').val();
-
-        
-        console.log(id);
-        console.log(contraseña_actual);
-        console.log(nuevaContraseña);
-        console.log(repetirNuevaContraseña);
 
         if (nuevaContraseña !== repetirNuevaContraseña) {
             Swal.fire({
@@ -19,17 +13,15 @@ $(document).ready(function() {
                 showConfirmButton: false,
                 timer: 1500
             });
-
         } else {
             $.ajax({
-                url: ' pages/perfil/actions/actualizaContrasena.php',
+                url: 'pages/perfil/actions/actualizaContrasena.php',
                 method: 'post',
                 data: {
                     nuevaContraseña: nuevaContraseña,
                     id: id,
-                    contraseña_actual:contraseña_actual,
-                    repetirNuevaContraseña:repetirNuevaContraseña
-
+                    contraseña_actual: contraseña_actual,
+                    repetirNuevaContraseña: repetirNuevaContraseña
                 },
                 success: function(response) {
                     Swal.fire({
@@ -39,10 +31,16 @@ $(document).ready(function() {
                         showConfirmButton: false,
                         timer: 1500
                     });
-                    
+                },
+                error: function(response) {
+                
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error",
+                        text: "Hubo un problema al cambiar la contraseña. Por favor, inténtalo de nuevo.",
+                    });
                 }
             });
         }
-
     });
 });
