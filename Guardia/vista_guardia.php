@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,26 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Vista Guardia</title>
 
+    <link rel="stylesheet" href="css/estilo_camara.css">
     <link rel="stylesheet" href="css/login_register.css">
     <link rel="stylesheet" href="css/style_inicio.css">
     <link rel="stylesheet" href="css/botones.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 </head>
 
 <body>
     <div class="container-fluid fondo-vehiculos">
-        <div class="row bg-light"> <!-- nav bar -->
-            <div class="col-12 ">
+        <div class="row bg-light">
+            <div class="col-12">
                 <nav class="navbar navbar-expand-lg bg-body-tertiary">
                     <div class="container-fluid">
                         <img src="img/main-logo.svg" class="img-fluid logo" alt="logo">
@@ -49,265 +43,109 @@
             </div>
         </div>
 
-        <div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="col-10 offset-1 mt-5 d-flex justify-content-between h-75">
-                        <div class="col-md-4" style="padding:10px;background:#fff;border-radius: 5px;" id="divvideo">
-                            <style>
-                                #divvideo {
-                                    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
-                                    position: relative;
-                                }
+        <div class="row">
+            <div class="col-12">
+                <div class="col-10 offset-1 mt-5 d-flex justify-content-between h-75">
+                    <div class="col-md-4" style="padding:10px;background:#fff;border-radius: 5px;" id="divvideo">
+                        <style>
+                            <?php include 'estilo_camara.css'; ?>
+                        </style>
+                    </div>
 
-                                #preview {
-                                    padding-top: 1%;
-                                    padding-bottom: 1%;
-                                    width: 100%;
-                                    height: 90%;
-                                    margin: 0px auto;
-                                    object-fit: cover;
-                                }
-                            </style>
-                            <center>
-                                <button id="toggleCamera" onclick="toggleCamera()" class="btn custom-btn">Encender lector QR</button>
-                            </center>
+                    <div class="col-md-8">
+                        <form action="insert.php" method="post" class="form-horizontal" style="border-radius: 5px;padding:10px; background:#fff;" id="divvideo">
+                            <h4>Historial de acceso vehicular</h4>
+                        </form>
 
-                            <video id="preview" width="100%" style="border-radius:10px;" class="d-none"></video>
-                            <br>
-                            <br>
-                            <?php
-                            ?>
+                        <div style="border-radius: 5px; padding:10px; background:#fff; margin-top: 10px;" id="divvideo">
+                            <table id="example1" class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <td>Rut</td>
+                                        <td>Nombre</td>
+                                        <td>Correo</td>
+                                        <td>Patente</td>
+                                        <td>Hora ingreso</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $server = "localhost";
+                                    $username = "root";
+                                    $password = "";
+                                    $dbname = "safedrive";
 
-                        </div>
-
-                        <div class="col-md-8">
-                            <form action="insert.php" method="post" class="form-horizontal" style="border-radius: 5px;padding:10px; background:#fff;" id="divvideo">
-                                <h4>Historial de acceso vehicular</h4>
-                            </form>
-                            <div style="border-radius: 5px; padding:10px; background:#fff; margin-top: 10px;" id="divvideo">
-                                <table id="example1" class="table table-bordered">
-                                    <thead>
+                                    $conn = new mysqli($server, $username, $password, $dbname);
+                                    if ($conn->connect_error) {
+                                        die("Connection failed" . $conn->connect_error);
+                                    }
+                                    $sql = "SELECT * FROM historial";
+                                    $query = $conn->query($sql);
+                                    while ($row = $query->fetch_assoc()) {
+                                    ?>
                                         <tr>
-                                            <td>Rut</td>
-                                            <td>Nombre</td>
-                                            <td>Correo</td>
-                                            <td>Patente</td>
-                                            <td>Hora ingreso</td>
+                                            <td>
+                                                <?php echo $row['run']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['nombre']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['correo']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['patente']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['hora']; ?>
+                                            </td>
                                         </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        $server = "localhost";
-                                        $username = "root";
-                                        $password = "";
-                                        $dbname = "safedrive";
-
-                                        $conn = new mysqli($server, $username, $password, $dbname);
-                                        if ($conn->connect_error) {
-                                            die("Connection failed" . $conn->connect_error);
-                                        }
-                                        $sql = "SELECT * FROM historial";
-                                        $query = $conn->query($sql);
-                                        while ($row = $query->fetch_assoc()) {
-                                        ?>
-                                            <tr>
-                                                <td>
-                                                    <?php echo $row['run']; ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $row['nombre']; ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $row['correo']; ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $row['patente']; ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $row['hora']; ?>
-                                                </td>
-                                            </tr>
-                                        <?php
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
-                                <tr>
-                                    <div class="table-button">
-                                        <button type="button" class="btn custom-btn" data-bs-toggle="modal" data-bs-target="#exportModal">Exportar tabla</button>
-                                    </div>
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="exportModal" tabindex="-1" aria-labelledby="exportModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exportModalLabel">Confirmar</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    ¿Está seguro de que desea exportar la tabla?
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                                    <button type="button" class="btn custom-btn" onclick="Export()">Confirmar</button>
-                                                </div>
+                                    <?php
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                            <tr>
+                                <div class="table-button">
+                                    <button type="button" class="btn custom-btn" data-bs-toggle="modal" data-bs-target="#exportModal">Exportar tabla</button>
+                                </div>
+                                <div class="modal fade" id="exportModal" tabindex="-1" aria-labelledby="exportModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exportModalLabel">Confirmar</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                ¿Está seguro de que desea exportar la tabla?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                                <button type="button" class="btn custom-btn" onclick="Export()">Confirmar</button>
                                             </div>
                                         </div>
                                     </div>
-                                </tr>
-                            </div>
-
+                                </div>
+                            </tr>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Exportar tablas -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+        <script src="js/exportar_tabla.js"></script>
+        <script src="js/actualizar_tabla.js"></script>
+        <script src="js/camara_scanner.js"></script>
+
+        <!-- Script para cargar el modal.html -->
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var exportButton = document.getElementById('exportButton');
-                if (exportButton) {
-                    exportButton.addEventListener('click', function() {
-                        Export();
-                    });
-                }
+            $(document).ready(function() {
+                $("#modalContainer").load("modal.html");
             });
         </script>
-
-        <!-- Exportar tabla -->
-        <script>
-            function Export() {
-                window.open("exportar.php", '_blank');
-                $('#exportModal').modal('hide');
-            }
-        </script>
-
-
-        <!-- Actualiza la tabla que se muestra -->
-        <script>
-            function actualizarTabla(data) {
-                // Limpiar el cuerpo de la tabla
-                document.getElementById('historialBody').innerHTML = "";
-
-                // Insertar nuevos datos
-                for (var i = 0; i < data.length; i++) {
-                    var row = data[i];
-                    var newRow = "<tr>";
-                    newRow += "<td>" + row.run + "</td>";
-                    newRow += "<td>" + row.nombre + "</td>";
-                    newRow += "<td>" + row.correo + "</td>";
-                    newRow += "<td>" + row.patente + "</td>";
-                    newRow += "<td>" + row.horario_ingreso + "</td>";
-                    newRow += "</tr>";
-                    document.getElementById('historialBody').innerHTML += newRow;
-                }
-            }
-        </script>
-
-        <!-- Función para extraer datos del historial para actualizar tabla -->
-        <script>
-            function actualizarTabla_ajax() {
-                $.ajax({
-                    url: 'insert_historial.php',
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function(data) {
-                        actualizarTabla(data);
-                    },
-                    error: function(error) {
-                        console.log(error);
-                    }
-                });
-            }
-        </script>
-
-        <!-- Cámara/Scanner -->
-        <script>
-            var scanner = null;
-
-            function toggleCamera() {
-                var divVideo = document.getElementById('divvideo');
-                const resultadoElement = document.getElementById('dato_QR');
-
-                if (scanner === null) {
-                    // Inicializar el scanner si no está encendido
-                    Instascan.Camera.getCameras().then(function(cameras) {
-                        if (cameras.length > 0) {
-                            scanner = new Instascan.Scanner({
-                                video: document.getElementById('preview'),
-                                scanPeriod: 5,
-                                mirror: true
-                            });
-
-                            scanner.start(cameras[0]);
-                            document.getElementById('preview').classList.remove('d-none'); // Mostrar el video
-
-                            // Ajustar el tamaño del div al 100% del área de la cámara
-                            divVideo.style.width = '100%';
-                            divVideo.style.height = '100%';
-
-                            document.getElementById('toggleCamera').textContent = 'Apagar lector QR';
-
-                            scanner.addListener('scan', function(contenidoQR) {
-                                const datosSeparados = contenidoQR.split('-');
-
-                                // Verificar si se obtuvieron dos partes
-                                if (datosSeparados.length === 2) {
-                                    const idUsuario = datosSeparados[0];
-                                    const patente = datosSeparados[1];
-
-                                    // Función para realizar la solicitud AJAX
-                                    function enviarDatosAJAX(idUsuario, patente) {
-                                        var xhr = new XMLHttpRequest();
-                                        var url = "insert_historial.php";
-                                        var params = "id_usuario=" + idUsuario + "&patente=" + patente;
-
-                                        xhr.open("POST", url, true);
-                                        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-                                        xhr.onreadystatechange = function() {
-                                            if (xhr.readyState === 4 && xhr.status === 200) {
-                                                // Aquí puedes manejar la respuesta del servidor si es necesario
-                                                console.log(xhr.responseText);
-                                            }
-                                        };
-
-                                        xhr.send(params);
-                                    }
-
-                                    
-                                } else {
-                                    resultadoElement.innerHTML = 'Formato de código QR no válido.';
-                                }
-
-                            });
-                        } else {
-                            console.error('No se han encontrado cámaras.');
-                            alert('No se encontraron cámaras.');
-                        }
-                    }).catch(function(e) {
-                        alert(e);
-                    });
-                } else {
-                    // Si está encendido, entonces apagar
-                    scanner.stop();
-                    scanner = null; // Restablece el objeto scanner
-                    document.getElementById('toggleCamera').textContent = 'Encender lector QR';
-
-                    // Restablecer el tamaño del div al 100% del área
-                    divVideo.style.width = '100%';
-                    divVideo.style.height = '100%';
-
-                    // Ocultar el video
-                    document.getElementById('preview').classList.add('d-none');
-                }
-
-
-            }
-        </script>
-
+    </div>
 </body>
 
 </html>
