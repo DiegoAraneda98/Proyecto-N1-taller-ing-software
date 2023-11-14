@@ -28,7 +28,7 @@ if ($row = mysqli_fetch_array($resultado)) {
         </div>
 
 
-        <div class="col-2 d-flex align-items-start justify-content-center rojo  border border-black margin" style=" height:70vh;">
+        <div class="col-2 d-flex align-items-start justify-content-center rojo  border border-black margin shadow" style=" height:70vh;">
             <div class="nav flex-column nav-pills  ml-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
                 <button class="nav-link btn btn-custom active mt-3 " id="v-pills-home-tab" data-bs-toggle="pill"
