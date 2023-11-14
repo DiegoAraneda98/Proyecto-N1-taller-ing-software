@@ -83,7 +83,7 @@
                         
                             <div class="col-12 mt-3">
                                 <textarea name="iSugerencia" class="form-control" cols="16" rows="4"
-                                    placeholder="Sugerencia (64 Caracteres Maximo)" maxlength="128"></textarea>
+                                    placeholder="Sugerencia (128 Caracteres Maximo)" maxlength="128"></textarea>
                             
                             
                                 <button type="submit" class="btn btn-danger m-3">Enviar</button>
