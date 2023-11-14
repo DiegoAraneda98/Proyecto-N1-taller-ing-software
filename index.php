@@ -59,9 +59,9 @@
                                 <input type="email" name="icorreo" class="form-control m-3"  placeholder="Correo">
                             </div>
                             <div class="col-6">
-                                Interfaz:
+                               
                                 <select name="interfaz" class="form-select m-3">
-                                <option selected>Desplegar</option>
+                                <option selected>Interfaz</option>
                                     <option value="Muy Buena">Muy Buena</option>
                                     <option value="Buena">Buena</option>
                                     <option value="Regular">Regular</option>
@@ -72,7 +72,7 @@
                             
                                 Rapidez:
                                 <select name="rapidez" class="form-select m-3">
-                                <option selected>Desplegar</option>
+                                <option selected>Rapidez</option>
                                     <option value="Muy Rapida">Muy Rapida</option>
                                     <option value="Rapida">Rapida</option>
                                     <option value="Regular">Regular</option>
@@ -82,8 +82,8 @@
                             </div>
                         
                             <div class="col-12 mt-3">
-                                <textarea name="iSugerencia" class="form-control" cols="4" rows="2"
-                                    placeholder="Sugerencia (64 Caracteres Maximo)" maxlength="64"></textarea>
+                                <textarea name="iSugerencia" class="form-control" cols="16" rows="4"
+                                    placeholder="Sugerencia (64 Caracteres Maximo)" maxlength="128"></textarea>
                             
                             
                                 <button type="submit" class="btn btn-danger m-3">Enviar</button>
