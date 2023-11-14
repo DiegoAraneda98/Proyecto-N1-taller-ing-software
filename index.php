@@ -1,4 +1,3 @@
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,32 +45,34 @@
                     <div class="h2 p-3 text-secondary">Encuesta</div>
                     <form action="añadir_contacto.php" method="post">
                         <div class="row">
-                            <div class="col-4">
-                                <input type="text" name="inombre" class="form-control" placeholder="Nombre">
-                            </div>
-                            <div class="col-4">
-                                <input type="number" name="irut" class="form-control" placeholder="RUT" maxlength="9">
-                            </div>
-                            <div class="col-4">
-                                <input type="number" name="itelefono" class="form-control" placeholder="Telefono"
+                            <div class="col-6">
+                                <input type="text" name="inombre" class="form-control m-3" placeholder="Nombre">
+                            
+                            
+                                <input type="text" name="irut" class="form-control m-3" placeholder="RUT" maxlength="9" >
+                            
+                            
+                                <input type="text" name="itelefono" class="form-control m-3" placeholder="Telefono"
                                     maxlength="10">
+                            
+                            
+                                <input type="email" name="icorreo" class="form-control m-3"  placeholder="Correo">
                             </div>
-                            <div class="col-4 mt-3">
-                                <input type="email" name="icorreo" class="form-control" placeholder="Correo">
-                            </div>
-                            <div class="col-4 mt-3">
-                                <h6>Interfaz:</h6>
-                                <select name="interfaz" class="form-select">
+                            <div class="col-6">
+                                Interfaz:
+                                <select name="interfaz" class="form-select m-3">
+                                <option selected>Desplegar</option>
                                     <option value="Muy Buena">Muy Buena</option>
                                     <option value="Buena">Buena</option>
                                     <option value="Regular">Regular</option>
                                     <option value="Mala">Mala</option>
                                     <option value="Muy Mala">Muy Mala</option>
                                 </select>
-                            </div>
-                            <div class="col-4 mt-3">
-                                <h6>Rapidez:</h6>
-                                <select name="rapidez" class="form-select">
+                           
+                            
+                                Rapidez:
+                                <select name="rapidez" class="form-select m-3">
+                                <option selected>Desplegar</option>
                                     <option value="Muy Rapida">Muy Rapida</option>
                                     <option value="Rapida">Rapida</option>
                                     <option value="Regular">Regular</option>
@@ -79,14 +80,15 @@
                                     <option value="Muy Lenta">Muy Lenta</option>
                                 </select>
                             </div>
-                        </div>
-                        <div class="row">
+                        
                             <div class="col-12 mt-3">
-                                <textarea name="iSugerencia" class="form-control" cols="16" rows="4"
-                                    placeholder="Sugerencia (500 Caracteres Maximo)" maxlength="64"></textarea>
-                            </div>
-                            <div class="col-12 mt-3">
-                                <button type="submit" class="btn btn-danger">Enviar</button>
+                                <textarea name="iSugerencia" class="form-control" cols="4" rows="2"
+                                    placeholder="Sugerencia (64 Caracteres Maximo)" maxlength="64"></textarea>
+                            
+                            
+                                <button type="submit" class="btn btn-danger m-3">Enviar</button>
+                                <button type="reset" class="btn btn-success m-3">Resetear</button>
+                                <button disabled="disabled" class="btn btn-dark m-3">Generar</button>
                             </div>
                         </div>
                     </form>
