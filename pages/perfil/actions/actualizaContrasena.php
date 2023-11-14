@@ -26,18 +26,20 @@ if ($resultado && $fila = mysqli_fetch_assoc($resultado)) {
         $resultadoUpdate = mysqli_query($conexion, $update);
     
         if ($resultadoUpdate) {
-            header('Location: ../../../index.php?p=perfil/perfil');
+            http_response_code(200); // Código HTTP 200 OK
+            
         } else {
+            http_response_code(500); // Código HTTP 500 Error interno del servidor
             echo "Error al actualizar la contraseña: " . mysqli_error($conexion);
         }
     } else {
-        echo '<div class="alert alert-danger text-center" role="alert">La contraseña actual no coincide</div>';
+        http_response_code(400); // Código HTTP 400 Solicitud incorrecta
+        echo "La contraseña actual no coincide";
     }
 } else {
+    http_response_code(500); // Código HTTP 500 Error interno del servidor
     echo "Error al obtener la información del usuario: " . mysqli_error($conexion);
 }
 ?>
-
-
 
 
