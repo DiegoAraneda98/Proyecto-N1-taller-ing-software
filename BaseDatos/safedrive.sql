@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-11-2023 a las 06:38:43
+-- Tiempo de generación: 15-11-2023 a las 02:36:40
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -395,8 +395,20 @@ CREATE TABLE `encuestas` (
   `id_encuesta` int(11) NOT NULL,
   `rapidez` varchar(30) NOT NULL,
   `interfaz` varchar(30) NOT NULL,
-  `id_usuario` int(11) NOT NULL
+  `id_usuario` int(11) NOT NULL,
+  `nom_usuario` varchar(50) NOT NULL,
+  `telefono` int(11) DEFAULT NULL,
+  `correo` varchar(64) DEFAULT NULL,
+  `sugerencia` varchar(128) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `encuestas`
+--
+
+INSERT INTO `encuestas` (`id_encuesta`, `rapidez`, `interfaz`, `id_usuario`, `nom_usuario`, `telefono`, `correo`, `sugerencia`) VALUES
+(1, '', '', 0, '', 0, '', ''),
+(2, '', '', 0, '', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -747,7 +759,7 @@ ALTER TABLE `comunas`
 -- AUTO_INCREMENT de la tabla `encuestas`
 --
 ALTER TABLE `encuestas`
-  MODIFY `id_encuesta` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_encuesta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `establecimiento`
