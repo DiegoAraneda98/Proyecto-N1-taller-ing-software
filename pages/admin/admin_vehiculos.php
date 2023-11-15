@@ -8,7 +8,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">Id usuario</th>
-                                <th scope="col">Nombre</th>
+                                <th scope="col">Propietario</th>
                                 <th scope="col">Patente</th>
                                 <th scope="col">Modelo</th>
                                 <th scope="col">Color</th>
