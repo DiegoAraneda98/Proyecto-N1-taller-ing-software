@@ -1,6 +1,5 @@
 <?php 
 
-
 $conexion = mysqli_connect("localhost","root","","safedrive");
 
 if (mysqli_connect_errno())

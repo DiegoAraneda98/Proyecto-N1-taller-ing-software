@@ -45,8 +45,15 @@ switch ($pagina) {
     case 'admin/admin_comunas':
         $navbarType = 'type3';
         break;
-        
+
     case 'admin/admin_regiones':
+        $navbarType = 'type3';
+        break;
+
+    case 'admin/admin_color':
+        $navbarType = 'type3';
+        break;
+    case 'admin/admin_modelo':
         $navbarType = 'type3';
         break;
 
