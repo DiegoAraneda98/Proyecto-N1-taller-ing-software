@@ -125,6 +125,7 @@ if ($navbarType === 'type1') {
     <a class="dropdown-item ' . ($page === 'admin/admin_tipo_vehiculo' ? 'active' : '') . '" href="index.php?p=admin/admin_tipo_vehiculo">Tipo vehículo</a>
     <a class="dropdown-item ' . ($page === 'admin/admin_establecimientos' ? 'active' : '') . '" href="index.php?p=admin/admin_establecimientos">Establecimientos</a>
     <a class="dropdown-item ' . ($page === 'admin/casetas' ? 'active' : '') . '" href="index.php?p=admin/casetas">Casetas</a>
+    <a class="dropdown-item ' . ($page === 'admin/admin_guardia' ? 'active' : '') . '" href="index.php?p=admin/admin_guardia">Guardias</a>
     <a class="dropdown-item ' . ($page === 'admin/admin_comunas' ? 'active' : '') . '" href="index.php?p=admin/admin_comunas">Comunas</a>
     <a class="dropdown-item ' . ($page === 'admin/admin_regiones' ? 'active' : '') . '" href="index.php?p=admin/admin_regiones">Regiones</a>
     </div>
