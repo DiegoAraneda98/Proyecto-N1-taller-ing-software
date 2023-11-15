@@ -16,20 +16,4 @@ function actualizarTabla(data) {
     }
 }
 
-function actualizarTabla_ajax() {
-    $.ajax({
-        url: 'insert_historial.php',
-        type: 'GET',
-        dataType: 'json',
-        success: function (data) {
-            actualizarTabla(data);
-        },
-        error: function (error) {
-            console.log(error);
-        }
-    });
-}
 
-document.addEventListener('DOMContentLoaded', function () {
-    actualizarTabla_ajax();
-});

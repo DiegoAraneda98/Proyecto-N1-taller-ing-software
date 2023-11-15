@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Vista Guardia</title>
 
-    <link rel="stylesheet" href="css/estilo_camara.css">
+    <link rel="stylesheet" href="css/camara.css">
     <link rel="stylesheet" href="css/login_register.css">
     <link rel="stylesheet" href="css/style_inicio.css">
     <link rel="stylesheet" href="css/botones.css">
@@ -47,9 +47,11 @@
             <div class="col-12">
                 <div class="col-10 offset-1 mt-5 d-flex justify-content-between h-75">
                     <div class="col-md-4" style="padding:10px;background:#fff;border-radius: 5px;" id="divvideo">
-                        <style>
-                            <?php include 'estilo_camara.css'; ?>
-                        </style>
+                        <center>
+                            <button id="toggleCamera" onclick="toggleCamera()" class="btn custom-btn">Encender lector QR</button>
+                        </center>
+
+                        <video id="preview" width="100%" style="border-radius:10px;" class="d-none"></video>
                     </div>
 
                     <div class="col-md-8">
@@ -107,7 +109,7 @@
                             </table>
                             <tr>
                                 <div class="table-button">
-                                    <button type="button" class="btn custom-btn" data-bs-toggle="modal" data-bs-target="#exportModal">Exportar tabla</button>
+                                    <button type="button" class="btn custom-btn" data-bs-toggle="modal" data-bs-target="#exportModal" onclick="">Exportar tabla</button>
                                 </div>
                                 <div class="modal fade" id="exportModal" tabindex="-1" aria-labelledby="exportModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
@@ -138,13 +140,8 @@
         <script src="js/exportar_tabla.js"></script>
         <script src="js/actualizar_tabla.js"></script>
         <script src="js/camara_scanner.js"></script>
+        <script src="js/instascan.min.js"></script>
 
-        <!-- Script para cargar el modal.html -->
-        <script>
-            $(document).ready(function() {
-                $("#modalContainer").load("modal.html");
-            });
-        </script>
     </div>
 </body>
 
