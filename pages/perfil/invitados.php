@@ -3,14 +3,14 @@
             <p class="h2 text-secondary text-start pt-1 mt-3">Contacto</p>
             <form action="#" method="POST" id="<?php echo $id ?>">
 
-                <div class="p-mt-3 text-start">Correo:
+                <div class="p-mt-3 text-start">Rut invitado:
                     <div class="input-group mt-3 w-75">
                         <input name="contraseña_actual" id="contraseña_actual" type="text" class="form-control rounded-0 "
                             aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
 
-                <div class="mt-3 text-start">Telefono:
+                <div class="mt-3 text-start">Nombre invitado:
                     <div class="input-group mt-3 w-75">
                         <input name="nuevaContraseña" id="nuevaContraseña" type="text" class="form-control rounded-0 "
                             aria-label="Username" aria-describedby="basic-addon1">

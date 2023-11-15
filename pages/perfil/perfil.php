@@ -45,7 +45,7 @@ if ($row = mysqli_fetch_array($resultado)) {
 
                 <button class="nav-link btn btn-custom mt-3" id="v-pills-settings-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
-                    aria-selected="false">No se</button>
+                    aria-selected="false">Invitados</button>
             </div>
         </div>
 
