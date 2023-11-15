@@ -8,6 +8,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">Id usuario</th>
+                                <th scope="col">Nombre</th>
                                 <th scope="col">Patente</th>
                                 <th scope="col">Modelo</th>
                                 <th scope="col">Color</th>
@@ -21,13 +22,16 @@
                             require __DIR__ . '/../../modelo/conexion.php';
 
 
-                            $sql = "SELECT * FROM vehiculos";
+                            $sql = "SELECT v.id_vehiculo,u.id_usuario, u.nombre, v.patente, v.modelo, v.color, v.tipo_vehiculo, v.fecha_ingreso 
+                                    FROM usuarios u 
+                                    JOIN vehiculos v ON u.id_usuario = v.id_usuario;";
                             $resultado = mysqli_query($conexion, "$sql");
 
                             while ($row = mysqli_fetch_assoc($resultado)) {
 
                                 echo "<tr id='{$row["id_vehiculo"]}'>";
                                 echo "<td data-target='id_usuario'>" . $row["id_usuario"] . "</td>";
+                                 echo "<td data-target='nombre'>" . $row["nombre"] . "</td>";
                                 echo "<td data-target='patente'>" . $row["patente"] . "</td>";
                                 echo "<td data-target='modelo'>" . $row["modelo"] . "</td>";
                                 echo "<td data-target='color'>" . $row["color"] . "</td>";
