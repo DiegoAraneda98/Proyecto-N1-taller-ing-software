@@ -118,9 +118,9 @@ if ($navbarType === 'type1') {
     <a class="nav-link dropdown-toggle" href="#" id="mantenedoresDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Mantenedores
   </a>
-  <div class="dropdown-menu" aria-labelledby="mantenedoresDropdown">
-    <a class="dropdown-item ' . ($page === 'admin/admin_vehiculos' ? 'active' : '') . '" href="index.php?p=admin/admin_vehiculos">Vehículos</a>
+  <div class="dropdown-menu drop" aria-labelledby="mantenedoresDropdown">
     <a class="dropdown-item ' . ($page === 'admin/admin' ? 'active' : '') . '" href="index.php?p=admin/admin">Usuarios</a>
+    <a class="dropdown-item ' . ($page === 'admin/admin_vehiculos' ? 'active' : '') . '" href="index.php?p=admin/admin_vehiculos">Vehículos</a>
     <a class="dropdown-item ' . ($page === 'admin/admin_tipo_usuario' ? 'active' : '') . '" href="index.php?p=admin/admin_tipo_usuario">Tipo usuario</a>
     <a class="dropdown-item ' . ($page === 'admin/admin_tipo_vehiculo' ? 'active' : '') . '" href="index.php?p=admin/admin_tipo_vehiculo">Tipo vehículo</a>
     <a class="dropdown-item ' . ($page === 'admin/admin_establecimientos' ? 'active' : '') . '" href="index.php?p=admin/admin_establecimientos">Establecimientos</a>
