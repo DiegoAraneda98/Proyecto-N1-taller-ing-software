@@ -1,5 +1,3 @@
-
-
 <div class="container-fluid">
     <div class="container-fluid">
         <div class="row">
@@ -41,9 +39,8 @@
                                 echo "<i class='bi bi-pencil-fill'></i>";
                                 echo "</a>";
 
-
-                                echo "<a href='index.php?p=/vehiculos/actions/eliminar&id_enviado=" . $row["id_vehiculo"] . "'>";
-                                echo "<button class = 'btn btn-sm ' data-toggle='modal' data-target='#eliminar' ><i class='bi bi-trash-fill'></i></button>";
+                                echo "<a href='#' class='btn btn-sm' data-role='eliminar' data-id='" . $row['id_vehiculo'] . "'>";
+                                echo "<i class='bi bi-trash-fill'></i>";
                                 echo "</a>";
 
 
@@ -68,6 +65,7 @@
 
                 <?php include 'editarmodal.php'; ?>
                 <?php include 'nuevomodal.php'; ?>
+                <?php include 'pages/admin/eliminarmodal.php'; ?>
                 <?php include 'qrModal.php'; ?>
 
 
@@ -84,5 +82,6 @@
 
 </div>
 <script src="js/editar_vehiculos.js"></script>
+<script src="js/eliminar_vehiculo.js"></script>
 <script src="js/crear_qr.js"></script>
-<script src="js/verifiaciones.js"></script>
+<script src="js/verificaciones.js"></script>
