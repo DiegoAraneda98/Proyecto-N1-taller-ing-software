@@ -1,3 +1,6 @@
+<?php
+$sqlcolores = "SELECT * FROM color";
+    $colores = $conexion->query($sqlcolores); ?>
 <div class="modal fade" id="editarmodalVehiculos" tabindex="-1" aria-labelledby="editarmodalVehiculosLabel" aria-hidden="true">
  
     <div class="modal-dialog modal-lg">
@@ -21,9 +24,16 @@
 
                     <div class="mb-3">
                         <label for="color" class="form-label">Color:</label>
-                        <input type="text" name="color" id="color" class="form-control">
+                        <div class="input-group">
+                            <select class="form-select" name="color" id="color">
+                                <option disabled selected>Seleccione el color</option>
+                                <?php while ($row_color = $colores->fetch_assoc()) { ?>
+                                    <option value="<?= $row_color["color"] ?>"> <?= $row_color["color"]; ?> </option>
+                                <?php } ?>
+                            </select>
+                        </div>
                     </div>
-
+                    
                     <div class="mb-3">
                         <label for="tipo_vehiculo" class="form-label">Tipo de vehículo :</label>
                         <div class="input-group ">

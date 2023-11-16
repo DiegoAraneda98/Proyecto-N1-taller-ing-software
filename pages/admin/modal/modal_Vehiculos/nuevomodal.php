@@ -1,7 +1,10 @@
 <div class="modal fade" id="nuevomodalVehiculos" tabindex="-1" aria-labelledby="nuevomodalVehiculosLabel"
     aria-hidden="true">
     <?php $sqlVehiculo = "SELECT * FROM tipo_vehiculo";
-    $tipo_vehiculo = $conexion->query($sqlVehiculo); ?>
+    $tipo_vehiculo = $conexion->query($sqlVehiculo); 
+    
+    $sqlcolores = "SELECT * FROM color";
+    $colores = $conexion->query($sqlcolores); ?>
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -23,7 +26,14 @@
 
                     <div class="mb-3">
                         <label for="color" class="form-label">Color:</label>
-                        <input type="text" name="color" id="color" class="form-control">
+                        <div class="input-group">
+                            <select class="form-select" name="color" id="color">
+                                <option disabled selected>Seleccione el color</option>
+                                <?php while ($row_color = $colores->fetch_assoc()) { ?>
+                                    <option value="<?= $row_color["color"] ?>"> <?= $row_color["color"]; ?> </option>
+                                <?php } ?>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="mb-3">
