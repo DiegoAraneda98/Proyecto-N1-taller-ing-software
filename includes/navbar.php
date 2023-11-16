@@ -128,6 +128,8 @@ if ($navbarType === 'type1') {
     <a class="dropdown-item ' . ($page === 'admin/admin_guardia' ? 'active' : '') . '" href="index.php?p=admin/admin_guardia">Guardias</a>
     <a class="dropdown-item ' . ($page === 'admin/admin_comunas' ? 'active' : '') . '" href="index.php?p=admin/admin_comunas">Comunas</a>
     <a class="dropdown-item ' . ($page === 'admin/admin_regiones' ? 'active' : '') . '" href="index.php?p=admin/admin_regiones">Regiones</a>
+    <a class="dropdown-item ' . ($page === 'admin/admin_color' ? 'active' : '') . '" href="index.php?p=admin/admin_color">Colores</a>
+    <a class="dropdown-item ' . ($page === 'admin/admin_modelo' ? 'active' : '') . '" href="index.php?p=admin/admin_modelo">Modelos</a>
     </div>
 </li>';
   }

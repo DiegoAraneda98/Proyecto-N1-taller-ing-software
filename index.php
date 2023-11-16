@@ -58,6 +58,14 @@ switch ($pagina) {
         $navbarType = 'type3';
         break;
 
+    case 'admin/admin_color':
+        $navbarType = 'type3';
+        break;
+    case 'admin/admin_modelo':
+        $navbarType = 'type3';
+        break;
+
+
     case 'guardia/vista_guardia':
         $navbarType = 'type5';
         break;
