@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-11-2023 a las 05:31:31
+-- Tiempo de generación: 16-11-2023 a las 03:41:09
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -32,6 +32,14 @@ CREATE TABLE `casetas` (
   `nombre` varchar(30) NOT NULL,
   `direccion` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `casetas`
+--
+
+INSERT INTO `casetas` (`id_caseta`, `nombre`, `direccion`) VALUES
+(2, 'caseta1', 'direccion 1 '),
+(3, 'caseta 3', 'direccion 3 ');
 
 -- --------------------------------------------------------
 
@@ -475,9 +483,16 @@ INSERT INTO `establecimiento` (`cod_establecimiento`, `nombre_establecimiento`, 
 
 CREATE TABLE `guardias` (
   `id_guardia` int(11) NOT NULL,
-  `nombre` int(40) NOT NULL,
+  `nombre` varchar(40) NOT NULL,
   `id_caseta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `guardias`
+--
+
+INSERT INTO `guardias` (`id_guardia`, `nombre`, `id_caseta`) VALUES
+(1, 'dsds', 2);
 
 -- --------------------------------------------------------
 
@@ -488,11 +503,10 @@ CREATE TABLE `guardias` (
 CREATE TABLE `historial` (
   `id_historial` int(11) NOT NULL,
   `patente` varchar(7) NOT NULL,
-  `fecha` date NOT NULL,
-  `motivo_ingreso` text NOT NULL,
+  `correo` varchar(50) NOT NULL,
+  `nombre` varchar(30) NOT NULL,
   `run` int(10) NOT NULL,
-  `horario_ingreso` time NOT NULL,
-  `horario_salida` time NOT NULL,
+  `hora_ingreso` time NOT NULL,
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -508,6 +522,43 @@ CREATE TABLE `invitados` (
   `nombre` varchar(30) NOT NULL,
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `modelo`
+--
+
+CREATE TABLE `modelo` (
+  `id_modelo` int(11) NOT NULL,
+  `modelo` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `modelo`
+--
+
+INSERT INTO `modelo` (`id_modelo`, `modelo`) VALUES
+(1, 'Toyota'),
+(2, 'Ford'),
+(3, 'Honda'),
+(4, 'Chevrolet'),
+(5, 'Volkswagen'),
+(6, 'Nissan'),
+(7, 'BMW'),
+(8, 'Mercedes-Benz'),
+(9, 'Audi'),
+(10, 'Hyundai'),
+(11, 'Kia'),
+(12, 'Subaru'),
+(13, 'Mazda'),
+(14, 'Fiat'),
+(15, 'Peugeot'),
+(16, 'Tesla'),
+(17, 'Volvo'),
+(18, 'Land Rover'),
+(19, 'Jeep'),
+(20, 'Porsche');
 
 -- --------------------------------------------------------
 
@@ -646,8 +697,7 @@ CREATE TABLE `tipo_usuario` (
 
 INSERT INTO `tipo_usuario` (`id_tipoUsuario`, `nombre`) VALUES
 (1, 'Institucional'),
-(2, 'Invitado'),
-(3, 'Guardia');
+(2, 'Invitado');
 
 -- --------------------------------------------------------
 
@@ -665,7 +715,8 @@ CREATE TABLE `tipo_vehiculo` (
 --
 
 INSERT INTO `tipo_vehiculo` (`id_tipoVehiculo`, `nombre`) VALUES
-(2, 'Motocicleta');
+(2, 'Motocicleta'),
+(3, 'Auto');
 
 -- --------------------------------------------------------
 
@@ -718,7 +769,8 @@ CREATE TABLE `vehiculos` (
 --
 
 INSERT INTO `vehiculos` (`id_vehiculo`, `patente`, `modelo`, `color`, `tipo_vehiculo`, `fecha_ingreso`, `id_usuario`) VALUES
-(27, 'fdsd22', 'fsd', 'fs', 'Motocicleta', '2023-11-13', 4);
+(33, 'aabb22', 'kia 4', 'Rojo', 'Motocicleta', '2023-11-15', 4),
+(34, 'aass33', 'Chevrolet', 'Bronce', 'Auto', '2023-11-15', 4);
 
 --
 -- Índices para tablas volcadas
@@ -778,6 +830,12 @@ ALTER TABLE `invitados`
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
+-- Indices de la tabla `modelo`
+--
+ALTER TABLE `modelo`
+  ADD PRIMARY KEY (`id_modelo`);
+
+--
 -- Indices de la tabla `pertenece`
 --
 ALTER TABLE `pertenece`
@@ -829,13 +887,13 @@ ALTER TABLE `vehiculos`
 -- AUTO_INCREMENT de la tabla `casetas`
 --
 ALTER TABLE `casetas`
-  MODIFY `id_caseta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_caseta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `color`
 --
 ALTER TABLE `color`
-  MODIFY `id_color` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_color` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `comunas`
@@ -859,19 +917,25 @@ ALTER TABLE `establecimiento`
 -- AUTO_INCREMENT de la tabla `guardias`
 --
 ALTER TABLE `guardias`
-  MODIFY `id_guardia` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_guardia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `historial`
 --
 ALTER TABLE `historial`
-  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `invitados`
 --
 ALTER TABLE `invitados`
   MODIFY `id_invitado` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `modelo`
+--
+ALTER TABLE `modelo`
+  MODIFY `id_modelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `provincias`
@@ -895,7 +959,7 @@ ALTER TABLE `tipo_usuario`
 -- AUTO_INCREMENT de la tabla `tipo_vehiculo`
 --
 ALTER TABLE `tipo_vehiculo`
-  MODIFY `id_tipoVehiculo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_tipoVehiculo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -907,7 +971,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `vehiculos`
 --
 ALTER TABLE `vehiculos`
-  MODIFY `id_vehiculo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_vehiculo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- Restricciones para tablas volcadas
@@ -918,12 +982,6 @@ ALTER TABLE `vehiculos`
 --
 ALTER TABLE `guardias`
   ADD CONSTRAINT `guardias_ibfk_1` FOREIGN KEY (`id_caseta`) REFERENCES `casetas` (`id_caseta`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `historial`
---
-ALTER TABLE `historial`
-  ADD CONSTRAINT `historial_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `invitados`
