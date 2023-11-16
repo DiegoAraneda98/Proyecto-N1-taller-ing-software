@@ -203,7 +203,7 @@ if ($navbarType === 'type1') {
     header("Location: index.php?p=auth/login");
   }
 
-  echo ' <div class="container-fluid"> <!-- admin guardia-->
+  echo ' <div class="container-fluid fondo-perfil"> <!-- admin guardia-->
   <div class="row bg-light">
       <div class="col-10 offset-1">
           <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -217,14 +217,12 @@ if ($navbarType === 'type1') {
                   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                       <ul class="navbar-nav nav-underline ms-auto mb-2 mb-lg-0">
                       <li class="nav-item"> 
-                      <a class="nav-link hidden ' . ($page === 'inicio' ? 'active' : '') . '" href="index.php?p=inicio">¿Quiénes somos?</a> 
+                      <a class="nav-link hidden ' . ($page === 'guardia/vista_guardia' ? 'active' : '') . '" href="index.php?p=guardia/vista_guardia">Admin</a> 
                     </li> 
                     <li class="nav-item"> 
-                      <a class="nav-link ' . ($page === 'vehiculos/mis_vehiculos' ? 'active' : '') . '" href="index.php?p=vehiculos/mis_vehiculos">Mis vehículos</a> 
+                    <a class="nav-link ' . ($page === 'auth/actions/controlador_logout' ? 'active' : '') . '" href="index.php?p=auth/actions/controlador_logout">Cerrar sesión</a>
                     </li> 
-                    <li class="nav-item"> 
-                      <a class="nav-link ' . ($page === 'perfil/perfil' ? 'active' : '') . '" href="index.php?p=perfil/perfil">Contacto</a> 
-                    </li> 
+                   
                   </ul> 
                       </ul>
                   </div>

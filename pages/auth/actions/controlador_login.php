@@ -22,7 +22,7 @@ if (isset($_POST["rut"], $_POST["contraseña"]) && !empty($_POST["rut"]) && !emp
 
         // Redireccionar según el tipo de usuario
         if ($_SESSION['tipo_usuario'] == 'Guardia' or $_SESSION['tipo_usuario'] == ' Guardia') {
-            header("Location: index.php?p=Guardia/vista_guardia");
+            header("Location: index.php?p=guardia/vista_guardia");
         } elseif ($_SESSION['tipo_usuario'] == 'Institucional' or $_SESSION['tipo_usuario'] == ' Institucional') {
             header("Location: index.php?p=inicio");
         } elseif ($_SESSION['tipo_usuario'] == 'admin' or $_SESSION['tipo_usuario'] == ' admin') {
