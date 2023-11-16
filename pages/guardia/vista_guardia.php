@@ -197,18 +197,19 @@
 
                                             },
                                             error: function(error) {
-                                                Swal.fire({
-                                                    title: "ACCESO DENEGADO",
-                                                    text: "Por favor validar sus datos. ",
-                                                    icon: "error",
-                                                    timer: 1500
-                                                });
+                                             
                                             }
                                         });
                                     });
 
                                 } else {
-                                    resultadoElement.innerHTML = 'Formato de código QR no válido.';
+                                    Swal.fire({
+                                                    title: "ACCESO DENEGADO",
+                                                    text: "Por favor validar sus datos. ",
+                                                    icon: "error",
+                                                    timer: 1500
+                                                });
+
                                 }
 
                             });
