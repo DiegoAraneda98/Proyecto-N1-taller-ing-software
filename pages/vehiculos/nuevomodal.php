@@ -3,6 +3,9 @@
  
  $sqlcolores = "SELECT * FROM color";
  $colores = $conexion->query($sqlcolores); 
+
+ $sqlmodelo = "SELECT * FROM modelo";
+ $modelo = $conexion->query($sqlmodelo); 
  ?>
                     
 <div class="modal fade" id="nuevomodal" tabindex="-1" aria-labelledby="nuevomodalLabel" aria-hidden="true">
@@ -21,8 +24,15 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="modelo" class="form-label">Modelo:</label>
-                        <input type="text" name="modelo" id="modelo" class="form-control" required>
+                        <label for="modelo" class="form-label">Color:</label>
+                        <div class="input-group">
+                            <select class="form-select" name="modelo" id="modelo">
+                                <option disabled selected>Seleccione el modelo</option>
+                                <?php while ($row_modelo = $modelo->fetch_assoc()) { ?>
+                                    <option value="<?= $row_modelo["modelo"] ?>"> <?= $row_modelo["modelo"]; ?> </option>
+                                <?php } ?>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="mb-3">
