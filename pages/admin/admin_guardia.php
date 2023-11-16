@@ -63,5 +63,5 @@
         </div>
         
     </div> 
-    <script src="js/admin_editar_tipo_usuario.js"></script>                            
-    <script src="js/admin_eliminar_tipo_usuario.js"></script>   
+    <script src="js/admin_editar_guardia.js"></script>                            
+    <script src="js/admin_eliminar_guardia.js"></script>   

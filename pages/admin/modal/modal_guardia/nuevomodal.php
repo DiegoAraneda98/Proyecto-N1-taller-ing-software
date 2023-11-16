@@ -13,7 +13,7 @@
 
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre:</label>
-                        <input type="text" name="nombre_guardia" id="nombre_guardia" class="form-control" onkeydown=filtroLetras() >
+                        <input type="text" name="nombre_guardia" id="nombre_guardia" class="form-control"  >
                     </div>
 
                     
