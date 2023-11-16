@@ -1,51 +1,46 @@
 <?php
 session_start();
+date_default_timezone_set("America/Santiago");
 $server = "localhost";
 $username = "root";
 $password = "";
 $dbname = "safedrive";
 
-$conn = new mysqli($server, $username, $password, $dbname);
+$conexion = new mysqli($server, $username, $password, $dbname);
 
-if ($conn->connect_error) {
-	die("Error de conexión: " . $conn->connect_error);
+if ($conexion->connect_error) {
+	die("Error de conexión: " . $conexion->connect_error);
 }
 
-if (isset($_POST['id_usuario']) && isset($_POST['patente'])) {
-
-	$idUsuario = $_POST['id_usuario'];
+if (isset($_POST['id']) && isset($_POST['patente'])) {
+	$idUsuario = $_POST['id'];
 	$patente = $_POST['patente'];
 
 	// Consulta vehiculos (coincidencia usuario/patente)
 	$consulta = "SELECT * FROM vehiculos WHERE id_usuario = '$idUsuario' AND patente = '$patente'";
-	$resultado = $conn->query($consulta);
+	$resultado = $conexion->query($consulta);
 
 	if ($resultado->num_rows > 0) {
 
 		// Obtenemos datos del usuario
 		$consultaUsuarios = "SELECT run, nombre, correo FROM usuarios WHERE id_usuario = '$idUsuario'";
-        $resultadoUsuarios = $conexion->query($consultaUsuarios);
+		$resultadoUsuarios = $conexion->query($consultaUsuarios);
 
-        if ($resultadoUsuarios->num_rows > 0) {
-            $filaUsuario = $resultadoUsuarios->fetch_assoc();
-            $run = $filaUsuario['run'];
-            $nombre = $filaUsuario['nombre'];
-            $correo = $filaUsuario['correo'];
+		$filaUsuario = $resultadoUsuarios->fetch_assoc();
+		$run = $filaUsuario['run'];
+		$nombre = $filaUsuario['nombre'];
+		$correo = $filaUsuario['correo'];
 
-            // Insertar datos en la tabla "historial"
-            $horaActual = date("H:i:s");
-            $consultaHistorial = "INSERT INTO historial (run, nombre, correo, patente, hora) VALUES ('$run', '$nombre', '$correo', '$patente', '$horaActual')";
-            
+		// Insertar datos en la tabla "historial"
+		$horaActual = date("H:i:s");
+		$consultaHistorial = "INSERT INTO historial (run, nombre, correo, patente, hora_ingreso, id_usuario) VALUES ('$run', '$nombre', '$correo', '$patente', '$horaActual', '$')";
+		$conexion->query($consultaHistorial);
 	} else {
-
-		echo "No se encontraron datos en vehiculos para la patente $patente y el id_usuario $idUsuario.";
+		http_response_code(400);
 	}
-} else {
-	// Si no se recibieron datos del código QR
-	echo "No se recibieron datos del código QR.";
-}
 }
 
-header("location: vista_guardia.php");
-$conn->close();
+header("location: ../vista_guardia.php");
+$conexion->close();
+
 ?>

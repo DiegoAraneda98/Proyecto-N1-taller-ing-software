@@ -7,28 +7,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Vista Guardia</title>
 
-    <link rel="stylesheet" href="../css/login_register.css">
-    <link rel="stylesheet" href="../css/style_inicio.css">
-    <link rel="stylesheet" href="../css/botones.css">
+    <link rel="stylesheet" href="css/login_register.css">
+    <link rel="stylesheet" href="css/style_inicio.css">
+    <link rel="stylesheet" href="css/botones.css">
 
 
     <!-- j-query -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
-
-    
     <!-- instacam -->
     <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
 
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
      -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
+
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -111,12 +111,12 @@
                                         $password = "";
                                         $dbname = "safedrive";
 
-                                        $conn = new mysqli($server, $username, $password, $dbname);
-                                        if ($conn->connect_error) {
-                                            die("Connection failed" . $conn->connect_error);
+                                        $conexion = new mysqli($server, $username, $password, $dbname);
+                                        if ($conexion->connect_error) {
+                                            die("Connection failed" . $conexion->connect_error);
                                         }
                                         $sql = "SELECT * FROM historial";
-                                        $query = $conn->query($sql);
+                                        $query = $conexion->query($sql);
                                         while ($row = $query->fetch_assoc()) {
                                         ?>
                                             <tr>
@@ -133,7 +133,7 @@
                                                     <?php echo $row['patente']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $row['hora']; ?>
+                                                    <?php echo $row['hora_ingreso']; ?>
                                                 </td>
                                             </tr>
                                         <?php
@@ -194,42 +194,6 @@
 
 
 
-        <script>
-            function actualizarTabla(data) {
-                // Limpiar el cuerpo de la tabla
-                document.getElementById('historialBody').innerHTML = "";
-
-                // Insertar nuevos datos
-                for (var i = 0; i < data.length; i++) {
-                    var row = data[i];
-                    var newRow = "<tr>";
-                    newRow += "<td>" + row.run + "</td>";
-                    newRow += "<td>" + row.nombre + "</td>";
-                    newRow += "<td>" + row.correo + "</td>";
-                    newRow += "<td>" + row.patente + "</td>";
-                    newRow += "<td>" + row.horario_ingreso + "</td>";
-                    newRow += "</tr>";
-                    document.getElementById('historialBody').innerHTML += newRow;
-                }
-            }
-        </script>
-
-
-        <script>
-            function actualizarTabla_ajax() {
-                $.ajax({
-                    url: 'insert_historial.php',
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function(data) {
-                        actualizarTabla(data);
-                    },
-                    error: function(error) {
-                        console.log(error);
-                    }
-                });
-            }
-        </script>
 
         <!-- Cámara/Scanner -->
         <script>
@@ -259,20 +223,42 @@
                             document.getElementById('toggleCamera').textContent = 'Apagar lector QR';
 
                             scanner.addListener('scan', function(contenidoQR) {
-                                const datosSeparados = contenidoQR.split(' ');
+                                const datosSeparados = contenidoQR.split(' '); // separa los datos
 
-
-                                console.log(datosSeparados)
                                 // Verificar si se obtuvieron dos partes
                                 if (datosSeparados.length === 2) {
                                     const idUsuario = datosSeparados[0];
                                     const patente = datosSeparados[1];
 
-                                    console.log(idUsuario)
-                                    
-                                    // Función para realizar la solicitud AJAX
-                                    
+                                    $(document).ready(function() {
+                                        $.ajax({
+                                            url: 'actions/insert_historial.php',
+                                            type: 'POST',
+                                            data: {
+                                                id: idUsuario,
+                                                patente: patente
+                                            },
+                                            success: function(response) {
+                                                Swal.fire({
+                                                    title: "ACCESO CONFIRMADO",
+                                                    text: "Tiene permitido el ingreso. ",
+                                                    icon: "success"
+                                                });
+                                                setTimeout(function() {
+                                                    window.location.href = 'vista_guardia.php';
+                                                }, 3000);
 
+                                            },
+                                            error: function(error) {
+                                                Swal.fire({
+                                                    title: "ACCESO DENEGADO",
+                                                    text: "Por favor validar sus datos. ",
+                                                    icon: "error",
+                                                    timer: 1500
+                                                });
+                                            }
+                                        });
+                                    });
 
                                 } else {
                                     resultadoElement.innerHTML = 'Formato de código QR no válido.';
