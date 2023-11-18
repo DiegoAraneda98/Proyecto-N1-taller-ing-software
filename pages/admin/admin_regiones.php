@@ -6,7 +6,7 @@
                     <div class="h2 p-3 text-secondary ">Regiones</div>
                     <hr class="border border-danger border-1 opacity-50">
                     <div class="table-responsive shadow  overflow-y-auto " style="max-height: 400px;">
-                        <table class="table table-hover text-center">
+                        <table class="table table-hover text-center" id="miTabla">
                             
                             <thead>
                                 <tr>
@@ -14,6 +14,7 @@
                                     <th scope="col">Región</th>
                                     <th scope="col">Abreviatura</th>
                                     <th scope="col">Capital</th>
+                                    <th scope="col">Opciones</th>
                                 </tr>
                                 </tr>
                             </thead>
@@ -71,3 +72,4 @@
     </div> 
     <script src="js/admin_editar_region.js"></script>                            
     <script src="js/admin_eliminar_usuarios.js"></script> 
+    <script src="js/data_table.js"></script> 

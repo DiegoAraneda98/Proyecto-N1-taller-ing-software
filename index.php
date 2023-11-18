@@ -19,10 +19,14 @@ switch ($pagina) {
         break;
 
     case 'perfil/perfil':
-        $navbarType = 'type4';
+        $navbarType = 'type3';
         break;
 
     case 'admin/admin':
+        $navbarType = 'type3';
+        break;
+
+    case 'admin/casetas':
         $navbarType = 'type3';
         break;
 
@@ -50,12 +54,17 @@ switch ($pagina) {
         $navbarType = 'type3';
         break;
 
+    case 'admin/admin_guardia':
+        $navbarType = 'type3';
+        break;
+
     case 'admin/admin_color':
         $navbarType = 'type3';
         break;
     case 'admin/admin_modelo':
         $navbarType = 'type3';
         break;
+
 
     case 'guardia/vista_guardia':
         $navbarType = 'type5';

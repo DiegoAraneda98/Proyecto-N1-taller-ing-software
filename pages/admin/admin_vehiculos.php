@@ -3,13 +3,12 @@
         <div class="row">
             <div class="col-10 bg-white offset-1 mt-5">
                 <div class="h2 p-3 text-secondary ">Vehículos</div>
-                <hr class="border border-danger border-1 opacity-50">
                 <div class="table-responsive shadow  overflow-y-auto " style="max-height: 400px;">
-                    <table class="table table-hover text-center">
+                    <table class="table table-hover text-center" id="miTabla">
                         <thead>
                             <tr>
                                 <th scope="col">Id usuario</th>
-                                <th scope="col">Nombre</th>
+                                <th scope="col">Propietario</th>
                                 <th scope="col">Patente</th>
                                 <th scope="col">Modelo</th>
                                 <th scope="col">Color</th>
@@ -32,7 +31,7 @@
 
                                 echo "<tr id='{$row["id_vehiculo"]}'>";
                                 echo "<td data-target='id_usuario'>" . $row["id_usuario"] . "</td>";
-                                echo "<td data-target='nombre'>" . $row["nombre"] . "</td>";
+                                 echo "<td data-target='nombre'>" . $row["nombre"] . "</td>";
                                 echo "<td data-target='patente'>" . $row["patente"] . "</td>";
                                 echo "<td data-target='modelo'>" . $row["modelo"] . "</td>";
                                 echo "<td data-target='color'>" . $row["color"] . "</td>";
@@ -78,3 +77,4 @@
 </div>
 <script src="js/admin_editar_vehiculos.js"></script>
 <script src="js/admin_eliminar_vehiculos.js"></script>    
+<script src="js/data_table.js"></script>    

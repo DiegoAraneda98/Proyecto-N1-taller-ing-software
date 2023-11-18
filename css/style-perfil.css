@@ -64,17 +64,24 @@ ul>li .ml {
 }
 
 .bg_edit{
-    background-color: #f1e6e8;
+    background-color: #ffffff;
 }
 
 .full-height-row {
     height: 100vh;
+  }
+
+
+ .margin{
+    margin-left: 20px !important;
+    margin-bottom: 20px !important;
+ }
+
+
+ .drop>a.active,
+.drop>a:active,
+.drop>a:focus {
+    background-color: #d6092c!important; /* Cambia esto al color que desees para el fondo */
+   color:white!important;
+   border-radius: 0% !important;
 }
-
-
-
-
-
-
-
- 
