@@ -1,0 +1,94 @@
+.fondo-perfil_perfil {
+    background-image: url("../img/fondo_perfil_admin_vehiculos.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90.4vh;
+}
+
+.logo {
+    width: 150px !important;
+}
+
+ul>li {
+    margin-left: 20px;
+}
+
+ul>li .ml {
+    margin-right: 20px;
+}
+
+.rojo {
+    background-color: #d6092c;
+}
+
+.imagen-perfil {
+    width: 70px;
+    border-radius: 50%;
+}
+
+.btn-1 {
+    margin-right: 20px;
+}
+
+
+.mi_perfil{
+    padding-left: 11px !important;
+    padding-top: 11px;
+}
+
+
+.altura{
+    height: 88% !important;
+}
+
+.odometer{
+    font-size: 4em;
+}
+
+.btn-custom{
+    color: white !important;
+}
+
+/* Estilo personalizado para los botones seleccionados */
+.btn-custom.active,
+.btn-custom:active,
+.btn-custom:focus {
+    background-color: rgb(255, 255, 255) !important; /* Cambia esto al color que desees para el fondo */
+   color: gray !important;
+   border-radius: 0% !important;
+}
+
+/* Estilo personalizado para los botones al pasar el mouse */
+.btn-custom:hover {
+    
+}
+
+.bg_edit{
+    background-color: #ffffff;
+}
+
+.full-height-row {
+    height: 100vh;
+  }
+
+
+ .margin{
+    margin-left: 20px !important;
+    margin-bottom: 20px !important;
+ }
+
+
+ .drop>a.active,
+.drop>a:active,
+.drop>a:focus {
+    background-color: #d6092c!important; /* Cambia esto al color que desees para el fondo */
+   color:white!important;
+   border-radius: 0% !important;
+}
+
+#miTabla tbody td:eq(0) {
+    text-align: left !important;
+}
+#miTabla tbody td {
+    text-align: center !important;
+}
