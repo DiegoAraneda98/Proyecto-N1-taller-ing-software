@@ -33,7 +33,7 @@ if (isset($_POST["rut"], $_POST["contraseña"]) && !empty($_POST["rut"]) && !emp
     }
 }
 
-
+?>
 
 
 

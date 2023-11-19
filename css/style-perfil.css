@@ -85,3 +85,10 @@ ul>li .ml {
    color:white!important;
    border-radius: 0% !important;
 }
+
+#miTabla tbody td:eq(0) {
+    text-align: left !important;
+}
+#miTabla tbody td {
+    text-align: center !important;
+}
