@@ -5,6 +5,13 @@ $pagina = isset($_GET['p']) ? strtolower($_GET['p']) : 'home';
 $navbarType = 'default';
 $footerType = 'default';
 
+$currentUrl = $_SERVER['REQUEST_URI'];
+
+// Verifica si la URL contiene 'admin'
+if (strpos($currentUrl, 'admin') !== false) {
+    $navbarType = 'type3';
+}
+
 switch ($pagina) {
     case 'inicio':
         $navbarType = 'type1';
@@ -19,49 +26,6 @@ switch ($pagina) {
         break;
 
     case 'perfil/perfil':
-        $navbarType = 'type3';
-        break;
-
-    case 'admin/admin':
-        $navbarType = 'type3';
-        break;
-
-    case 'admin/casetas':
-        $navbarType = 'type3';
-        break;
-
-    case 'admin/admin_vehiculos':
-        $navbarType = 'type3';
-        break;
-
-    case 'admin/admin_tipo_usuario':
-        $navbarType = 'type3';
-        break;
-
-    case 'admin/admin_tipo_vehiculo':
-        $navbarType = 'type3';
-        break;
-
-    case 'admin/admin_establecimientos':
-        $navbarType = 'type3';
-        break;
-
-    case 'admin/admin_comunas':
-        $navbarType = 'type3';
-        break;
-
-    case 'admin/admin_regiones':
-        $navbarType = 'type3';
-        break;
-
-    case 'admin/admin_guardia':
-        $navbarType = 'type3';
-        break;
-
-    case 'admin/admin_color':
-        $navbarType = 'type3';
-        break;
-    case 'admin/admin_modelo':
         $navbarType = 'type3';
         break;
 
