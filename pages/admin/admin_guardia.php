@@ -3,9 +3,9 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-10 bg-white offset-1 mt-5">
-                    <div class="h2 p-3 text-secondary ">Guardias</div>
+                    <div class="h2 p-3 text-secondary ">Tipos de usuarios</div>
                     <div class="table-responsive shadow  overflow-y-auto " style="max-height: 400px;">
-                        <table class="table table-hover text-center" id="miTabla">
+                        <table class="table table-hover text-center">
                             
                             <thead>
                                 <tr>
@@ -65,4 +65,3 @@
     </div> 
     <script src="js/admin_editar_guardia.js"></script>                            
     <script src="js/admin_eliminar_guardia.js"></script>   
-    <script src="js/data_table.js"></script>   
