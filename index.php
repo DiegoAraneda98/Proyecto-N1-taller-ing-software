@@ -43,9 +43,8 @@
             <div class="row">
                 <div class="col-10 bg-white offset-1 mt-5">
                     <div class="h2 p-3 text-secondary">Encuesta</div>
-                    
+                    <form action="añadir_contacto.php" method="post">
                         <div class="row">
-                        <form action="añadir_contacto.php" method="post">
                             <div class="col-6">
                                 <input type="text" name="inombre" class="form-control m-3" placeholder="Nombre">
                             
@@ -91,9 +90,8 @@
                                 <button type="reset" class="btn btn-success m-3">Resetear</button>
                                 <button disabled="disabled" class="btn btn-dark m-3">Generar</button>
                             </div>
-                        </form>
                         </div>
-                    
+                    </form>
                 </div>
             </div>
         </div>
