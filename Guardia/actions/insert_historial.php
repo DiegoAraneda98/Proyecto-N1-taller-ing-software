@@ -39,8 +39,8 @@ if (isset($_POST['id']) && isset($_POST['patente'])) {
 		http_response_code(400);
 	}
 }
-
-header("location: ../vista_guardia.php");
+/* 
+header("location: index.php?p=guardia/vista_guardia"); */
 $conexion->close();
 
 ?>
