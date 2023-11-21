@@ -20,7 +20,7 @@
                     <div class="mb-3">
                         <label for="caseta" class="form-label">Casetas:</label>
                         <div class="input-group ">
-                            <select class="form-select " id="caseta" name="caseta">
+                            <select class="form-select " id="id_caseta" name="id_caseta">
                                 <option disabled selected>Seleccione la caseta</option>
                                 <?php while ($row_casetas = $casetas->fetch_assoc()) { ?>
                                     <option value="<?= $row_casetas["id_caseta"] ?>">

@@ -10,9 +10,9 @@
                             
                             <thead>
                                 <tr>
-                                    <th scope="col">Id comuna</th>
+                                    <th scope="col">ID comuna</th>
                                     <th scope="col">Comuna</th>
-                                    <th scope="col">Id provincia</th>
+                                    <th scope="col">ID provincia</th>
                                     <th scope="col">Opciones</th>
                                 </tr>
                                 </tr>

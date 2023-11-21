@@ -4,12 +4,13 @@
             <div class="row">
                 <div class="col-10 bg-white offset-1 mt-5">
                     <div class="h2 p-3 text-secondary ">Tipos de usuarios</div>
-                    <div class="table-responsive shadow  overflow-y-auto " style="max-height: 400px;">
+                    <hr class="border border-danger border-1 opacity-50">
+                    <div class="table-responsive shadow ">
                         <table class="table table-hover text-center" id="miTabla">
                             
                             <thead>
                                 <tr>
-                                    <th scope="col">Id tipo usuario</th>
+                                    <th scope="col">ID tipo usuario</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Opciones</th>
                                 </tr>

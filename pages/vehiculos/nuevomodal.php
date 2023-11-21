@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="modelo" class="form-label">Color:</label>
+                        <label for="modelo" class="form-label">Modelo:</label>
                         <div class="input-group">
                             <select class="form-select" name="modelo" id="modelo">
                                 <option disabled selected>Seleccione el modelo</option>

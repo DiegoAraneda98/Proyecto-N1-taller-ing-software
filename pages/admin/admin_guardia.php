@@ -4,12 +4,13 @@
             <div class="row">
                 <div class="col-10 bg-white offset-1 mt-5">
                     <div class="h2 p-3 text-secondary ">Guardias</div>
-                    <div class="table-responsive shadow  overflow-y-auto " style="max-height: 400px;">
+                    <hr class="border border-danger border-1 opacity-50">
+                    <div class="table-responsive shadow">
                         <table class="table table-hover text-center" id="miTabla">
                             
                             <thead>
                                 <tr>
-                                    <th scope="col">Id guardia</th>
+                                    <th scope="col">ID guardia</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Id caseta</th>
                                     <th scope="col">Opciones</th>
@@ -65,4 +66,3 @@
     </div> 
     <script src="js/admin_editar_guardia.js"></script>                            
     <script src="js/admin_eliminar_guardia.js"></script>   
-    <script src="js/data_table.js"></script>   
