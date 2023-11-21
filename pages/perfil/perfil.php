@@ -68,7 +68,7 @@ if ($row = mysqli_fetch_array($resultado)) {
                 </div>
                 <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"
                     tabindex="0">
-                    extra
+                    <?php include('invitados.php'); ?>
                 </div>
             </div>
         </div>
