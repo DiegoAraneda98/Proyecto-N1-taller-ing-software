@@ -60,8 +60,8 @@
                             </div>
                             <div class="col-6">
                                
-                                <select name="interfaz" class="form-select m-3">
-                                <option selected>Interfaz</option>
+                                <select name="interfaz" class="form-select m-3 w-75">
+                                <option disabled selected >Interfaz</option>
                                     <option value="Muy Buena">Muy Buena</option>
                                     <option value="Buena">Buena</option>
                                     <option value="Regular">Regular</option>
@@ -71,24 +71,48 @@
                            
                             
                                 
-                                <select name="rapidez" class="form-select m-3">
-                                <option selected>Rapidez</option>
+                                <select name="rapidez" class="form-select m-3 w-75">
+                                <option disabled selected >Rapidez</option>
                                     <option value="Muy Rapida">Muy Rapida</option>
                                     <option value="Rapida">Rapida</option>
                                     <option value="Regular">Regular</option>
                                     <option value="Lenta">Lenta</option>
                                     <option value="Muy Lenta">Muy Lenta</option>
                                 </select>
+
+                                <select name="interfaz 2" class="form-select m-3 w-75">
+                                <option disabled selected >Interfaz</option>
+                                    <option value="Muy Buena">Muy Buena</option>
+                                    <option value="Buena">Buena</option>
+                                    <option value="Regular">Regular</option>
+                                    <option value="Mala">Mala</option>
+                                    <option value="Muy Mala">Muy Mala</option>
+                                </select>
+                           
+                            
+                                
+                                <select name="rapidez 2" class="form-select m-3 w-75">
+                                <option disabled selected >Rapidez</option>
+                                    <option value="Muy Rapida">Muy Rapida</option>
+                                    <option value="Rapida">Rapida</option>
+                                    <option value="Regular">Regular</option>
+                                    <option value="Lenta">Lenta</option>
+                                    <option value="Muy Lenta">Muy Lenta</option>
+                                </select>
+                                
                             </div>
-                        
-                            <div class="col-12 mt-3">
-                                <textarea name="iSugerencia" class="form-control" cols="16" rows="4"
+                            
+                            <div class="col-9 mt-3">
+                                <textarea name="iSugerencia" class="form-control m-3" cols="16" rows="4"
                                     placeholder="Sugerencia (128 Caracteres Maximo)" maxlength="128"></textarea>
                             
                             
-                                <button type="submit" class="btn btn-danger m-3">Enviar</button>
-                                <button type="reset" class="btn btn-success m-3">Resetear</button>
-                                <button disabled="disabled" class="btn btn-dark m-3">Generar</button>
+                                
+                                
+                                
+                            </div>
+                            <div class="col-3 d-flex align-items-center">
+                            <button type="submit" class="btn btn-danger m-3">Enviar</button>
                             </div>
                         </div>
                     </form>
