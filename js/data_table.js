@@ -2,7 +2,8 @@ $(document).ready(function() {
     $('#miTabla').DataTable( {    
         paging: true,
         scrollCollapse: true,
-        scrollY: '500px',
+        scrollY: '250px',
+
         "language": {
             "lengthMenu": "Mostrar _MENU_ registros por pagina",
             "zeroRecords": "No se encuentra el registro buscado - Lo lamentamos",

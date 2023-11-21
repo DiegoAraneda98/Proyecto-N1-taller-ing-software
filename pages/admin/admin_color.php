@@ -4,12 +4,12 @@
                 <div class="col-10 bg-white offset-1 mt-5">
                     <div class="h2 p-3 text-secondary ">Colores</div>
                     <hr class="border border-danger border-1 opacity-50">
-                    <div class="table-responsive shadow  overflow-y-auto " style="max-height: 400px;">
+                    <div class="table-responsive shadow ">
                         <table class="table table-hover text-center" id="miTabla">
                             
                             <thead>
                                 <tr>
-                                    <th scope="col">Id color</th>
+                                    <th scope="col">ID color</th>
                                     <th scope="col">Color</th>
                                     <th scope="col">Opciones</th>
                                 </tr>

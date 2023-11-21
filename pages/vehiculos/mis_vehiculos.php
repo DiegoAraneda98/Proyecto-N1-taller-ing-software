@@ -4,7 +4,7 @@
             <div class="col-10 bg-white offset-1 mt-5">
                 <div class="h2 p-3 text-secondary ">Mis vehículos</div>
                 <div class="border border-danger border-1 opacity-50 mb-5"></div>
-                <div class="table-responsive shadow  overflow-y-auto mt-3 border border-3" style="max-height: 400px;">
+                <div class="table-responsive shadow  mt-3 border border-3">
                     <table class="table table-hover text-center ">
                         <?php require __DIR__ . '/../auth/actions/controlador_login.php'; ?>
                         <thead>
@@ -85,3 +85,4 @@
 <script src="js/eliminar_vehiculo.js"></script>
 <script src="js/crear_qr.js"></script>
 <script src="js/verificaciones.js"></script>
+<script src="js/data_table.js"></script>
