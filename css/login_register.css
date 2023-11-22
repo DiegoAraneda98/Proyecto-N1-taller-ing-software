@@ -24,7 +24,7 @@
 }
 
 .fondo_reset{
-    background-image: url("../img/ucsc.jpg"); 
+    background-image: url("../img/ucsc.png"); 
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
