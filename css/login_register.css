@@ -23,6 +23,13 @@
     height: 100vh;
 }
 
+.fondo_reset{
+    background-image: url("../img/ucsc.jpg"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
 .rojo{
     background-color: #d6092c !important ;
 }

@@ -14,9 +14,9 @@
         <div class="col-4 offset-4 d-flex justify-content-center ">
 
             <div class="bg-white  p-5 rounded-4 text-secondary shadow " style="width: 100%; height: 100%">
-                
+
                 <form action="#" method="post">
-                    <?php 
+                    <?php
                     include("modelo/conexion.php");
                     include("actions/controlador_login.php");
                     ?>
@@ -38,6 +38,33 @@
                         class="btn rojo text-white fw-semibold w-100 mt-4 ">
                     <p class="text-center mt-2">Si olvidaste tu contraseña haz click <a
                             href="index.php?p=auth/reset_contraseña">aquí</a></p>
+
+                    <?php
+                    if (isset($_GET['message'])) {
+
+                        ?>
+                        <div class="alert alert-primary" role="alert">
+                            <?php switch ($_GET['message']) {
+
+                                case 'ok':
+                                    echo 'Por favor, revisa tu correo';
+                                    break;
+
+                                case 'success':
+                                    echo 'Inicia sesión con tu nueva contraseña';
+                                    break;
+
+                                default:
+                                    echo 'Algo salió mal, intenta de nuevo';
+                                    break;
+
+                            }
+
+                            ?>
+                        </div>
+                        <?php
+                    }
+                    ?>
                 </form>
             </div>
         </div>
