@@ -45,6 +45,7 @@
                     <img src="img/perfil_defualt.png" class="img-fluid imagen-perfil m-5">
                 </div>
             </div>
+            
         </div>
         <div class="d-flex justify-content-end align-items-center ">
             <button type="button"
@@ -52,6 +53,7 @@
                 Subir imagen
             </button>
         </div>
+        
 
     </div>
 

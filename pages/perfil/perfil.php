@@ -45,7 +45,7 @@ if ($row = mysqli_fetch_array($resultado)) {
 
                 <button class="nav-link btn btn-custom mt-3" id="v-pills-settings-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
-                    aria-selected="false">Invitados</button>
+                    aria-selected="false"><i class="bi bi-person-fill-add"></i> Invitados</button>
             </div>
         </div>
 
@@ -68,7 +68,8 @@ if ($row = mysqli_fetch_array($resultado)) {
                 </div>
                 <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"
                     tabindex="0">
-                    extra
+                    <?php include('invitados.php')?>
+                    
                 </div>
             </div>
         </div>
@@ -77,10 +78,13 @@ if ($row = mysqli_fetch_array($resultado)) {
 </div>
 
 
+<?php include 'eliminarmodal.php'; ?>
 <script src="js/verificaciones.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="js/editar_Contraseña.js"></script>
+
+
 
 <script>
 function guardarDatos() {
