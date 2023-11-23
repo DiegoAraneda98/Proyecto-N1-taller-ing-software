@@ -46,10 +46,10 @@
                     <form action="añadir_contacto.php" method="post">
                         <div class="row">
                             <div class="col-6">
-                                <input type="text" name="inombre" class="form-control m-3" placeholder="Nombre">
+                                <input type="text" name="inombre" class="form-control m-3" placeholder="Nombre" required>
                             
                             
-                                <input type="text" name="irut" class="form-control m-3" placeholder="RUT" maxlength="9" >
+                                <input type="text" name="irut" class="form-control m-3" placeholder="RUT" maxlength="9" required>
                             
                             
                                 <input type="text" name="itelefono" class="form-control m-3" placeholder="Telefono"
@@ -60,7 +60,7 @@
                             </div>
                             <div class="col-6">
                                
-                                <select name="interfaz" class="form-select m-3 w-75">
+                                <select name="interfaz" class="form-select m-3 w-75" required>
                                 <option disabled selected >Interfaz</option>
                                     <option value="Muy Buena">Muy Buena</option>
                                     <option value="Buena">Buena</option>
@@ -71,7 +71,7 @@
                            
                             
                                 
-                                <select name="rapidez" class="form-select m-3 w-75">
+                                <select name="rapidez" class="form-select m-3 w-75" required>
                                 <option disabled selected >Rapidez</option>
                                     <option value="Muy Rapida">Muy Rapida</option>
                                     <option value="Rapida">Rapida</option>
@@ -80,13 +80,11 @@
                                     <option value="Muy Lenta">Muy Lenta</option>
                                 </select>
 
-                                <select name="interfaz 2" class="form-select m-3 w-75">
-                                <option disabled selected >Interfaz</option>
-                                    <option value="Muy Buena">Muy Buena</option>
-                                    <option value="Buena">Buena</option>
-                                    <option value="Regular">Regular</option>
-                                    <option value="Mala">Mala</option>
-                                    <option value="Muy Mala">Muy Mala</option>
+                                <select name="Problemas" class="form-select m-3 w-75" required>
+                                <option disabled selected >Problemas</option>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                   
                                 </select>
                            
                             
@@ -104,7 +102,7 @@
                             
                             <div class="col-9 mt-3">
                                 <textarea name="iSugerencia" class="form-control m-3" cols="16" rows="4"
-                                    placeholder="Sugerencia (128 Caracteres Maximo)" maxlength="128"></textarea>
+                                    placeholder="Sugerencia o problemas (128 Caracteres Maximo)" maxlength="128"></textarea>
                             
                             
                                 
@@ -112,7 +110,7 @@
                                 
                             </div>
                             <div class="col-3 d-flex align-items-center">
-                            <button type="submit" class="btn btn-danger m-3">Enviar</button>
+                            <button type="submit" class="btn btn-danger m-3" id="btn-enviar">Enviar</button>
                             </div>
                         </div>
                     </form>
