@@ -83,6 +83,7 @@ if ($row = mysqli_fetch_array($resultado)) {
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="js/editar_Contraseña.js"></script>
+<script src="js/eliminar_invitado.js"></script>
 
 
 

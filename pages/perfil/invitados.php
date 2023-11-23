@@ -67,8 +67,8 @@
                                     echo "<td data-target='nombre'>" . $row["nombre"] . "</td>";
                                     echo "<td>";
 
-                                    echo "<a href='index.php?p=perfil/actions/eliminarInvitado&id_enviado=" . $row["id_invitado"] . "'>";
-                                    echo "<button class = 'btn btn-sm ' data-toggle='modal' data-target='#eliminar' ><i class='bi bi-trash-fill'></i></button>";
+                                    echo "<a href='#' class='btn btn-sm' data-role='eliminar' data-id='" . $row['id_invitado'] . "'>";
+                                    echo "<i class='bi bi-trash-fill'></i>";
                                     echo "</a>";
                                     echo "</td>";
 
@@ -81,3 +81,4 @@
         </div>
     </div>
 </div>
+
