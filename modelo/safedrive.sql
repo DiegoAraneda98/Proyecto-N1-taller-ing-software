@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-11-2023 a las 03:41:09
+-- Tiempo de generación: 23-11-2023 a las 04:53:53
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -473,7 +473,8 @@ CREATE TABLE `establecimiento` (
 --
 
 INSERT INTO `establecimiento` (`cod_establecimiento`, `nombre_establecimiento`, `direccion`, `cod_comuna`) VALUES
-(1, 'ucsc', ' Avenida Alonso de Ribera 2850', 233);
+(1, 'ucsc', ' Avenida Alonso de Ribera 2850', 233),
+(6, 'uss', 'paicavi', 233);
 
 -- --------------------------------------------------------
 
@@ -486,13 +487,6 @@ CREATE TABLE `guardias` (
   `nombre` varchar(40) NOT NULL,
   `id_caseta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- Volcado de datos para la tabla `guardias`
---
-
-INSERT INTO `guardias` (`id_guardia`, `nombre`, `id_caseta`) VALUES
-(1, 'dsds', 2);
 
 -- --------------------------------------------------------
 
@@ -509,6 +503,17 @@ CREATE TABLE `historial` (
   `hora_ingreso` time NOT NULL,
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `historial`
+--
+
+INSERT INTO `historial` (`id_historial`, `patente`, `correo`, `nombre`, `run`, `hora_ingreso`, `id_usuario`) VALUES
+(8, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '20:24:13', 0),
+(9, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '20:24:55', 0),
+(10, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '20:25:00', 0),
+(11, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '20:25:05', 0),
+(12, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '20:25:11', 0);
 
 -- --------------------------------------------------------
 
@@ -696,8 +701,8 @@ CREATE TABLE `tipo_usuario` (
 --
 
 INSERT INTO `tipo_usuario` (`id_tipoUsuario`, `nombre`) VALUES
-(1, 'Institucional'),
-(2, 'Invitado');
+(5, 'Institucional'),
+(6, 'Invitados');
 
 -- --------------------------------------------------------
 
@@ -734,19 +739,20 @@ CREATE TABLE `usuarios` (
   `telefono` int(10) DEFAULT NULL,
   `salud` varchar(20) DEFAULT NULL,
   `foto` varchar(70) DEFAULT NULL,
-  `contraseña` varchar(80) NOT NULL
+  `contraseña` varchar(80) NOT NULL,
+  `status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `run`, `nombre`, `apellido`, `correo`, `tipo_usuario`, `telefono`, `salud`, `foto`, `contraseña`) VALUES
-(1, 19816480, 'admin2', NULL, 'admin2@ucsc.cl', 'admin', NULL, NULL, NULL, '19816480'),
-(2, 20033016, 'admin1', NULL, 'admin1@ucsc.cl', 'admin', NULL, NULL, NULL, '20033016'),
-(3, 19815710, 'admin3', NULL, 'admin3@ucsc.cl', 'admin', NULL, NULL, NULL, '19815710'),
-(4, 11111111, 'test', 'test apellido', 'test@ucsc.cl', 'Institucional', 0, '', '', '111'),
-(5, 22222222, 'Guardia ', '', 'Guardia@ucsc.cl', 'Guardia', 0, 'Sano', '', '222');
+INSERT INTO `usuarios` (`id_usuario`, `run`, `nombre`, `apellido`, `correo`, `tipo_usuario`, `telefono`, `salud`, `foto`, `contraseña`, `status`) VALUES
+(1, 19816480, 'admin2', NULL, 'admin2@ucsc.cl', 'admin', NULL, NULL, NULL, '19816480', 0),
+(2, 20033016, 'admin1', NULL, 'admin1@ucsc.cl', 'admin', NULL, NULL, NULL, '20033016', 0),
+(3, 19815710, 'admin3', NULL, 'admin3@ucsc.cl', 'admin', NULL, NULL, NULL, '19815710', 0),
+(4, 11111111, 'test', 'test apellido', 'test@ucsc.cl', 'Institucional', 0, '', '', '333', 0),
+(5, 22222222, 'Guardia ', '', 'Guardia@ucsc.cl', 'Guardia', 0, 'Sano', '', '222', 0);
 
 -- --------------------------------------------------------
 
@@ -769,8 +775,10 @@ CREATE TABLE `vehiculos` (
 --
 
 INSERT INTO `vehiculos` (`id_vehiculo`, `patente`, `modelo`, `color`, `tipo_vehiculo`, `fecha_ingreso`, `id_usuario`) VALUES
-(33, 'aabb22', 'kia 4', 'Rojo', 'Motocicleta', '2023-11-15', 4),
-(34, 'aass33', 'Chevrolet', 'Bronce', 'Auto', '2023-11-15', 4);
+(33, 'aabb22', 'Chevrolet', 'Rojo', 'Motocicleta', '2023-11-15', 4),
+(34, 'aass33', 'Ford', 'Turquesa', 'Auto', '2023-11-15', 4),
+(35, 'ddss22', 'Chevrolet', 'Lavanda', 'Motocicleta', '0000-00-00', 2),
+(36, 'DDSS22', 'Honda', 'Morado', 'Motocicleta', '2023-11-21', 2);
 
 --
 -- Índices para tablas volcadas
@@ -911,7 +919,7 @@ ALTER TABLE `encuestas`
 -- AUTO_INCREMENT de la tabla `establecimiento`
 --
 ALTER TABLE `establecimiento`
-  MODIFY `cod_establecimiento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `cod_establecimiento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `guardias`
@@ -923,7 +931,7 @@ ALTER TABLE `guardias`
 -- AUTO_INCREMENT de la tabla `historial`
 --
 ALTER TABLE `historial`
-  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `invitados`
@@ -953,7 +961,7 @@ ALTER TABLE `regiones`
 -- AUTO_INCREMENT de la tabla `tipo_usuario`
 --
 ALTER TABLE `tipo_usuario`
-  MODIFY `id_tipoUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_tipoUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_vehiculo`
@@ -971,7 +979,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `vehiculos`
 --
 ALTER TABLE `vehiculos`
-  MODIFY `id_vehiculo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id_vehiculo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- Restricciones para tablas volcadas
