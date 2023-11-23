@@ -9,8 +9,11 @@ $sug =  $_POST["iSugerencia"];
 $para = "tfell@ing.ucsc.cl";
 $titulo="Sugerencias de ".$nombre_re;
 $mensaje="Nombre: ".$nombre_re."\nCorreo: ".$correo_re."\nTelefono: ".$tele_re."\nSugerencia: \n".$sug;
-mail($para,$titulo,$mensaje,null);
+$mail = @mail($para,$titulo,$mensaje,null);
+if($mail){
+    echo"Fue realizado con exito";
+}
 $query = "INSERT INTO encuestas (rapidez, interfaz) VALUES ('$erapidez', '$einter');";
 $result =  mysqli_query($conexion, $query);
-
+header("index.php");
 ?>
