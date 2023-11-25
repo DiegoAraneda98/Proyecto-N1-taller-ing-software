@@ -11,6 +11,7 @@
                     <hr class="border border-danger border-1 opacity-50">
 
                     <form action="index.php?p=auth/actions/restablecer_contraseña" method="post">
+                        
                         <div class="p mt-4">Correo Institucional</div>
                         <div class="input-group ">
                             <input class="form-control bg-light mt-3" id="correo" type="email" name="correo"

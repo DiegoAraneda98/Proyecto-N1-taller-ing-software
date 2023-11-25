@@ -1,8 +1,16 @@
 <?php
+require __DIR__ . '/../../../modelo/conexion.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
+require 'PHPMailer/Exception.php';
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
 
 if (!empty($_POST["registro"])) { //si el boton es presionado, validar datos que no estan vacios
     if (empty($_POST["rut"]) or empty($_POST["nombre"]) or empty($_POST["correo"]) or empty($_POST["tipo_usuario"]) or empty($_POST["contraseña"])) {
-        echo '<div class="alert alert-danger" role="alert"> Uno de los campos está vacio!!</div>';
+        /*  echo '<div class="alert alert-danger" role="alert"> Uno de los campos está vacio!!</div>'; */
     } else {
         $rut = stripslashes($_REQUEST['rut']);
         $rut = mysqli_real_escape_string($conexion, $rut);
@@ -29,16 +37,57 @@ if (!empty($_POST["registro"])) { //si el boton es presionado, validar datos que
         } else {
             $sql = $conexion->query("INSERT INTO usuarios (run, nombre, correo, tipo_usuario, contraseña) VALUES ('$rut', ' $nombre' , ' $correo' , ' $tipo_usuario' , '$contraseña')");
 
-            if ($sql == 1) {
+            $sql = "SELECT * FROM usuarios WHERE run = '$rut' and contraseña = '$contraseña' ";  /*  AND status = 1 */
+
+            $result = $conexion->query($sql);
+            $row = mysqli_fetch_assoc($result);
+
+            $mail = new PHPMailer(true);
+
+            try {
+
+                //Server settings
+                $mail->isSMTP();
+                $mail->Host = 'smtp-mail.outlook.com';
+                $mail->SMTPSecure = 'tls';
+                $mail->SMTPAuth = true;
+                $mail->Username = 'CorreoSoporteucsc@outlook.com';
+                $mail->Password = 'contrasena2023Soporte_';
+                $mail->Port = 587;
+
+
+                //Recipients
+                $mail->setFrom('CorreoSoporteucsc@outlook.com', 'Soporte');
+                $mail->addAddress('npcruz630@gmail.com', 'Ususario Prueba');  //Add a recipient
+
+
+                //Content
+                $mail->isHTML(true);
+                $mail->Subject = 'Activacion de cuenta';
+                $mail->Body = 'Hola, este es un correo generado para activar tu cuenta, por favor, 
+                visita la pagina: <a href="localhost/xampp/Proyecto-N1-taller-ing-software/index.php?p=auth/asignacion_salud&id=' . $row['id_usuario'] . '">Activa tu cuenta</a>';
+                $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+                $mail->send();
+                header('Location: index.php?p=auth/register&message=ok');
+                /*   echo 'Message has been sent'; */
+            } catch (Exception $e) {
+                /*  echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"; */
+                header('Location: index.php?p=auth/login&message=error');
+            }
+
+           /*  if ($sql == 1) {
 
                 header("Location: index.php?p=auth/login");
             } else {
                 echo "USUARIO NO REGISTRADO CON EXITO";
-            }
+            } */
         }
 
 
 
     }
 }
+
+
 ?>

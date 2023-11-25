@@ -54,6 +54,9 @@
                                     echo 'Inicia sesión con tu nueva contraseña';
                                     break;
 
+                                case 'activated':
+                                    echo 'Su cuenta se activo con exito!!';
+                                    break;
                                 default:
                                     echo 'Algo salió mal, intenta de nuevo';
                                     break;

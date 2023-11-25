@@ -45,11 +45,11 @@ if ($respuestas_afirmativas >= 6) {
 
 
 
-$update = "UPDATE usuarios SET salud= '$estado_salud' WHERE id_usuario='$id'";
+$update = "UPDATE usuarios SET salud= '$estado_salud', estado = '1' WHERE id_usuario='$id'";
 $resultado = mysqli_query($conexion, $update);
 
 
- header('Location: index.php?p=auth/login'); 
+ header('Location: index.php?p=auth/login&message=activated'); 
 
 ?>
 

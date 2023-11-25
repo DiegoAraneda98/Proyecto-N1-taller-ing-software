@@ -18,19 +18,19 @@
                     <div class="p mt-3">Rut</div>
                     <div class="input-group ">
                         <input class="form-control bg-light" type="text" name="rut" onkeydown=filtro() minlength="8"
-                            maxlength="8" placeholder="Sin puntos, ni dígito verificador" />
+                            maxlength="8" placeholder="Sin puntos, ni dígito verificador" required/>
                     </div>
 
                     <div class="p mt-3">Nombre</div>
                     <div class="input-group ">
                         <input class="form-control bg-light" type="text" name="nombre" onkeydown=filtroLetras()
-                            placeholder="John Doe" />
+                            placeholder="John Doe" required />
                     </div>
 
                     <div class="p mt-3">Correo Institucional</div>
                     <div class="input-group ">
                         <input class="form-control bg-light" id="correo" type="email" name="correo"
-                            onblur=validarEmailConDominioUCSC() placeholder="Correo@ucsc.cl" />
+                            onblur=validarEmailConDominioUCSC() placeholder="Correo@ucsc.cl" required/>
                     </div>
 
                     <div class="p mt-3">¿Qué usuario es?</div>
@@ -47,13 +47,40 @@
                     <div class="p mt-3">Contraseña</div>
                     <div class="input-group ">
                         <input class="form-control bg-light" type="password" name="contraseña"
-                            placeholder="Introduzca su contraseña" />
+                            placeholder="Introduzca su contraseña" required />
                     </div>
 
                     <div class="btn w-100 mt-3 shadow-sm rojo">
                         <input type="submit" value="Registrarse" name="registro"
                             class="btn rojo text-white fw-semibold w-100 ">
                     </div>
+
+                    <?php
+                    if (isset($_GET['message'])) {
+
+                        ?>
+                        <div class="alert alert-primary" role="alert">
+                            <?php switch ($_GET['message']) {
+
+                                case 'ok':
+                                    echo 'Revisa tu correo y termina tu registro';
+                                    break;
+
+                                case 'success':
+                                    echo 'Inicia sesión con tu nueva contraseña';
+                                    break;
+
+                                default:
+                                    echo 'Algo salió mal, intenta de nuevo';
+                                    break;
+
+                            }
+
+                            ?>
+                        </div>
+                        <?php
+                    }
+                    ?>
                 </form>
             </div>
         </div>
