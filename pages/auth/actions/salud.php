@@ -39,7 +39,7 @@ if ($respuestas_afirmativas >= 6) {
 } elseif ($respuestas_afirmativas >= 4) {
     $estado_salud = 'observacion';
 } else {
-    $estado_salud = 'sano';
+    $estado_salud = 'negativo';
 }
 
 
