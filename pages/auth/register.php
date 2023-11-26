@@ -63,7 +63,7 @@
                             <?php switch ($_GET['message']) {
 
                                 case 'ok':
-                                    echo 'Revisa tu correo y termina tu registro';
+                                    echo 'Revise su correo y termine con su registro';
                                     break;
 
                                 case 'success':

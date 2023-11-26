@@ -36,7 +36,7 @@ if (isset($_POST['disnea']) && $_POST['disnea'] == 'si') {
 // Proceso para determinar el estado de salud
 if ($respuestas_afirmativas >= 6) {
     $estado_salud = 'positivo';
-} elseif ($respuestas_afirmativas >= 4) {
+} elseif ($respuestas_afirmativas >= 4 and $respuestas_afirmativas < 6) {
     $estado_salud = 'observacion';
 } else {
     $estado_salud = 'negativo';
