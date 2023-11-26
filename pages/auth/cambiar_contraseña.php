@@ -11,23 +11,41 @@
                     <hr class="border border-danger border-1 opacity-50">
 
                     <form action="index.php?p=auth/actions/nueva_contraseña" method="post">
-                        
+
                         <div class="p mt-4">Nueva contraseña:</div>
                         <div class="input-group ">
-                            <input class="form-control bg-light mt-3" type="text" name="nueva_contraseña" placeholder="Introduzca su nueva contraseña" />
+                            <input class="form-control bg-light mt-3" type="text" name="nueva_contraseña"
+                                placeholder="Introduzca su nueva contraseña" />
                         </div>
 
                         <div class="p mt-4">Repetir nueva contraseña:</div>
                         <div class="input-group ">
-                            <input class="form-control bg-light mt-3" type="text" name="repetir_contraseña" placeholder="Repita su nueva contraseña" />
+                            <input class="form-control bg-light mt-3" type="text" name="repetir_contraseña"
+                                placeholder="Repita su nueva contraseña" />
                         </div>
 
-                        <input type="hidden" class="d-none" name="id" value="<?php echo $_GET['id']; ?>">
+                        <input type="hidden" class="d-none" name="token" value="<?php if(isset($_GET['token'])) {echo $_GET['token'];} ?>">
+                        <?php
+                        if (isset($_GET['message'])) {
 
+                            ?>
+                            <div class="alert alert-primary mt-2" role="alert">
+                                <?php switch ($_GET['message']) {
+
+                                    case 'inequable':
+                                        echo 'Sus contraseñas no son iguales';
+                                        break;
+                                }
+
+                                ?>
+                            </div>
+                            <?php
+                        }
+                        ?>
                         <div class="d-flex justify-content-center">
-                            <div class="btn mt-5 shadow-sm rojo w-75">
+                            <div class="btn mt-3 shadow-sm rojo w-75">
                                 <input type="submit" value="Cambiar contraseña" name="registro"
-                                    class="btn rojo text-white fw-semibold ">
+                                    class="btn rojo text-white fw-semibold w-100 ">
                             </div>
                         </div>
 

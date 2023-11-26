@@ -21,7 +21,7 @@
                         <div class="d-flex justify-content-center">
                             <div class="btn mt-4 shadow-sm rojo w-75">
                                 <input type="submit" value="Solicitar recuperación" name="registro"
-                                    class="btn rojo text-white fw-semibold ">
+                                    class="btn rojo text-white fw-semibold w-100">
                             </div>
                         </div>
 
