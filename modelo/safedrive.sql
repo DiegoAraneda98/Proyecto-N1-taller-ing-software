@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-11-2023 a las 04:53:53
+-- Tiempo de generación: 27-11-2023 a las 21:45:33
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -450,8 +450,9 @@ INSERT INTO `comunas` (`id`, `comuna`, `provincia_id`) VALUES
 
 CREATE TABLE `encuestas` (
   `id_encuesta` int(11) NOT NULL,
-  `rapidez` varchar(30) NOT NULL,
-  `interfaz` varchar(30) NOT NULL,
+  `rapidez` int(5) NOT NULL,
+  `interfaz` int(5) NOT NULL,
+  `accesibilidad` int(5) NOT NULL,
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -740,19 +741,20 @@ CREATE TABLE `usuarios` (
   `salud` varchar(20) DEFAULT NULL,
   `foto` varchar(70) DEFAULT NULL,
   `contraseña` varchar(80) NOT NULL,
-  `status` int(1) NOT NULL
+  `estado` tinyint(1) NOT NULL,
+  `token` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `run`, `nombre`, `apellido`, `correo`, `tipo_usuario`, `telefono`, `salud`, `foto`, `contraseña`, `status`) VALUES
-(1, 19816480, 'admin2', NULL, 'admin2@ucsc.cl', 'admin', NULL, NULL, NULL, '19816480', 0),
-(2, 20033016, 'admin1', NULL, 'admin1@ucsc.cl', 'admin', NULL, NULL, NULL, '20033016', 0),
-(3, 19815710, 'admin3', NULL, 'admin3@ucsc.cl', 'admin', NULL, NULL, NULL, '19815710', 0),
-(4, 11111111, 'test', 'test apellido', 'test@ucsc.cl', 'Institucional', 0, '', '', '333', 0),
-(5, 22222222, 'Guardia ', '', 'Guardia@ucsc.cl', 'Guardia', 0, 'Sano', '', '222', 0);
+INSERT INTO `usuarios` (`id_usuario`, `run`, `nombre`, `apellido`, `correo`, `tipo_usuario`, `telefono`, `salud`, `foto`, `contraseña`, `estado`, `token`) VALUES
+(1, 19816480, 'admin2', NULL, 'admin2@ucsc.cl', 'admin', NULL, NULL, NULL, '999', 0, ''),
+(2, 20033016, 'admin1', NULL, 'admin1@ucsc.cl', 'admin', NULL, NULL, NULL, '999', 1, ''),
+(3, 19815710, 'admin3', NULL, 'admin3@ucsc.cl', 'admin', NULL, 'positivo', NULL, '999', 1, ''),
+(12, 11111111, ' test', NULL, 'test@ucsc.cl', ' Institucional', NULL, 'negativo', NULL, '666', 1, 'd5afc68c26eaab272b8d4517b022b566'),
+(14, 55555555, ' cinco', NULL, ' cinco@ucsc.cl', ' Institucional', NULL, 'negativo', NULL, '555', 1, 'f085ae791ec06075309554e30b9a89cb');
 
 -- --------------------------------------------------------
 
@@ -775,8 +777,6 @@ CREATE TABLE `vehiculos` (
 --
 
 INSERT INTO `vehiculos` (`id_vehiculo`, `patente`, `modelo`, `color`, `tipo_vehiculo`, `fecha_ingreso`, `id_usuario`) VALUES
-(33, 'aabb22', 'Chevrolet', 'Rojo', 'Motocicleta', '2023-11-15', 4),
-(34, 'aass33', 'Ford', 'Turquesa', 'Auto', '2023-11-15', 4),
 (35, 'ddss22', 'Chevrolet', 'Lavanda', 'Motocicleta', '0000-00-00', 2),
 (36, 'DDSS22', 'Honda', 'Morado', 'Motocicleta', '2023-11-21', 2);
 
@@ -973,7 +973,7 @@ ALTER TABLE `tipo_vehiculo`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `vehiculos`
