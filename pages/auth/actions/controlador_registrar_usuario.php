@@ -42,6 +42,12 @@ if (!empty($_POST["registro"])) { //si el boton es presionado, validar datos que
             $result = $conexion->query($sql);
             $row = mysqli_fetch_assoc($result);
 
+            $token = bin2hex(random_bytes(16)); // Genera un token único
+            $id_usuario = $row['id_usuario'];
+        
+            $updateTokenSql = "UPDATE usuarios SET token = '$token' WHERE id_usuario = $id_usuario";
+            $conexion->query($updateTokenSql);
+
             $mail = new PHPMailer(true);
 
             try {
@@ -65,7 +71,7 @@ if (!empty($_POST["registro"])) { //si el boton es presionado, validar datos que
                 $mail->isHTML(true);
                 $mail->Subject = 'Activacion de cuenta';
                 $mail->Body = 'Hola, este es un correo generado para activar tu cuenta, por favor, 
-                visita la pagina: <a href="localhost/xampp/Proyecto-N1-taller-ing-software/index.php?p=auth/asignacion_salud&id=' . $row['id_usuario'] . '">Activa tu cuenta</a>';
+                visita la pagina: <a href="localhost/xampp/Proyecto-N1-taller-ing-software/index.php?p=auth/asignacion_salud&token='.$token.'">Activa tu cuenta</a>';
                 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
                 $mail->send();

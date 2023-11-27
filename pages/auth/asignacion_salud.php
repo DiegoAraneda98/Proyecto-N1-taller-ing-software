@@ -125,7 +125,7 @@
                         </div>
 
                     
-                        <input type="hidden" class="d-none" name="id" value="<?php echo $_GET['id']; ?>">
+                        <input type="hidden" class="d-none" name="token" value="<?php if(isset($_GET['token'])) {echo $_GET['token'];} ?>">
 
                         <div class="d-flex justify-content-center">
                             <div class="btn mt-5 shadow-sm rojo w-75">

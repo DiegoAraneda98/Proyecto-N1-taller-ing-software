@@ -2,9 +2,13 @@
 
 require __DIR__ . '/../../../modelo/conexion.php';
 
-$id = $_POST["id"];
+$token = $_POST["token"];
 
+$selectUsuario = "SELECT * FROM usuarios WHERE token = '$token'";
+$resultadoSelect = mysqli_query($conexion, $selectUsuario);
 
+$row = mysqli_fetch_assoc($resultadoSelect);
+$id_usuario = $row['id_usuario'];
 // Inicializa el contador de respuestas afirmativas
 $respuestas_afirmativas = 0;
 
@@ -45,7 +49,7 @@ if ($respuestas_afirmativas >= 6) {
 
 
 
-$update = "UPDATE usuarios SET salud= '$estado_salud', estado = '1' WHERE id_usuario='$id'";
+$update = "UPDATE usuarios SET salud= '$estado_salud', estado = '1' WHERE id_usuario='$id_usuario'";
 $resultado = mysqli_query($conexion, $update);
 
 
