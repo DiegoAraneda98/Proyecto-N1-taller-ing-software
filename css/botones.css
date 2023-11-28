@@ -12,3 +12,15 @@
         background-color: #d6092c  !important;
         color: #fff  !important;
     }
+
+    .dt-buttons{
+        display: flex ; 
+        justify-content: end ;
+        width: 12%;
+        margin-left: 87%; 
+        padding: 5px;
+    }
+
+#miTabla_filter{
+    margin-right: 80%; 
+}
