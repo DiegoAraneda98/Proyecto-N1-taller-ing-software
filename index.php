@@ -8,109 +8,31 @@
 </head>
 
 <body>
-    <div class="container-fluid bg-light">
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <img src="img/logo.png" class="img-fluid logo" alt="logo">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Mis vehiculos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Perfil</a>
-                        </li>
-                        <li class="nav-item ml">
-                            <a class="nav-link active"
-                                href="controlador/controlador_logout.php">Cerrar sesión</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Contenido principal -->
+    
         <div class="container-fluid">
             <div class="row">
-                <div class="col-10 bg-white offset-1 mt-5">
+                <div class="col-10 ">
                     <div class="h2 p-3 text-secondary">Encuesta</div>
-                    <form action="añadir_contacto.php" method="post">
+                    <form action="email.php" method="post">
                         <div class="row">
-                            <div class="col-6">
-                                <input type="text" name="inombre" class="form-control m-3" placeholder="Nombre" required>
+                            <div class="col-3"></div>
+                            <div class="col-9 aling-items-center bg-white">
+                                <input type="text" name="inombre" class="form-control m-3 w-50" placeholder="Nombre" required>
                             
                             
-                                <input type="text" name="irut" class="form-control m-3" placeholder="RUT" maxlength="9" required>
+                                <input type="text" name="irut" class="form-control m-3 w-50" placeholder="RUT" maxlength="9" required>
                             
                             
-                                <input type="text" name="itelefono" class="form-control m-3" placeholder="Telefono"
+                                <input type="text" name="itelefono" class="form-control m-3 w-50" placeholder="Telefono"
                                     maxlength="10">
                             
                             
-                                <input type="email" name="icorreo" class="form-control m-3"  placeholder="Correo">
+                                <input type="email" name="icorreo" class="form-control m-3 w-50"  placeholder="Correo" required>
                             </div>
-                            <div class="col-6">
-                               
-                                <select name="interfaz" class="form-select m-3 w-75" required>
-                                <option disabled selected >Interfaz</option>
-                                    <option value="Muy Buena">Muy Buena</option>
-                                    <option value="Buena">Buena</option>
-                                    <option value="Regular">Regular</option>
-                                    <option value="Mala">Mala</option>
-                                    <option value="Muy Mala">Muy Mala</option>
-                                </select>
-                           
-                            
-                                
-                                <select name="rapidez" class="form-select m-3 w-75" required>
-                                <option disabled selected >Rapidez</option>
-                                    <option value="Muy Rapida">Muy Rapida</option>
-                                    <option value="Rapida">Rapida</option>
-                                    <option value="Regular">Regular</option>
-                                    <option value="Lenta">Lenta</option>
-                                    <option value="Muy Lenta">Muy Lenta</option>
-                                </select>
-
-                                <select name="Problemas" class="form-select m-3 w-75" required>
-                                <option disabled selected >Problemas</option>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                   
-                                </select>
-                           
-                            
-                                
-                                <select name="rapidez 2" class="form-select m-3 w-75">
-                                <option disabled selected >Rapidez</option>
-                                    <option value="Muy Rapida">Muy Rapida</option>
-                                    <option value="Rapida">Rapida</option>
-                                    <option value="Regular">Regular</option>
-                                    <option value="Lenta">Lenta</option>
-                                    <option value="Muy Lenta">Muy Lenta</option>
-                                </select>
-                                
-                            </div>
-                            
-                            <div class="col-9 mt-3">
-                                <textarea name="iSugerencia" class="form-control m-3" cols="16" rows="4"
-                                    placeholder="Sugerencia o problemas (128 Caracteres Maximo)" maxlength="128"></textarea>
-                            
-                            
-                                
-                                
-                                
-                            </div>
-                            <div class="col-3 d-flex align-items-center">
+                            <div class="col-9"></div>
+                            <div class="col-3 d-flex align-items-center bg-white">
                             <button type="submit" class="btn btn-danger m-3" id="btn-enviar">Enviar</button>
+                            
                             </div>
                         </div>
                     </form>
