@@ -42,19 +42,19 @@
         <div class="card text-center rounded-0 bg-body-secondary " style="width: 95%;  height: 80%;">
             <div class="d-flex justify-content-center mt-5 flex-wrap">
                 <div class="rounded-circle bg-white">
-                    <img src="img/perfil_defualt.png" class="img-fluid imagen-perfil m-5">
+                    <img src="img/perfil_defualt.png" class="img-fluid imagen-perfil m-5" alt="avatar" id="img"/>
                 </div>
             </div>
             
         </div>
         <div class="d-flex justify-content-end align-items-center ">
-            <button type="button"
-                class="btn custom-btn border-secondary rounded-0 text-black d-flex justify-content-center fw-semibold bg-light mt-3 ">
-                Subir imagen
-            </button>
+            <input  type="file" name="foto" id="foto" accept="image/*">
+            <label class=" btn custom-btn border-secondary rounded-0 text-black d-flex justify-content-center fw-semibold bg-light mt-3 subir_imagen" for="foto">Subir imagen</label>
         </div>
         
 
     </div>
 
 </div>
+
+<script src="js/cambiar_foto.js"></script>

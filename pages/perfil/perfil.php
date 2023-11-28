@@ -94,7 +94,6 @@ function guardarDatos() {
     var nombre = document.getElementById('nombre').value;
     var apellido = document.getElementById('apellido').value;
     
-   
     // Crea un objeto con los datos a enviar al servidor
     var datos = {
         rut : rut,
