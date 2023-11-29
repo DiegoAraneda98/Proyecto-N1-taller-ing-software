@@ -12,6 +12,7 @@ if ($row = mysqli_fetch_array($resultado)) {
     $nombre = $row["nombre"];
     $apellido = $row["apellido"];
     $correo = $row["correo"];
+    $correo_secundario = $row["correo_secundario"];
     $telefono = $row["telefono"];
     $contraseña = $row["contraseña"];
 }

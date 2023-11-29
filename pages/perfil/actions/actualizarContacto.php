@@ -9,9 +9,10 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST" || empty($_POST)) {
 
 $correo = $_POST['correo'];
 $telefono = $_POST['telefono'];
+$correo_secundario = $_POST['correo_secundario'];
 $id_usuario = $_SESSION['id_usuario'];
 
-$update = "UPDATE usuarios SET correo='$correo', telefono = '$telefono' WHERE id_usuario='$id_usuario'";
+$update = "UPDATE usuarios SET correo='$correo', telefono = '$telefono', correo_secundario = '$correo_secundario'  WHERE id_usuario='$id_usuario'";
 $resultado = mysqli_query($conexion,$update);
 
 

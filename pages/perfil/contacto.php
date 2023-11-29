@@ -19,8 +19,8 @@
 
                 <div class="mt-3 text-start">Correo secundario:
                     <div class="input-group mt-3 w-75">
-                        <input name="repetirNuevaContraseña" id="repetirNuevaContrasena" type="text" class="form-control rounded-0 mb-4"
-                            aria-label="Username" aria-describedby="basic-addon1" value="">
+                        <input name="correo_secundario" id="correo_secundario" type="text" class="form-control rounded-0 mb-4"
+                            aria-label="Username" aria-describedby="basic-addon1" value="<?php echo $correo_secundario ?>">
                     </div>
                 </div>
 

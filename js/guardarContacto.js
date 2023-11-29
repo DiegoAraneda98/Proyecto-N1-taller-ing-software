@@ -2,13 +2,13 @@ function guardarContacto() {
     // Obtén los valores de los campos del formulario
     var correo = document.getElementById('correo').value;
     var telefono = document.getElementById('telefono').value;
-    /* var correo_sec = document.getElementById('correo_sec').value; */
+    var correo_secundario = document.getElementById('correo_secundario').value; 
     
     // Crea un objeto con los datos a enviar al servidor
     var datos = {
         correo : correo,
         telefono: telefono,
-        /* correo_sec: correo_sec, */
+        correo_secundario: correo_secundario, 
     };
 
     // Realiza una solicitud AJAX para guardar los datos en el servidor

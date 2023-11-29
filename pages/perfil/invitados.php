@@ -16,9 +16,9 @@
                         aria-label="Username" aria-describedby="basic-addon1" required>
                 </div>
             </div>
-            <div class="mt-3 text-start">Correo secundario:
+            <div class="mt-3 text-start">Correo invitado:
                 <div class="input-group mt-3 w-75">
-                    <input name="repetirNuevaContraseña" id="repetirNuevaContrasena" type="text"
+                    <input name="correo_invitado" id="correo_invitado" type="text"
                         class="form-control rounded-0 mb-4" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
             </div>
