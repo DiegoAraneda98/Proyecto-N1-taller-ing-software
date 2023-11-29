@@ -34,7 +34,8 @@ if ($result->num_rows > 0) {
         $mail->SMTPAuth = true;                                  
         $mail->Username = 'CorreoSoporteucsc@outlook.com';                     
         $mail->Password = 'contrasena2023Soporte_';                               
-        $mail->Port = 587;                                    
+        $mail->Port = 587;     
+        $mail->CharSet = 'UTF-8';                               
 
 
         //Recipients
@@ -44,8 +45,10 @@ if ($result->num_rows > 0) {
         /* 'Hola, este es un correo generado para solicitar la recuperacion de tú contraseña, por favor, 
         visita la pagina: <a href="localhost/xampp/Proyecto-N1-taller-ing-software/index.php?p=auth/cambiar_contraseña&id='.$row['id_usuario'].'">Recupera tu contraseña</a>'; */
         //Content
+        $subject = "Recuperación de contraseña";
+        $subject = utf8_decode($subject);
         $mail->isHTML(true);                                  
-        $mail->Subject = 'Recuperacion de contraseña';
+        $mail->Subject = $subject;
         $mail->Body = 'Hola, este es un correo generado para solicitar la recuperación de tu contraseña, por favor, 
         visita la pagina: <a href="localhost/xampp/Proyecto-N1-taller-ing-software/index.php?p=auth/cambiar_contraseña&token='.$token.'">Recupera tu contraseña</a>';
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
