@@ -38,29 +38,49 @@
         </form>
     </div>
 
-    <div class="col-4 ">
-        <div class="text-center rounded-0 bg-body-secondary rounded-circle ">
-            <div class="d-flex justify-content-center">
+    <div class="col-4">
+        <form id="imagenForm" enctype="multipart/form-data">
+            <div class="text-center rounded-0 bg-body-secondary rounded-circle">
+                <div class="d-flex justify-content-center">
+                    
+                    <?php 
+                        $sql = "SELECT foto FROM usuarios WHERE id_usuario = '" . $_SESSION['id_usuario'] . "'";
+                        $result = $conexion->query($sql);
 
-                <img src="img/perfil_defualt.png" class="img-fluid imagen-perfil " alt="avatar" id="img" />
+                        if ($result) {
+                            if ($result->num_rows > 0) {
+                                $row = $result->fetch_assoc();
+                                if ($row["foto"] !== null && $row["foto"] !== '') {
+                                    echo '<img src="' . $row["foto"] . '" class="img-fluid imagen-perfil" alt="avatar usuario" id="img" />';
+                                } else {
+                                    echo '<img src="img/perfil_defualt.png" class="img-fluid imagen-perfil" alt="avatar default" id="img" />';
+                                }
+                            } else {
+                                echo '<img src="img/perfil_defualt.png" class="img-fluid imagen-perfil" alt="avatar default" id="img" />';
+                            }
+                        } else {
+                            // Manejo de errores si la consulta falla
+                            echo "Error en la consulta: " . $conexion->error;
+                        }
+                    ?>
 
+                </div>
             </div>
 
-        </div>
+            <div class="d-flex">
+                <button
+                    class="btn custom-btn border-secondary rounded-0 text-black fw-semibold mt-3 bg-light d-flex justify-content-start"
+                    type="button" onclick="guardarImagen()">
+                    Guardar imagen
+                </button>
 
-        <div class="d-flex ">
-            <button class="btn custom-btn border-secondary rounded-0 text-black fw-semibold mt-3 bg-light d-flex justify-content-start"
-                type="button">
-                Guardar imagen
-            </button>
+                <label
+                    class="btn custom-btn border-secondary rounded-0 text-black fw-semibold bg-light mt-3 ml-5 subir_imagen d-flex justify-content-end"
+                    for="foto">Subir imagen</label>
 
-            <label
-                class=" btn custom-btn border-secondary rounded-0 text-black fw-semibold bg-light mt-3 ml-5 subir_imagen d-flex justify-content-end"
-                for="foto">Subir imagen</label>
-
-            <input type="file" name="foto" id="foto" accept="image/*">
-        </div>
-
+                <input type="file" name="foto" id="foto" accept="image/*">
+            </div>
+        </form>
     </div>
 
 </div>
