@@ -28,11 +28,10 @@
                                 <input type="text" name="inombre" class="form-control m-3 w-50" placeholder="Nombre" required>
                             
                             
-                                <input type="text" name="irut" class="form-control m-3 w-50" placeholder="RUT" maxlength="9" required>
+                               
                             
                             
-                                <input type="text" name="itelefono" class="form-control m-3 w-50" placeholder="Telefono"
-                                    maxlength="10">
+                        
                             
                             
                                 <input type="email" name="icorreo" class="form-control m-3 w-50"  placeholder="Correo" required>

@@ -20,7 +20,8 @@
                 <div class="card-body">
                     <h4 class="card-title text-center">Encuesta</h4>
                     <hr class="border border-danger border-1 opacity-50">
-
+                    Bienvenido, te encuentras en la encuesta. Por favor califica de 1 a 5 la rapidez, interfaz y accesibilidad.
+                    <hr class="border border-danger border-1 opacity-50">
                     <form action="Action/ingresar.php" method="post">
                                <h4>Rapidez:     
                     <p class="clasificacion">

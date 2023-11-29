@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form action="email.php" method="post">
+    <form action="Encuesta/Action/email.php" method="post">
         <button type="submit">Mandar correo</button>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
