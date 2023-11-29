@@ -18,7 +18,7 @@ if (isset($_POST["rut"], $_POST["contraseña"]) && !empty($_POST["rut"]) && !emp
         $_SESSION['run'] = $rut;
         $_SESSION['id_usuario'] = $fila['id_usuario'];
         $_SESSION['tipo_usuario'] = $fila['tipo_usuario'];
-       
+        $_SESSION['correo'] = $fila['correo'];
 
         // Redireccionar según el tipo de usuario
         if ($_SESSION['tipo_usuario'] == 'Guardia' or $_SESSION['tipo_usuario'] == ' Guardia') {

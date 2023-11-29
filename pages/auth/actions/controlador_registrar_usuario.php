@@ -60,17 +60,20 @@ if (!empty($_POST["registro"])) { //si el boton es presionado, validar datos que
                 $mail->Username = 'CorreoSoporteucsc@outlook.com';
                 $mail->Password = 'contrasena2023Soporte_';
                 $mail->Port = 587;
+                $mail->CharSet = 'UTF-8';  
+
 
 
                 //Recipients
                 $mail->setFrom('CorreoSoporteucsc@outlook.com', 'Soporte');
-                $mail->addAddress('npcruz630@gmail.com', 'Ususario Prueba');  //Add a recipient
+                $mail->addAddress($correo, 'Ususario Prueba');  //Add a recipient
 
-
+                $subject = "Activación de cuenta";
+                $subject = utf8_decode($subject);
                 //Content
                 $mail->isHTML(true);
-                $mail->Subject = 'Activacion de cuenta';
-                $mail->Body = 'Hola, este es un correo generado para activar tu cuenta, por favor, 
+                $mail->Subject = $subject;
+                $mail->Body = 'Bienvenido a la plataforma SafeInDrive, este es un correo generado con la finalidad de activar tu cuenta y terminar con su registro, por favor, 
                 visita la pagina: <a href="localhost/xampp/Proyecto-N1-taller-ing-software/index.php?p=auth/asignacion_salud&token='.$token.'">Activa tu cuenta</a>';
                 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 

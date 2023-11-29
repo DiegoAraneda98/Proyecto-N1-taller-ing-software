@@ -39,6 +39,7 @@
                     <p class="text-center mt-2">Si olvidaste tu contraseña haz click <a
                             href="index.php?p=auth/reset_contraseña">aquí</a></p>
 
+
                     <?php
                     if (isset($_GET['message'])) {
 
@@ -69,6 +70,7 @@
                     }
                     ?>
                 </form>
+                <form action="index.php?p=encuesta/actions/email" method="post"><button type="submit">mandar correo</button></form>
             </div>
         </div>
         <div class="col-4"></div>

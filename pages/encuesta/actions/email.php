@@ -1,6 +1,4 @@
 <?php
-
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
@@ -9,9 +7,9 @@ require 'PHPMailer/Exception.php';
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
 
-$_SESSION['correo'];
 
 
+sleep(300);
 $mail = new PHPMailer(true);
 
 try {
@@ -29,7 +27,7 @@ try {
 
   //Recipients
   $mail->setFrom('CorreoSoporteucsc@outlook.com', 'Soporte');
-  $mail->addAddress($_SESSION['correo'], 'Ususario Prueba');  //Add a recipient
+  $mail->addAddress('npcruz630@gmail.com', 'Ususario Prueba');  //Add a recipient
 
 
   //Content
@@ -49,14 +47,5 @@ try {
 
 }
 
-sleep(10);
 
-if (isset($_SESSION['run'])) {
-    // Destruye la sesión si existe
-    session_destroy();
-    header("Location: index.php?p=auth/login");
-} else {
-    // Redirige al usuario a la página de inicio de sesión si no está autenticado
-    header("Location: index.php?p=auth/login");
-}
 ?>

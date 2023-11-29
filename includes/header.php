@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="css/style-perfil.css">
 <link rel="stylesheet" href="css/odometer-theme-car.css">
 <link rel="stylesheet" href="css/botones.css">
+<link rel="stylesheet" href="css/estrellas.css">
 
 
 <!-- jQuery -->
