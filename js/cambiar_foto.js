@@ -27,10 +27,10 @@ function guardarImagen() {
         processData: false,
         success: function (response) {
             Swal.fire({
-                title: "Good job!",
-                text: "You clicked the button!",
+                title: "Imagen actualizada!",
+                text: "Tú imagen a sido guardada con exito!",
                 icon: "success"
-              });
+                });
         },
         error: function (error) {
             alert('Error al guardar la imagen.');
