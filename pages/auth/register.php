@@ -63,7 +63,7 @@
             <a class="btn text-white fw-semibold m-4  rojo" href="index.php?p=auth/login" role="button">Iniciar sesión</a>
         </div>
     </div>
-  
+
 
 <script src="js/verificaciones.js"></script>
 
