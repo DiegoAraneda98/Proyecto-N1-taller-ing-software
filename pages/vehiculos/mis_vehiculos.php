@@ -5,16 +5,16 @@
                 <div class="h2 p-3 text-secondary ">Mis vehículos</div>
                 <div class="border border-danger border-1 opacity-50 mb-5"></div>
                 <div class="table-responsive shadow  mt-3 border border-3">
-                    <table class="table table-hover text-center ">
+                    <table class="table table-hover table-bordered border-dark  table-striped text-center ">
                         <?php require __DIR__ . '/../auth/actions/controlador_login.php'; ?>
-                        <thead>
+                        <thead class="table-dark">
                             <tr>
                                 <th scope="col">Patente</th>
                                 <th scope="col">Modelo</th>
                                 <th scope="col">Color</th>
                                 <th scope="col">Tipo de vehículo</th>
                                 <th scope="col">Fecha ingreso</th>
-                                <th scope="col">Opciones</th>
+                                <th scope="col">Opciones <i class='bi bi-pencil-fill'></i> <i class='bi bi-trash-fill'></i></th>
                             </tr>
                         </thead>
                         <tbody class="table-group-divider">

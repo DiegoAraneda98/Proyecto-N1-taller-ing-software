@@ -70,7 +70,7 @@
                     }
                     ?>
                 </form>
-                <form action="index.php?p=encuesta/actions/email" method="post"><button type="submit">mandar correo</button></form>
+                
             </div>
         </div>
         <div class="col-4"></div>
