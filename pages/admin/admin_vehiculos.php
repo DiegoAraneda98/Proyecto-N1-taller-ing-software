@@ -4,9 +4,9 @@
             <div class="col-10 bg-white offset-1 mt-5">
                 <div class="h2 p-3 text-secondary ">Vehículos</div>
                 <hr class="border border-danger border-1 opacity-50">
-                <div class="table-responsive shadow">
-                    <table class="table table-hover text-center" id="miTabla">
-                        <thead>
+                <div class="table-responsive shadow p-3">
+                    <table class="table table-hover table-bordered border-dark  table-striped text-center" id="miTabla">
+                        <thead class="table-dark">
                             <tr>
                                 <th scope="col">ID usuario</th>
                                 <th scope="col">Propietario</th>
@@ -67,7 +67,7 @@
                 <?php include 'eliminarmodal.php'; ?>
 
                 <div class="d-flex justify-content-end mt-5">
-                    <button type="submit" class="btn custom-btn  fw-semibold  mb-4 añadir_vehiculo" name="añadir"
+                    <button type="submit" class="btn custom-btn  fw-semibold  mb-4 añadir_vehiculo rounded-0" name="añadir"
                         data-bs-toggle="modal" data-bs-target="#nuevomodalVehiculos">Añadir vehículo</button>
                 </div>
 

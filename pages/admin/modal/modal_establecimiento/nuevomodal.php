@@ -27,7 +27,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="cod_comuna" class="form-label">Color:</label>
+                        <label for="cod_comuna" class="form-label">Comuna:</label>
                         <div class="input-group">
                             <select class="form-select" name="cod_comuna" id="cod_comuna">
                                 <option disabled selected>Seleccione la comuna</option>

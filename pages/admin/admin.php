@@ -2,14 +2,14 @@
 <div class="container-fluid">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-10 bg-white offset-1 mt-5">
+                <div class="col-10 bg-white offset-1 mt-5 ">
                     <div class="h2 p-3 text-secondary ">Usuarios</div>
-                    <hr class="border border-danger border-1 opacity-50">
-                    <div class="table-responsive shadow" >
-                        <table class="table table-hover text-center" id="miTabla" >
+                    <hr class="border border-danger border-1 opacity-50 ">
+                    <div class="table-responsive shadow p-3" >
+                        <table class="table table-hover table-bordered border-dark  table-striped text-center" id="miTabla" >
                             
-                            <thead>
-                                <tr>
+                            <thead class="table-dark">
+                                <tr >
                                     <th scope="col">ID usuario</th>
                                     <th scope="col">Run</th>
                                     <th scope="col">Nombre</th>
@@ -18,12 +18,11 @@
                                     <th scope="col">Tipo de usuario</th>
                                     <th scope="col">Teléfono</th>
                                     <th scope="col">Salud</th>
-                                    <th scope="col">Foto</th>
                                     <th scope="col">Contraseña</th>
                                     <th scope="col">Opciones</th>
                                 </tr>
                             </thead>
-                            <tbody class="table-group-divider">
+                            <tbody class="table-group-divider ">
                                 <?php
                                 require __DIR__ . '/../../modelo/conexion.php';
                                 
@@ -42,7 +41,6 @@
                                     echo "<td data-target='tipo_usuario'>" . $row["tipo_usuario"] . "</td>";
                                     echo "<td data-target='telefono'>" . $row["telefono"] . "</td>";
                                     echo "<td data-target='salud'>" . $row["salud"] . "</td>";
-                                    echo "<td data-target='foto'>" . $row["foto"] . "</td>";
                                     echo "<td data-target='contraseña'>" . $row["contraseña"] . "</td>";
                                     
 
@@ -74,8 +72,8 @@
                     <?php include 'modal/modal_Usuarios/nuevomodal.php'; ?>
                     <?php include 'eliminarmodal.php'; ?>
                     
-                    <div class="d-flex justify-content-end mt-5">
-                        <button type="submit" class="btn rojo text-white fw-semibold  mb-4 añadir_vehiculo" name="añadir" data-bs-toggle="modal" data-bs-target="#nuevomodalAdmin">Añadir usuario</button>
+                    <div class="d-flex justify-content-end mt-4">
+                        <button type="submit" class="btn custom-btn  fw-semibold  mb-4 añadir_vehiculo rounded-0" name="añadir" data-bs-toggle="modal" data-bs-target="#nuevomodalAdmin">Añadir usuario</button>
                     </div>
 
                 </div>
