@@ -15,8 +15,12 @@
                     <div class="h2 p-3 text-secondary">Encuesta</div>
                     <form action="email.php" method="post">
                         <div class="row">
+
                             <div class="col-3"></div>
                             <div class="col-9 aling-items-center bg-white">
+
+                            <div class="col-12">
+
                                 <input type="text" name="inombre" class="form-control m-3 w-50" placeholder="Nombre" required>
                             
                             
@@ -27,10 +31,17 @@
                                     maxlength="10">
                             
                             
+
                                 <input type="email" name="icorreo" class="form-control m-3 w-50"  placeholder="Correo" required>
                             </div>
                             <div class="col-9"></div>
                             <div class="col-3 d-flex align-items-center bg-white">
+
+                                <input type="email" name="icorreo" class="form-control m-3 w-50"  placeholder="Correo">
+                            </div>
+                            
+                            <div class="col-12 d-flex align-items-center">
+
                             <button type="submit" class="btn btn-danger m-3" id="btn-enviar">Enviar</button>
                             
                             </div>
