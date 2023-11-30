@@ -13,7 +13,7 @@
                     $sqlUsuario = "SELECT * FROM tipo_usuario";
                     $tipo_usuario = $conexion->query($sqlUsuario); 
                     ?>
-                    
+
                     <div class="text-center fw-bold fs-4">¡Vamos allá!</div>
                     <div class="p mt-3">Rut</div>
                     <div class="input-group ">
@@ -36,11 +36,10 @@
                     <div class="p mt-3">¿Qué usuario es?</div>
                     <div class="input-group ">
                         <select class="form-select bg-light" name="tipo_usuario">
-                        <option disabled selected>Seleccione su tipo usuario</option>
-                                <?php while ($row_usuarios = $tipo_usuario->fetch_assoc()) { ?>
-                                    <option value="<?= $row_usuarios["nombre"]?>"><?= $row_usuarios["nombre"]?></option>
-                                <?php } ?>
-                           
+                            <option disabled selected>Seleccione su tipo usuario</option>
+                            <?php while ($row_usuarios = $tipo_usuario->fetch_assoc()) { ?>
+                            <option value="<?= $row_usuarios["nombre"]?>"><?= $row_usuarios["nombre"]?></option>
+                            <?php } ?>
                         </select>
                     </div>
 
@@ -54,16 +53,20 @@
                         <input type="submit" value="Registrarse" name="registro"
                             class="btn rojo text-white fw-semibold w-100 ">
                     </div>
+
+                    <p class="text-center mt-2">Si ya tienes una cuenta y deseas activarla haz click <a
+                            href="index.php?p=auth/reset_contraseña">aquí</a></p>
+
                 </form>
             </div>
         </div>
 
         <div class="col-4 d-flex justify-content-end align-items-start">
             <p class=" fw-semibold m-2 p-4 fs-5">Tienes una cuenta</p>
-            <a class="btn text-white fw-semibold m-4  rojo" href="index.php?p=auth/login" role="button">Iniciar sesión</a>
+            <a class="btn text-white fw-semibold m-4  rojo" href="index.php?p=auth/login" role="button">Iniciar
+                sesión</a>
         </div>
     </div>
 
 
-<script src="js/verificaciones.js"></script>
-
+    <script src="js/verificaciones.js"></script>

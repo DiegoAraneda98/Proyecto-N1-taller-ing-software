@@ -29,15 +29,14 @@ $mail = new PHPMailer(true);
 
                 //Recipients
                 $mail->setFrom('CorreoSoporteucsc@outlook.com', 'Soporte');
-                $mail->addAddress($_SESSION['correo'], 'Ususario Prueba');  //Add a recipient
+                $mail->addAddress('diego.alberto.ah98@gmail.com', 'Ususario Prueba');  //Add a recipient
 
-                $subject = "Activación de cuenta";
+                $subject = "Desactivación de cuenta";
                 $subject = utf8_decode($subject);
                 //Content
                 $mail->isHTML(true);
                 $mail->Subject = $subject;
-                $mail->Body = 'Bienvenido a la plataforma SafeInDrive, este es un correo generado con la finalidad de activar tu cuenta y terminar con su registro, por favor, 
-                visita la pagina: <a href="localhost/xampp/Proyecto-N1-taller-ing-software/index.php?p=auth/asignacion_salud&token='.$token.'">Activa tu cuenta</a>';
+                $mail->Body = '¿ Esta seguro de desactivar su cuenta ? <a href="localhost/xampp/Proyecto-N1-taller-ing-software/index.php?p=perfil/confirmacion_desactivacion">Desactiva tu cuenta</a>';
                 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
                 $mail->send();

@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="input-group mt-3 d-flex justify-content-start w-75 ">
-                <a href="#" class="btn custom-btn border-secondary rounded-0 text-black bg-light fw-semibold mb-5"
+                <a href="index.php?p=perfil/actions/correoDesactivar" class="btn custom-btn border-secondary rounded-0 text-black bg-light fw-semibold mb-5"
                     id="save-password"  data-id="<?php echo $id ?>">Eliminar cuenta</a>
                 </div>
 
