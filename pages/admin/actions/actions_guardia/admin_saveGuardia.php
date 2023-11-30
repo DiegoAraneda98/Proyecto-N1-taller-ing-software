@@ -12,6 +12,8 @@ $sql = "INSERT INTO guardias (nombre, id_caseta) VALUES ('$nombre', '$id_caseta'
 if ($conexion->query($sql)) {
     echo "EXITO";
 }
+
+
 header('Location: index.php?p=admin/admin_guardia');
 
 ?>
