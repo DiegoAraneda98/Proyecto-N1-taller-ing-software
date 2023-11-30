@@ -34,7 +34,7 @@ if ($row = mysqli_fetch_array($resultado)) {
 
                 <button class="nav-link btn btn-custom active mt-3 " id="v-pills-home-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
-                    aria-selected="true"><i class="bi bi-person-fill"></i>  Informacion personal</button>
+                    aria-selected="true"><i class="bi bi-person-fill"></i>  Información personal</button>
 
                 <button class="nav-link btn btn-custom mt-3" id="v-pills-profile-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"

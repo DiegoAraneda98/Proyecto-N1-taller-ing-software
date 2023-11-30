@@ -1,6 +1,6 @@
 
     <div class="row">
-        <div class="col-8">
+        <div class="col-7">
             <p class="h2 text-secondary text-start pt-1 mt-3">Seguridad</p>
             <form action="#" method="POST" id="<?php echo $id ?>">
 
@@ -41,5 +41,9 @@
 
                 
             </form>
+        </div>
+
+        <div class="col-5 d-flex justify-content-center align-items-center">
+            <img src="img/contraseña_seguras.jpg" class="img-fluid" alt="Foto de recomendación contraseña" style="width:100%">
         </div>
     </div>
