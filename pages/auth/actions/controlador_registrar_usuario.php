@@ -22,7 +22,8 @@ if (!empty($_POST["registro"])) { //si el boton es presionado, validar datos que
         $tipo_usuario = mysqli_real_escape_string($conexion, trim($tipo_usuario));
 
         $correo = stripslashes($_REQUEST['correo']);
-        $correo = mysqli_real_escape_string($conexion, $correo);
+        $correo = mysqli_real_escape_string($conexion, trim($correo));  // Utiliza trim() para eliminar espacios en blanco adicionales
+
 
         $contraseña = stripslashes($_REQUEST['contraseña']);
         $contraseña = mysqli_real_escape_string($conexion, $contraseña);
@@ -35,7 +36,7 @@ if (!empty($_POST["registro"])) { //si el boton es presionado, validar datos que
         if ($result->num_rows > 0) {
             echo '<div class="alert alert-danger text-center" role="alert">El rut ya esta registrado</div>';
         } else {
-            $sql = $conexion->query("INSERT INTO usuarios (run, nombre, correo, tipo_usuario, contraseña) VALUES ('$rut', ' $nombre' , ' $correo' , ' $tipo_usuario' , '$contraseña')");
+            $sql = $conexion->query("INSERT INTO usuarios (run, nombre, correo, tipo_usuario, contraseña) VALUES ('$rut', '$nombre' , '$correo' , '$tipo_usuario' , '$contraseña')");
 
             $sql = "SELECT * FROM usuarios WHERE run = '$rut' and contraseña = '$contraseña' ";  /*  AND status = 1 */
 
@@ -44,7 +45,7 @@ if (!empty($_POST["registro"])) { //si el boton es presionado, validar datos que
 
             $token = bin2hex(random_bytes(16)); // Genera un token único
             $id_usuario = $row['id_usuario'];
-        
+
             $updateTokenSql = "UPDATE usuarios SET token = '$token' WHERE id_usuario = $id_usuario";
             $conexion->query($updateTokenSql);
 
@@ -60,7 +61,7 @@ if (!empty($_POST["registro"])) { //si el boton es presionado, validar datos que
                 $mail->Username = 'CorreoSoporteucsc@outlook.com';
                 $mail->Password = 'contrasena2023Soporte_';
                 $mail->Port = 587;
-                $mail->CharSet = 'UTF-8';  
+                $mail->CharSet = 'UTF-8';
 
 
 
@@ -74,7 +75,7 @@ if (!empty($_POST["registro"])) { //si el boton es presionado, validar datos que
                 $mail->isHTML(true);
                 $mail->Subject = $subject;
                 $mail->Body = 'Bienvenido a la plataforma SafeInDrive, este es un correo generado con la finalidad de activar tu cuenta y terminar con su registro, por favor, 
-                visita la pagina: <a href="localhost/xampp/Proyecto-N1-taller-ing-software/index.php?p=auth/asignacion_salud&token='.$token.'">Activa tu cuenta</a>';
+                visita la pagina: <a href="localhost/xampp/Proyecto-N1-taller-ing-software/index.php?p=auth/asignacion_salud&token=' . $token . '">Activa tu cuenta</a>';
                 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
                 $mail->send();
@@ -85,12 +86,12 @@ if (!empty($_POST["registro"])) { //si el boton es presionado, validar datos que
                 header('Location: index.php?p=auth/login&message=error');
             }
 
-           /*  if ($sql == 1) {
+            /*  if ($sql == 1) {
 
-                header("Location: index.php?p=auth/login");
-            } else {
-                echo "USUARIO NO REGISTRADO CON EXITO";
-            } */
+                 header("Location: index.php?p=auth/login");
+             } else {
+                 echo "USUARIO NO REGISTRADO CON EXITO";
+             } */
         }
 
 

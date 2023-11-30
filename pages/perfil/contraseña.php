@@ -25,10 +25,17 @@
                     </div>
                 </div>
 
-                <div class="input-group mt-3 d-flex justify-content-end align-items-end w-75 ">
-                <a href="#" class="btn custom-btn border-secondary rounded-0 text-black bg-light fw-semibold mb-5"
+                <div class="input-group mt-3 d-flex justify-content-end w-75">
+                <a href="#" class="btn custom-btn  fw-semibold  mb-4 rounded-0  "
                     id="save-password"  data-id="<?php echo $id ?>">Editar contraseña</a>
-            </div>
+
+                    <a href="index.php?p=perfil/actions/correoDesactivar" class="btn custom-btn  fw-semibold  mb-4 rounded-0 ml-2"
+                    id="save-password"  data-id="<?php echo $id ?>">Eliminar cuenta</a>
+                </div>
+
+                <div class="input-group mt-3 d-flex justify-content-start w-75 ">
+               
+                </div>
 
                 <input type="hidden" id="idUsuario" name="idUsuario" class="form-control">
 

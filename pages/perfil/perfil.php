@@ -12,6 +12,7 @@ if ($row = mysqli_fetch_array($resultado)) {
     $nombre = $row["nombre"];
     $apellido = $row["apellido"];
     $correo = $row["correo"];
+    $correo_secundario = $row["correo_secundario"];
     $telefono = $row["telefono"];
     $contraseña = $row["contraseña"];
 }
@@ -112,7 +113,7 @@ function guardarDatos() {
             if (response.success) {
                 // Los datos se han guardado correctamente, muestra una alerta
                 Swal.fire({
-                    position: "top-end",
+                    
                     icon: "success",
                     title: "Los datos se han guardado correctamente",
                     showConfirmButton: false,

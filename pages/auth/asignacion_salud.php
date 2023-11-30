@@ -9,11 +9,16 @@
                 <div class="card-body">
                     <h4 class="card-title text-center">Encuesta COVID-19</h4>
                     <hr class="border border-danger border-1 opacity-50">
-
+                    <p class="text-center h6">Hola, gracias por tomarte el tiempo de contestar esta breve encuesta,
+                        a continuación, encontrara 3 campos de valoración los cuales son rapidez, interfaz y
+                        accesibilidad. Por favor califica estos campos de 1 a 5 estrellas. </p>
+                    <hr class="border border-danger border-1 opacity-50">
                     <form action="index.php?p=auth/actions/salud" method="post">
-                        
-                        <div class="p mt-4">¿Ha tenido fiebre?
-                            <span class="ml-5"> <!-- Agrega un espacio con margen a la derecha -->
+
+                        <div class="row ">
+                            <div class="col-4">¿Ha tenido fiebre? </div>
+                            <div class="col-7 text-end">
+
                                 <div class="form-check d-inline">
                                     <input type="radio" name="fiebre" value="si" id="fiebre_si"
                                         class="form-check-input">
@@ -25,11 +30,15 @@
                                         class="form-check-input">
                                     <label for="fiebre_no" class="form-check-label">No</label>
                                 </div>
-                            </span>
+                            </div>
                         </div>
 
-                        <div class="p mt-4">¿Ha estado en contacto con alguien COVID-19 positivo?
-                            <span class="ml-5"> <!-- Agrega un espacio con margen a la derecha -->
+
+
+                        <div class="row mt-3">
+                            <div class="col-7">¿Ha estado en contacto con alguien COVID-19 positivo? </div>
+
+                            <div class="col-4 text-end">
                                 <div class="form-check d-inline">
                                     <input type="radio" name="contacto" value="si" id="contacto_si"
                                         class="form-check-input">
@@ -41,11 +50,14 @@
                                         class="form-check-input">
                                     <label for="contacto_no" class="form-check-label">No</label>
                                 </div>
-                            </span>
+                            </div>
                         </div>
 
-                        <div class="p mt-4">¿Le duelen los músculos?
-                            <span class="ml-5"> <!-- Agrega un espacio con margen a la derecha -->
+                        <div class="row mt-3">
+                            <div class="col-4"> ¿Le duelen los músculos? </div>
+
+
+                            <div class="col-7 text-end">
                                 <div class="form-check d-inline">
                                     <input type="radio" name="musculos" value="si" id="musculos_si"
                                         class="form-check-input">
@@ -57,11 +69,13 @@
                                         class="form-check-input">
                                     <label for="musculos_no" class="form-check-label">No</label>
                                 </div>
-                            </span>
+                            </div>
                         </div>
 
-                        <div class="p mt-4">¿Ha presentado fatiga?
-                            <span class="ml-5"> <!-- Agrega un espacio con margen a la derecha -->
+                        <div class="row mt-3">
+                            <div class="col-4"> ¿Ha presentado fatiga? </div>
+
+                            <div class="col-7 text-end">
                                 <div class="form-check d-inline">
                                     <input type="radio" name="fatiga" value="si" id="fatiga_si"
                                         class="form-check-input">
@@ -73,27 +87,28 @@
                                         class="form-check-input">
                                     <label for="fatiga_no" class="form-check-label">No</label>
                                 </div>
-                            </span>
+                            </div>
                         </div>
 
-                        <div class="p mt-4">¿Ha tenido perdida del gusto?
-                            <span class="ml-5"> <!-- Agrega un espacio con margen a la derecha -->
+
+                        <div class="row mt-3">
+                            <div class="col-4"> ¿Ha tenido perdida del gusto? </div>
+                            <div class="col-7 text-end">
                                 <div class="form-check d-inline">
-                                    <input type="radio" name="gusto" value="si" id="gusto_si"
-                                        class="form-check-input">
+                                    <input type="radio" name="gusto" value="si" id="gusto_si" class="form-check-input">
                                     <label for="gusto_si" class="form-check-label">Sí</label>
                                 </div>
 
                                 <div class="form-check d-inline">
-                                    <input type="radio" name="gusto" value="no" id="gusto_no"
-                                        class="form-check-input">
+                                    <input type="radio" name="gusto" value="no" id="gusto_no" class="form-check-input">
                                     <label for="gusto_no" class="form-check-label">No</label>
                                 </div>
-                            </span>
+                            </div>
                         </div>
 
-                        <div class="p mt-4">¿Ha sentido perdida en el apetito?
-                            <span class="ml-5 "> <!-- Agrega un espacio con margen a la derecha -->
+                        <div class="row mt-3">
+                            <div class="col-5">¿Ha sentido perdida en el apetito?</div>
+                            <div class="col-6 text-end">
                                 <div class="form-check d-inline ">
                                     <input type="radio" name="apetito" value="si" id="apetito_si"
                                         class="form-check-input">
@@ -105,11 +120,13 @@
                                         class="form-check-input">
                                     <label for="apetito_no" class="form-check-label">No</label>
                                 </div>
-                            </span>
+                            </div>
                         </div>
 
-                        <div class="p mt-4">¿Ha experimentado disnea? (Dificultad respiratoria)
-                            <span class="ml-5"> <!-- Agrega un espacio con margen a la derecha -->
+
+                        <div class="row mt-3">
+                            <div class="col-6">¿Ha experimentado disnea? (Dificultad respiratoria)</div>
+                            <div class="col-5 text-end">
                                 <div class="form-check d-inline">
                                     <input type="radio" name="disnea" value="si" id="disnea_si"
                                         class="form-check-input">
@@ -121,11 +138,13 @@
                                         class="form-check-input">
                                     <label for="disnea_no" class="form-check-label">No</label>
                                 </div>
-                            </span>
+                            </div>
                         </div>
 
-                    
-                        <input type="hidden" class="d-none" name="token" value="<?php if(isset($_GET['token'])) {echo $_GET['token'];} ?>">
+
+                        <input type="hidden" class="d-none" name="token" value="<?php if (isset($_GET['token'])) {
+                            echo $_GET['token'];
+                        } ?>">
 
                         <div class="d-flex justify-content-center">
                             <div class="btn mt-5 shadow-sm rojo w-75">

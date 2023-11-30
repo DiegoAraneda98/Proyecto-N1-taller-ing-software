@@ -59,7 +59,7 @@
                     if (isset($_GET['message'])) {
 
                         ?>
-                        <div class="alert alert-primary" role="alert">
+                        <div class="alert alert-primary mt-2" role="alert">
                             <?php switch ($_GET['message']) {
 
                                 case 'ok':
@@ -81,6 +81,7 @@
                         <?php
                     }
                     ?>
+                    <p class="text-center mt-2">Si ya tienes una cuenta y deseas activarla haz click <a href="index.php?p=auth/reset_contraseña">aquí</a></p>
                 </form>
             </div>
         </div>

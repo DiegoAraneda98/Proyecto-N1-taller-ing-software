@@ -46,7 +46,14 @@ if ($numeroAleatorio < 25) {
 
     $mail->send();
 
-    echo 'Message has been sent';
+    if (isset($_SESSION['run'])) {
+      // Destruye la sesión si existe
+      session_destroy();
+      header("Location: index.php?p=auth/login");
+    } else {
+      // Redirige al usuario a la página de inicio de sesión si no está autenticado
+      header("Location: index.php?p=auth/login");
+    }
   } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 

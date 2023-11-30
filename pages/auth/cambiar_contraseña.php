@@ -9,7 +9,9 @@
                 <div class="card-body">
                     <h4 class="card-title text-center">Recupere su contraseña</h4>
                     <hr class="border border-danger border-1 opacity-50">
-
+                    <p class="text-center h6">¿Olvidaste tu contraseña? No te preocupes, estamos aquí para ayudarte a
+                        recuperar el acceso a tu cuenta. Completa los siguientes campos en donde se le pedira ingresar una nueva contraseña y repetir esta misma. </p>
+                    <hr class="border border-danger border-1 opacity-50">
                     <form action="index.php?p=auth/actions/nueva_contraseña" method="post">
 
                         <div class="p mt-4">Nueva contraseña:</div>
@@ -24,7 +26,10 @@
                                 placeholder="Repita su nueva contraseña" />
                         </div>
 
-                        <input type="hidden" class="d-none" name="token" value="<?php if(isset($_GET['token'])) {echo $_GET['token'];} ?>">
+                        <input type="hidden" class="d-none" name="token"
+                            value="<?php if (isset($_GET['token'])) {
+                                echo $_GET['token'];
+                            } ?>">
                         <?php
                         if (isset($_GET['message'])) {
 

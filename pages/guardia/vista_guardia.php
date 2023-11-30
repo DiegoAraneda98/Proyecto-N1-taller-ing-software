@@ -5,31 +5,50 @@
         <div class="row">
             <div class="col-12">
                 <div class="col-10 offset-1 mt-5 d-flex justify-content-between h-75">
-                    <div class="col-md-4" style="padding:10px;background:#fff;border-radius: 5px;" id="divvideo">
+                    <div class="col-md-4">
+                        <div class="col-md-4" style="padding:10px;background:#fff;border-radius: 5px;" id="divvideo">
 
-                        <style>
-                            #divvideo {
-                                box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
-                                position: relative;
-                            }
+                            <style>
+                                #divvideo {
+                                    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+                                    position: relative;
+                                }
 
-                            #preview {
-                                padding-top: 1%;
-                                padding-bottom: 1%;
-                                width: 100%;
-                                height: 100%;
-                                margin: 0px auto;
-                                object-fit: cover;
-                            }
-                        </style>
+                                #preview {
+                                    padding-top: 1%;
+                                    padding-bottom: 1%;
+                                    width: 100%;
+                                    height: 100%;
+                                    margin: 0px auto;
+                                    object-fit: cover;
+                                }
 
-                        <video id="preview" width="100%" style="border-radius:10px;" class="d-none"></video>
-                        <br>
-                        <br>
-                        <?php
-                        ?>
+                                #chartContainer {
+                                    margin-top: 10px;
+                                }
+                            </style>
 
+                            <video id="preview" width="100%" style="border-radius:10px;" class="d-none"></video>
+                            <br>
+                            <br>
+                        </div>
+
+
+                        <div class="" style="padding: 10px; background: #fff; border-radius: 5px; margin-top: 10px; position:relative; z-index:0;text-align: center;">
+                            <h4 style="margin-bottom: 0;">Hora Peek</h4>
+                            <form id="filtroHorasForm">
+                                <label for="horaInicio">Hora de inicio:</label>
+                                <input type="time" id="horaInicio" name="horaInicio" required>
+                                <label for="horaFin">Hora de fin:</label>
+                                <input type="time" id="horaFin" name="horaFin" required>
+                                <input class="custom-btn" style="border-radius: .25rem;" type="submit" value="Filtrar">
+                            </form>
+                            <div id="chartContainer" style="background: #fff; border-radius: 5px; padding: 10px;">
+                                <canvas id="horaPicoChart" width="400" height="300"></canvas>
+                            </div>
+                        </div>
                     </div>
+
 
                     <div class="col-md-8">
                         <form action="insert_historial.php" method="post" class="form-horizontal" style="border-radius: 5px;padding:10px; background:#fff;" id="divvideo">
@@ -57,6 +76,20 @@
                                     if ($conexion->connect_error) {
                                         die("Connection failed" . $conexion->connect_error);
                                     }
+
+                                    $sql1 = "SELECT hora_ingreso, COUNT(*) as cantidad FROM historial GROUP BY hora_ingreso";
+                                    $result = $conexion->query($sql1);
+
+                                    $horas = [];
+                                    $cantidades = [];
+
+                                    if ($result->num_rows > 0) {
+                                        while ($row = $result->fetch_assoc()) {
+                                            $horas[] = $row['hora_ingreso'];
+                                            $cantidades[] = (int)$row['cantidad'];
+                                        }
+                                    }
+
                                     $sql = "SELECT * FROM historial";
                                     $query = $conexion->query($sql);
                                     while ($row = $query->fetch_assoc()) {
@@ -172,4 +205,117 @@
         // Ejecutar la función para iniciar la cámara al cargar la página
         document.addEventListener('DOMContentLoaded', toggleCamera);
     </script>
+
+
+    <!-- Gráfico historial  -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('horaPicoChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: <?php echo json_encode($horas); ?>,
+                    datasets: [{
+                        label: 'Hora vs Cantidad',
+                        data: <?php echo json_encode($cantidades); ?>,
+                        backgroundColor: '#d6092c',
+                        borderColor: '#d6092c',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Hora'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Cantidad'
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- filtrar gráfico -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const ctx = document.getElementById('horaPicoChart').getContext('2d');
+            let myChart;
+
+            function actualizarGrafico(data) {
+                if (myChart) {
+                    myChart.destroy();
+                }
+
+                myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: data.horas,
+                        datasets: [{
+                            label: 'Cantidad',
+                            data: data.cantidades,
+                            backgroundColor: '#d6092c',
+                            borderColor: '#d6092c',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Hora'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Cantidad'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            document.getElementById('filtroHorasForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                // Obtener valores del formulario
+                const horaInicio = document.getElementById('horaInicio').value;
+                const horaFin = document.getElementById('horaFin').value;
+
+                fetch('actions/filtrar_grafico.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            horaInicio: horaInicio,
+                            horaFin: horaFin
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Actualizar el gráfico con los datos recibidos
+                        actualizarGrafico(data);
+                    })
+                    .catch(error => {});
+            });
+        });
+    </script>
+
+
     <script src="js/data_table.js"></script>

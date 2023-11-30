@@ -7,7 +7,6 @@ $(document).ready(function() {
 
         if (nuevaContraseña !== repetirNuevaContraseña) {
             Swal.fire({
-                position: "top-end",
                 icon: "error",
                 title: "Las contraseñas no son iguales",
                 showConfirmButton: false,
@@ -25,7 +24,6 @@ $(document).ready(function() {
                 },
                 success: function(response) {
                     Swal.fire({
-                        position: "top-end",
                         icon: "success",
                         title: "Contraseña cambiada",
                         showConfirmButton: false,

@@ -7,20 +7,27 @@
                 </div>
 
                 <div class="card-body">
-                    <h4 class="card-title text-center">Recuperar contraseña</h4>
+                    <h4 class="card-title text-center">Desactivación de cuenta</h4>
                     <hr class="border border-danger border-1 opacity-50">
 
-                    <form action="index.php?p=auth/actions/restablecer_contraseña" method="post">
-                        
-                        <div class="p mt-4">Correo Institucional</div>
-                        <div class="input-group ">
-                            <input class="form-control bg-light mt-3" id="correo" type="email" name="correo"
-                                 placeholder="Correo@ucsc.cl" />
+                    <form action="index.php?p=perfil/actions/desactivarCuenta" method="post">
+
+                        <div class="p mt-4">Rut</div>
+                        <div class="input-group mt-1">
+                            <input class="form-control bg-light" type="text" name="rut"
+                                placeholder="Ingrese su Rut sin dígito verificador" minlength="8" maxlength="8"
+                                onkeydown=filtro() required />
+                        </div>
+
+                        <div class="p mt-4">Contraseña</div>
+                        <div class="input-group mt-1">
+                            <input class="form-control bg-light" type="password" name="contraseña"
+                                placeholder="Contraseña" required />
                         </div>
 
                         <div class="d-flex justify-content-center">
                             <div class="btn mt-4 shadow-sm rojo w-75">
-                                <input type="submit" value="Solicitar recuperación" name="registro"
+                                <input type="submit" value="Desactivar cuenta" name="registro"
                                     class="btn rojo text-white fw-semibold w-100">
                             </div>
                         </div>
@@ -33,4 +40,3 @@
         <div class="col-2"></div>
     </div>
 </div>
-

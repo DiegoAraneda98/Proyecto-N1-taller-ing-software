@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-11-2023 a las 21:45:33
+-- Tiempo de generación: 30-11-2023 a las 03:11:48
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -452,9 +452,19 @@ CREATE TABLE `encuestas` (
   `id_encuesta` int(11) NOT NULL,
   `rapidez` int(5) NOT NULL,
   `interfaz` int(5) NOT NULL,
-  `accesibilidad` int(5) NOT NULL,
-  `id_usuario` int(11) NOT NULL
+  `accesibilidad` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `encuestas`
+--
+
+INSERT INTO `encuestas` (`id_encuesta`, `rapidez`, `interfaz`, `accesibilidad`) VALUES
+(1, 4, 3, 4),
+(2, 4, 4, 4),
+(3, 3, 4, 3),
+(4, 4, 4, 4),
+(5, 5, 4, 4);
 
 -- --------------------------------------------------------
 
@@ -488,6 +498,13 @@ CREATE TABLE `guardias` (
   `nombre` varchar(40) NOT NULL,
   `id_caseta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `guardias`
+--
+
+INSERT INTO `guardias` (`id_guardia`, `nombre`, `id_caseta`) VALUES
+(2, 'asd', 3);
 
 -- --------------------------------------------------------
 
@@ -526,8 +543,16 @@ CREATE TABLE `invitados` (
   `id_invitado` int(11) NOT NULL,
   `run` int(10) NOT NULL,
   `nombre` varchar(30) NOT NULL,
+  `correo_invitado` varchar(30) DEFAULT NULL,
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `invitados`
+--
+
+INSERT INTO `invitados` (`id_invitado`, `run`, `nombre`, `correo_invitado`, `id_usuario`) VALUES
+(1, 77777777, 'vegetta777', 'vegetta@gmail.com', 12);
 
 -- --------------------------------------------------------
 
@@ -736,6 +761,7 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(50) NOT NULL,
   `apellido` varchar(30) DEFAULT NULL,
   `correo` varchar(30) NOT NULL,
+  `correo_secundario` varchar(30) DEFAULT NULL,
   `tipo_usuario` text NOT NULL,
   `telefono` int(10) DEFAULT NULL,
   `salud` varchar(20) DEFAULT NULL,
@@ -749,12 +775,12 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `run`, `nombre`, `apellido`, `correo`, `tipo_usuario`, `telefono`, `salud`, `foto`, `contraseña`, `estado`, `token`) VALUES
-(1, 19816480, 'admin2', NULL, 'admin2@ucsc.cl', 'admin', NULL, NULL, NULL, '999', 0, ''),
-(2, 20033016, 'admin1', NULL, 'admin1@ucsc.cl', 'admin', NULL, NULL, NULL, '999', 1, ''),
-(3, 19815710, 'admin3', NULL, 'admin3@ucsc.cl', 'admin', NULL, 'positivo', NULL, '999', 1, ''),
-(12, 11111111, ' test', NULL, 'test@ucsc.cl', ' Institucional', NULL, 'negativo', NULL, '666', 1, 'd5afc68c26eaab272b8d4517b022b566'),
-(14, 55555555, ' cinco', NULL, ' cinco@ucsc.cl', ' Institucional', NULL, 'negativo', NULL, '555', 1, 'f085ae791ec06075309554e30b9a89cb');
+INSERT INTO `usuarios` (`id_usuario`, `run`, `nombre`, `apellido`, `correo`, `correo_secundario`, `tipo_usuario`, `telefono`, `salud`, `foto`, `contraseña`, `estado`, `token`) VALUES
+(1, 19816480, 'admin2', NULL, 'admin2@ucsc.cl', '', 'admin', NULL, NULL, NULL, '999', 0, ''),
+(2, 20033016, 'admin1', NULL, 'admin1@ucsc.cl', '', 'admin', NULL, 'negativo', NULL, '999', 1, ''),
+(3, 19815710, 'admin3', NULL, 'admin3@ucsc.cl', '', 'admin', NULL, 'positivo', NULL, '999', 1, ''),
+(12, 11111111, ' test', 'Parra', 'test@ucsc.cl', 'correo@gmail.com', ' Institucional', 995116584, 'negativo', 'avatares/6567e4ac05b927.12406170profe2.jpg', '666', 1, '0a8f5cdc883271c6970550e5dcacdf08'),
+(18, 55555555, ' Diego', NULL, ' nparrac@ing.ucsc.cl', NULL, ' Institucional', NULL, NULL, NULL, '555', 0, '112aa6229a84b7c6462adc30b85b36e6');
 
 -- --------------------------------------------------------
 
@@ -806,8 +832,7 @@ ALTER TABLE `comunas`
 -- Indices de la tabla `encuestas`
 --
 ALTER TABLE `encuestas`
-  ADD PRIMARY KEY (`id_encuesta`),
-  ADD KEY `id_usuario` (`id_usuario`);
+  ADD PRIMARY KEY (`id_encuesta`);
 
 --
 -- Indices de la tabla `establecimiento`
@@ -913,7 +938,7 @@ ALTER TABLE `comunas`
 -- AUTO_INCREMENT de la tabla `encuestas`
 --
 ALTER TABLE `encuestas`
-  MODIFY `id_encuesta` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_encuesta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `establecimiento`
@@ -925,7 +950,7 @@ ALTER TABLE `establecimiento`
 -- AUTO_INCREMENT de la tabla `guardias`
 --
 ALTER TABLE `guardias`
-  MODIFY `id_guardia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_guardia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `historial`
@@ -937,7 +962,7 @@ ALTER TABLE `historial`
 -- AUTO_INCREMENT de la tabla `invitados`
 --
 ALTER TABLE `invitados`
-  MODIFY `id_invitado` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_invitado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `modelo`
@@ -973,13 +998,13 @@ ALTER TABLE `tipo_vehiculo`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `vehiculos`
 --
 ALTER TABLE `vehiculos`
-  MODIFY `id_vehiculo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_vehiculo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- Restricciones para tablas volcadas
