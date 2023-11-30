@@ -9,7 +9,7 @@ if (isset($_POST["rut"], $_POST["contraseña"]) && !empty($_POST["rut"]) && !emp
     $rut = mysqli_real_escape_string($conexion, $_POST["rut"]);
     $contraseña = mysqli_real_escape_string($conexion, $_POST["contraseña"]);
 
-    $sql = "SELECT * FROM usuarios WHERE run = '$rut' AND contraseña = '$contraseña'";
+    $sql = "SELECT * FROM usuarios WHERE run = '$rut' AND contraseña = '$contraseña' AND estado = '1' AND salud  = 'negativo'";
     $result = mysqli_query($conexion, $sql);
     $rows = mysqli_num_rows($result);
 
@@ -18,7 +18,7 @@ if (isset($_POST["rut"], $_POST["contraseña"]) && !empty($_POST["rut"]) && !emp
         $_SESSION['run'] = $rut;
         $_SESSION['id_usuario'] = $fila['id_usuario'];
         $_SESSION['tipo_usuario'] = $fila['tipo_usuario'];
-       
+        $_SESSION['correo'] = $fila['correo'];
 
         // Redireccionar según el tipo de usuario
         if ($_SESSION['tipo_usuario'] == 'Guardia' or $_SESSION['tipo_usuario'] == ' Guardia') {

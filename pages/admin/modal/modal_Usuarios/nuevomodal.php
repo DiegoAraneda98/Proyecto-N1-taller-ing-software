@@ -64,10 +64,7 @@
                         </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="foto" class="form-label">Foto:</label>
-                        <input type="text" name="foto" id="foto" class="form-control">
-                    </div>
+                
 
                     <div class="mb-3">
                         <label for="contraseña" class="form-label">Contraseña:</label>

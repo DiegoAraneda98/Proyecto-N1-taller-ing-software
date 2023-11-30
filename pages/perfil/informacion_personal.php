@@ -20,14 +20,14 @@
                 <div class="input-group mt-2 w-75">
                     <input name="apellido" id="apellido" type="text" class="form-control rounded-0 mb-2"
                         aria-label="Username" aria-describedby="basic-addon1" onkeydown=filtroLetras()
-                        value="<?php echo $apellido ?>">
+                        value="<?php echo $apellido ?>" require>
                 </div>
             </div>
 
 
 
             <div class="input-group mt-4 d-flex justify-content-end align-items-end w-75 ">
-                <button class="btn custom-btn border-secondary rounded-0 text-black fw-semibold bg-light"
+                <button class="btn custom-btn  fw-semibold  mb-4 rounded-0 "
                     onclick="guardarDatos()" type="button">
                     Guardar datos
                 </button>
@@ -67,16 +67,18 @@
                 </div>
             </div>
 
-            <div class="d-flex">
+            <div class="w-100">
+
+                <label
+                    class="btn custom-btn  fw-semibold mt-3 rounded-0 subir_imagen "
+                    for="foto">Subir imagen</label>
                 <button
-                    class="btn custom-btn border-secondary rounded-0 text-black fw-semibold mt-3 bg-light d-flex justify-content-start"
+                    class="btn custom-btn  fw-semibold  rounded-0 mt-2"
                     type="button" onclick="guardarImagen()">
                     Guardar imagen
                 </button>
 
-                <label
-                    class="btn custom-btn border-secondary rounded-0 text-black fw-semibold bg-light mt-3 ml-5 subir_imagen d-flex justify-content-end"
-                    for="foto">Subir imagen</label>
+              
 
                 <input type="file" name="foto" id="foto" accept="image/*">
             </div>

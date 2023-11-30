@@ -5,10 +5,10 @@
                 <div class="col-10 bg-white offset-1 mt-5">
                     <div class="h2 p-3 text-secondary ">Regiones</div>
                     <hr class="border border-danger border-1 opacity-50">
-                    <div class="table-responsive shadow ">
-                        <table class="table table-hover text-center" id="miTabla">
+                    <div class="table-responsive shadow p-3">
+                        <table class="table table-hover table-bordered border-dark  table-striped text-center" id="miTabla">
                             
-                            <thead>
+                            <thead class="table-dark">
                                 <tr>
                                     <th scope="col">ID región</th>
                                     <th scope="col">Región</th>

@@ -29,7 +29,7 @@ $mail = new PHPMailer(true);
 
                 //Recipients
                 $mail->setFrom('CorreoSoporteucsc@outlook.com', 'Soporte');
-                $mail->addAddress('diego.alberto.ah98@gmail.com', 'Ususario Prueba');  //Add a recipient
+                $mail->addAddress($_SESSION['correo']);  //Add a recipient
 
                 $subject = "Desactivación de cuenta";
                 $subject = utf8_decode($subject);
@@ -41,6 +41,7 @@ $mail = new PHPMailer(true);
 
                 $mail->send();
                 echo 'Message has been sent'; 
+                header ('index.php?p=perfil/perfil');
             } catch (Exception $e) {
                 echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"; 
             }

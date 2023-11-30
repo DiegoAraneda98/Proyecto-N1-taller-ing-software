@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="input-group mt-3 d-flex justify-content-end align-items-end w-75 ">
-                <a href="#" class="btn custom-btn border-secondary rounded-0 text-black bg-light fw-semibold mb-5"
+                <a href="#" class="btn custom-btn  fw-semibold  mb-4 rounded-0"
                 onclick="guardarContacto()" id="save-password"  data-id="<?php echo $id ?>">Guardar contacto</a>
 
             

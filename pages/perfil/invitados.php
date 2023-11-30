@@ -26,7 +26,7 @@
             <div class="input-group mt-3 d-flex justify-content-end align-items-end w-75 ">
 
                 <button name="añadir"
-                    class="btn custom-btn border-secondary rounded-0 text-black bg-light fw-semibold mb-5"
+                    class="btn custom-btn  fw-semibold  mb-4 rounded-0"
                     type="submit">Añadir invitado</button>
 
             </div>
@@ -41,10 +41,10 @@
 
     </div>
     <div class="col-4">
-        <div class="table-responsive shadow overflow-y-auto" style="max-height: 310px;">
+        <div class="table table-hover table-bordered border-dark  table-striped text-center overflow-y-auto" style="max-height: 310px;">
             <table class="table table-hover text-center">
                 <?php require __DIR__ . '/../auth/actions/controlador_login.php'; ?>
-                <thead>
+                <thead class="table-dark">
                     <tr>
                         <th scope="col">Rut</th>
                         <th scope="col">Nombre</th>

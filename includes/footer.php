@@ -9,17 +9,17 @@ if ($footerType === 'type1') {
                 <use xlink:href="#bootstrap" />
             </svg>
         </a>
-        <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Company, Inc</span>
+        <span class="mb-3 mb-md-0 text-muted">&copy; 2023 Company, Inc</span>
     </div>
 
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-        <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+        <li class="ms-3"><a class="text-muted" href="https://twitter.com/ucscconcepcion?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><svg class="bi" width="24" height="24">
                     <i class="bi bi-twitter-x"></i>
                 </svg></a></li>
-        <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+        <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/ucscconcepcion/"><svg class="bi" width="24" height="24">
                     <i class="bi bi-instagram"></i>
                 </svg></a></li>
-        <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+        <li class="ms-3"><a class="text-muted" href="https://www.facebook.com/ucscconcepcion/"><svg class="bi" width="24" height="24">
                     <i class="bi bi-facebook"></i>
                 </svg></a></li>
     </ul>
