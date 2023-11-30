@@ -7,26 +7,25 @@
                 </div>
 
                 <div class="card-body">
-                    <h4 class="card-title text-center">Recuperar contraseña</h4>
+                    <h4 class="card-title text-center">Reactivar cuenta</h4>
                     <hr class="border border-danger border-1 opacity-50">
                     <p class="text-center h6">En esta página se solicitará tu dirección de correo electrónico con el fin
-                        de facilitar el proceso de recuperación de contraseña. Si has olvidado tu contraseña o necesitas
-                        restablecerla por cualquier motivo, por favor, proporciona tu correo electrónico asociado a tu
-                        cuenta para recibir instrucciones detalladas sobre cómo restablecer tu contraseña.
+                        de volver a activar tu cuenta. Por favor, proporciona tu correo electrónico asociado a tu
+                        cuenta para recibir instrucciones sobre cómo volver a activar tu cuenta.
                     </p>
                     <hr class="border border-danger border-1 opacity-50">
 
-                    <form action="index.php?p=auth/actions/restablecer_contraseña" method="post">
-                        
+                    <form action="index.php?p=perfil/actions/correoActivacion" method="post">
+
                         <div class="p mt-4">Correo Institucional</div>
                         <div class="input-group ">
                             <input class="form-control bg-light mt-3" id="correo" type="email" name="correo"
-                                 placeholder="Correo@ucsc.cl" />
+                                placeholder="Correo@ucsc.cl" />
                         </div>
 
                         <div class="d-flex justify-content-center">
                             <div class="btn mt-4 shadow-sm rojo w-75">
-                                <input type="submit" value="Solicitar recuperación" name="registro"
+                                <input type="submit" value="Solicitar reactivación" name="registro"
                                     class="btn rojo text-white fw-semibold w-100">
                             </div>
                         </div>
@@ -39,4 +38,3 @@
         <div class="col-2"></div>
     </div>
 </div>
-

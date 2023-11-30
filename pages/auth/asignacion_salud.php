@@ -9,9 +9,10 @@
                 <div class="card-body">
                     <h4 class="card-title text-center">Encuesta COVID-19</h4>
                     <hr class="border border-danger border-1 opacity-50">
-                    <p class="text-center h6">Hola, gracias por tomarte el tiempo de contestar esta breve encuesta,
-                        a continuación, encontrara 3 campos de valoración los cuales son rapidez, interfaz y
-                        accesibilidad. Por favor califica estos campos de 1 a 5 estrellas. </p>
+                    <p class="text-center h6">Por favor, toma unos minutos antes de terminar tu registro para responder las siguientes
+                        preguntas. Tu honestidad y franqueza son fundamentales para obtener una visión precisa de tu estado de salud.
+                        Apreciamos tu colaboración y contribución a esta iniciativa. ¡Gracias por contestar!
+                    </p>
                     <hr class="border border-danger border-1 opacity-50">
                     <form action="index.php?p=auth/actions/salud" method="post">
 

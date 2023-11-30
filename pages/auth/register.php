@@ -81,7 +81,7 @@
                         <?php
                     }
                     ?>
-                    <p class="text-center mt-2">Si ya tienes una cuenta y deseas activarla haz click <a href="index.php?p=auth/reset_contraseña">aquí</a></p>
+                    <p class="text-center mt-2">Si ya tienes una cuenta y deseas activarla haz click <a href="index.php?p=perfil/reactivar_cuenta">aquí</a></p>
                 </form>
             </div>
         </div>

@@ -85,13 +85,6 @@ if (!empty($_POST["registro"])) { //si el boton es presionado, validar datos que
                 /*  echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"; */
                 header('Location: index.php?p=auth/login&message=error');
             }
-
-            /*  if ($sql == 1) {
-
-                 header("Location: index.php?p=auth/login");
-             } else {
-                 echo "USUARIO NO REGISTRADO CON EXITO";
-             } */
         }
 
 
