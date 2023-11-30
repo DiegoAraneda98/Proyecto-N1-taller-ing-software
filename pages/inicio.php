@@ -7,7 +7,7 @@
 </div>
 
 
-<div class="container-fluid bg-light"> <!-- Carrusel de imagenes -->
+<div class="container-fluid "> <!-- Carrusel de imagenes -->
   <div class="row">
     <div class="col-1"></div>
     <div class="col-10">
@@ -47,7 +47,7 @@
   </div>
 </div>
 
-<div class="row bg-light"> <!-- linea divisora -->
+<div class="row "> <!-- linea divisora -->
   <div class="col-1"></div>
   <div class="col-10">
     <hr class="border border-danger border-1 opacity-50">
@@ -56,18 +56,17 @@
 </div>
 
 
-
-<div class="row bg-light"> <!-- fechas -->
 <div class="col-1"></div>
   <div class="col-5">
-    <div class="bg-black text-white">
+    <div class=" text-white">
       hola
     </div>
   </div>
   <div class="col-5">
-  <div class="bg-black text-white">
+  <div class="text-white">
       hola
     </div>
     </div>
   <div class="col-1"></div>
 </div>
+

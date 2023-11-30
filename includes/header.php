@@ -50,5 +50,6 @@
 
 </head>
 
-<body>
+<body data-bs-theme="light">
     <?php require_once 'includes/navbar.php'; ?>
+    <script src="js/cambiar_tema.js"></script>

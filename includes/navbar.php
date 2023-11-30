@@ -8,11 +8,12 @@ if ($navbarType === 'type1') {
     header("Location: index.php?p=auth/login");
   }
   echo ' <div class="container-fluid"> <!-- nav bar inicio(Centrado)-->
-  <div class="row bg-light">
+  <div class="row ">
       <div class="col-10 offset-1">
-          <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <nav class="navbar navbar-expand-lg ">
               <div class="container-fluid">
                   <img src="img/main-logo.svg" class="img-fluid logo" alt="logo">
+                  <button onclick="cambiarTema()" class="btn rounded-fill ml-4"><i id="dl-icon" class="bi bi-moon-fill"></i></button>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                       data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
                       aria-expanded="false" aria-label="Toggle navigation">
