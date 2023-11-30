@@ -116,6 +116,17 @@ if ($navbarType === 'type1') {
   } else {
     echo '<li class="nav-item dropdown"> 
     <a class="nav-link dropdown-toggle" href="#" id="mantenedoresDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Modo cuarentena
+  </a>
+  <div class="dropdown-menu drop" aria-labelledby="mantenedoresDropdown">
+    <a class="dropdown-item" href="index.php?p=admin/actions/activarCuarentena">Activar cuarentena</a>
+    <a class="dropdown-item" href="index.php?p=admin/actions/desactivarCuarentena">Desactivar cuarentena</a>
+    </div>
+</li>';
+
+
+    echo '<li class="nav-item dropdown"> 
+    <a class="nav-link dropdown-toggle" href="#" id="mantenedoresDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Mantenedores
   </a>
   <div class="dropdown-menu drop" aria-labelledby="mantenedoresDropdown">
