@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-11-2023 a las 03:11:48
+-- Tiempo de generación: 30-11-2023 a las 07:25:29
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -547,13 +547,6 @@ CREATE TABLE `invitados` (
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `invitados`
---
-
-INSERT INTO `invitados` (`id_invitado`, `run`, `nombre`, `correo_invitado`, `id_usuario`) VALUES
-(1, 77777777, 'vegetta777', 'vegetta@gmail.com', 12);
-
 -- --------------------------------------------------------
 
 --
@@ -776,11 +769,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `run`, `nombre`, `apellido`, `correo`, `correo_secundario`, `tipo_usuario`, `telefono`, `salud`, `foto`, `contraseña`, `estado`, `token`) VALUES
-(1, 19816480, 'admin2', NULL, 'admin2@ucsc.cl', '', 'admin', NULL, NULL, NULL, '999', 0, ''),
-(2, 20033016, 'admin1', NULL, 'admin1@ucsc.cl', '', 'admin', NULL, 'negativo', NULL, '999', 1, ''),
-(3, 19815710, 'admin3', NULL, 'admin3@ucsc.cl', '', 'admin', NULL, 'positivo', NULL, '999', 1, ''),
-(12, 11111111, ' test', 'Parra', 'test@ucsc.cl', 'correo@gmail.com', ' Institucional', 995116584, 'negativo', 'avatares/6567e4ac05b927.12406170profe2.jpg', '666', 1, '0a8f5cdc883271c6970550e5dcacdf08'),
-(18, 55555555, ' Diego', NULL, ' nparrac@ing.ucsc.cl', NULL, ' Institucional', NULL, NULL, NULL, '555', 0, '112aa6229a84b7c6462adc30b85b36e6');
+(2, 20033016, 'admin1', NULL, 'admin1@ucsc.cl', '', 'admin', NULL, 'negativo', NULL, '999', 1, '');
 
 -- --------------------------------------------------------
 
@@ -998,7 +987,7 @@ ALTER TABLE `tipo_vehiculo`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `vehiculos`
