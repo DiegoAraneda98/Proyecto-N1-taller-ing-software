@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 01-12-2023 a las 06:55:48
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Host: 127.0.0.1
+-- Generation Time: Dec 01, 2023 at 02:32 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,23 +18,23 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `safedrive`
+-- Database: `safedrive`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `casetas`
+-- Table structure for table `casetas`
 --
 
 CREATE TABLE `casetas` (
   `id_caseta` int(11) NOT NULL,
-  `nombre` varchar(30) NOT NULL,
-  `direccion` varchar(50) NOT NULL
+  `nombre` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `direccion` varchar(50) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `casetas`
+-- Dumping data for table `casetas`
 --
 
 INSERT INTO `casetas` (`id_caseta`, `nombre`, `direccion`) VALUES
@@ -44,16 +44,16 @@ INSERT INTO `casetas` (`id_caseta`, `nombre`, `direccion`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `color`
+-- Table structure for table `color`
 --
 
 CREATE TABLE `color` (
   `id_color` int(11) NOT NULL,
-  `color` varchar(20) NOT NULL
+  `color` varchar(20) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `color`
+-- Dumping data for table `color`
 --
 
 INSERT INTO `color` (`id_color`, `color`) VALUES
@@ -81,17 +81,17 @@ INSERT INTO `color` (`id_color`, `color`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `comunas`
+-- Table structure for table `comunas`
 --
 
 CREATE TABLE `comunas` (
   `id` int(11) NOT NULL,
   `comuna` varchar(64) NOT NULL,
   `provincia_id` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `comunas`
+-- Dumping data for table `comunas`
 --
 
 INSERT INTO `comunas` (`id`, `comuna`, `provincia_id`) VALUES
@@ -445,7 +445,7 @@ INSERT INTO `comunas` (`id`, `comuna`, `provincia_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `encuestas`
+-- Table structure for table `encuestas`
 --
 
 CREATE TABLE `encuestas` (
@@ -456,7 +456,7 @@ CREATE TABLE `encuestas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `encuestas`
+-- Dumping data for table `encuestas`
 --
 
 INSERT INTO `encuestas` (`id_encuesta`, `rapidez`, `interfaz`, `accesibilidad`) VALUES
@@ -469,18 +469,18 @@ INSERT INTO `encuestas` (`id_encuesta`, `rapidez`, `interfaz`, `accesibilidad`) 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `establecimiento`
+-- Table structure for table `establecimiento`
 --
 
 CREATE TABLE `establecimiento` (
   `cod_establecimiento` int(11) NOT NULL,
-  `nombre_establecimiento` varchar(60) NOT NULL,
-  `direccion` varchar(60) NOT NULL,
+  `nombre_establecimiento` varchar(60) COLLATE utf8_spanish_ci NOT NULL,
+  `direccion` varchar(60) COLLATE utf8_spanish_ci NOT NULL,
   `cod_comuna` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `establecimiento`
+-- Dumping data for table `establecimiento`
 --
 
 INSERT INTO `establecimiento` (`cod_establecimiento`, `nombre_establecimiento`, `direccion`, `cod_comuna`) VALUES
@@ -490,19 +490,19 @@ INSERT INTO `establecimiento` (`cod_establecimiento`, `nombre_establecimiento`, 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `guardias`
+-- Table structure for table `guardias`
 --
 
 CREATE TABLE `guardias` (
   `id_guardia` int(11) NOT NULL,
   `run` int(8) NOT NULL,
-  `nombre` varchar(40) NOT NULL,
-  `contraseña` varchar(80) NOT NULL,
+  `nombre` varchar(40) COLLATE utf8_spanish_ci NOT NULL,
+  `contraseña` varchar(80) COLLATE utf8_spanish_ci NOT NULL,
   `id_caseta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `guardias`
+-- Dumping data for table `guardias`
 --
 
 INSERT INTO `guardias` (`id_guardia`, `run`, `nombre`, `contraseña`, `id_caseta`) VALUES
@@ -511,14 +511,14 @@ INSERT INTO `guardias` (`id_guardia`, `run`, `nombre`, `contraseña`, `id_caseta
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `historial`
+-- Table structure for table `historial`
 --
 
 CREATE TABLE `historial` (
   `id_historial` int(11) NOT NULL,
-  `patente` varchar(7) NOT NULL,
-  `correo` varchar(50) NOT NULL,
-  `nombre` varchar(30) NOT NULL,
+  `patente` varchar(7) COLLATE utf8_spanish_ci NOT NULL,
+  `correo` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `nombre` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `run` int(10) NOT NULL,
   `hora_ingreso` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `hora_salida` timestamp NULL DEFAULT NULL,
@@ -526,45 +526,39 @@ CREATE TABLE `historial` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `historial`
+-- Dumping data for table `historial`
 --
 
 INSERT INTO `historial` (`id_historial`, `patente`, `correo`, `nombre`, `run`, `hora_ingreso`, `hora_salida`, `id_usuario`) VALUES
-(8, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '2023-11-30 23:24:13', NULL, 0),
-(9, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '2023-11-30 23:24:55', NULL, 0),
-(10, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '2023-11-30 23:25:00', NULL, 0),
-(11, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '2023-11-30 23:25:05', NULL, 0),
-(12, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '2023-11-30 23:25:11', NULL, 0),
-(13, 'ddss22', 'nparrac@ing.ucsc.cl', 'Usuario', 11111111, '2023-12-01 04:18:43', '2023-12-01 04:18:43', 27),
-(14, 'ddss22', 'nparrac@ing.ucsc.cl', 'Usuario', 11111111, '2023-12-01 04:19:12', '2023-12-01 04:19:12', 27);
+(13, 'ddss22', 'nparrac@ing.ucsc.cl', 'Usuario', 11111111, '2023-12-01 04:18:43', '2023-12-01 04:18:43', 27);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `invitados`
+-- Table structure for table `invitados`
 --
 
 CREATE TABLE `invitados` (
   `id_invitado` int(11) NOT NULL,
   `run` int(10) NOT NULL,
-  `nombre` varchar(30) NOT NULL,
-  `correo_invitado` varchar(30) DEFAULT NULL,
+  `nombre` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `correo_invitado` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `modelo`
+-- Table structure for table `modelo`
 --
 
 CREATE TABLE `modelo` (
   `id_modelo` int(11) NOT NULL,
-  `modelo` varchar(40) NOT NULL
+  `modelo` varchar(40) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `modelo`
+-- Dumping data for table `modelo`
 --
 
 INSERT INTO `modelo` (`id_modelo`, `modelo`) VALUES
@@ -592,7 +586,7 @@ INSERT INTO `modelo` (`id_modelo`, `modelo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pertenece`
+-- Table structure for table `pertenece`
 --
 
 CREATE TABLE `pertenece` (
@@ -603,17 +597,17 @@ CREATE TABLE `pertenece` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `provincias`
+-- Table structure for table `provincias`
 --
 
 CREATE TABLE `provincias` (
   `id` int(11) NOT NULL,
   `provincia` varchar(64) NOT NULL,
   `region_id` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `provincias`
+-- Dumping data for table `provincias`
 --
 
 INSERT INTO `provincias` (`id`, `provincia`, `region_id`) VALUES
@@ -677,7 +671,7 @@ INSERT INTO `provincias` (`id`, `provincia`, `region_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `regiones`
+-- Table structure for table `regiones`
 --
 
 CREATE TABLE `regiones` (
@@ -685,10 +679,10 @@ CREATE TABLE `regiones` (
   `region` varchar(64) NOT NULL,
   `abreviatura` varchar(4) NOT NULL,
   `capital` varchar(64) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `regiones`
+-- Dumping data for table `regiones`
 --
 
 INSERT INTO `regiones` (`id`, `region`, `abreviatura`, `capital`) VALUES
@@ -712,16 +706,16 @@ INSERT INTO `regiones` (`id`, `region`, `abreviatura`, `capital`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tipo_usuario`
+-- Table structure for table `tipo_usuario`
 --
 
 CREATE TABLE `tipo_usuario` (
   `id_tipoUsuario` int(11) NOT NULL,
-  `nombre` varchar(30) NOT NULL
+  `nombre` varchar(30) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `tipo_usuario`
+-- Dumping data for table `tipo_usuario`
 --
 
 INSERT INTO `tipo_usuario` (`id_tipoUsuario`, `nombre`) VALUES
@@ -731,16 +725,16 @@ INSERT INTO `tipo_usuario` (`id_tipoUsuario`, `nombre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tipo_vehiculo`
+-- Table structure for table `tipo_vehiculo`
 --
 
 CREATE TABLE `tipo_vehiculo` (
   `id_tipoVehiculo` int(11) NOT NULL,
-  `nombre` varchar(30) NOT NULL
+  `nombre` varchar(30) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `tipo_vehiculo`
+-- Dumping data for table `tipo_vehiculo`
 --
 
 INSERT INTO `tipo_vehiculo` (`id_tipoVehiculo`, `nombre`) VALUES
@@ -750,28 +744,28 @@ INSERT INTO `tipo_vehiculo` (`id_tipoVehiculo`, `nombre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Table structure for table `usuarios`
 --
 
 CREATE TABLE `usuarios` (
   `id_usuario` int(11) NOT NULL,
   `run` int(10) DEFAULT NULL,
-  `nombre` varchar(50) NOT NULL,
-  `apellido` varchar(30) DEFAULT NULL,
-  `correo` varchar(30) DEFAULT NULL,
-  `correo_secundario` varchar(30) DEFAULT NULL,
-  `tipo_usuario` text NOT NULL,
+  `nombre` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `apellido` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `correo` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `correo_secundario` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `tipo_usuario` text COLLATE utf8_spanish_ci NOT NULL,
   `telefono` int(10) DEFAULT NULL,
-  `salud` varchar(20) DEFAULT NULL,
-  `foto` varchar(70) DEFAULT NULL,
-  `contraseña` varchar(80) NOT NULL,
+  `salud` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `foto` varchar(70) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `contraseña` varchar(80) COLLATE utf8_spanish_ci NOT NULL,
   `estado` tinyint(1) NOT NULL,
-  `token` varchar(255) DEFAULT NULL,
+  `token` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
   `cuarentena` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Dumping data for table `usuarios`
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `run`, `nombre`, `apellido`, `correo`, `correo_secundario`, `tipo_usuario`, `telefono`, `salud`, `foto`, `contraseña`, `estado`, `token`, `cuarentena`) VALUES
@@ -783,63 +777,63 @@ INSERT INTO `usuarios` (`id_usuario`, `run`, `nombre`, `apellido`, `correo`, `co
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `vehiculos`
+-- Table structure for table `vehiculos`
 --
 
 CREATE TABLE `vehiculos` (
   `id_vehiculo` int(11) NOT NULL,
-  `patente` varchar(7) NOT NULL,
-  `modelo` varchar(15) NOT NULL,
-  `color` varchar(15) NOT NULL,
-  `tipo_vehiculo` varchar(20) NOT NULL,
+  `patente` varchar(7) COLLATE utf8_spanish_ci NOT NULL,
+  `modelo` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `color` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `tipo_vehiculo` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `fecha_ingreso` date NOT NULL,
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `vehiculos`
+-- Dumping data for table `vehiculos`
 --
 
 INSERT INTO `vehiculos` (`id_vehiculo`, `patente`, `modelo`, `color`, `tipo_vehiculo`, `fecha_ingreso`, `id_usuario`) VALUES
 (40, 'SSDD33', 'Chevrolet', 'Verde', 'Auto', '2023-12-01', 30);
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `casetas`
+-- Indexes for table `casetas`
 --
 ALTER TABLE `casetas`
   ADD PRIMARY KEY (`id_caseta`);
 
 --
--- Indices de la tabla `color`
+-- Indexes for table `color`
 --
 ALTER TABLE `color`
   ADD PRIMARY KEY (`id_color`);
 
 --
--- Indices de la tabla `comunas`
+-- Indexes for table `comunas`
 --
 ALTER TABLE `comunas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `encuestas`
+-- Indexes for table `encuestas`
 --
 ALTER TABLE `encuestas`
   ADD PRIMARY KEY (`id_encuesta`);
 
 --
--- Indices de la tabla `establecimiento`
+-- Indexes for table `establecimiento`
 --
 ALTER TABLE `establecimiento`
   ADD PRIMARY KEY (`cod_establecimiento`),
   ADD KEY `cod_comuna` (`cod_comuna`);
 
 --
--- Indices de la tabla `guardias`
+-- Indexes for table `guardias`
 --
 ALTER TABLE `guardias`
   ADD PRIMARY KEY (`id_guardia`),
@@ -847,58 +841,58 @@ ALTER TABLE `guardias`
   ADD KEY `run` (`run`);
 
 --
--- Indices de la tabla `historial`
+-- Indexes for table `historial`
 --
 ALTER TABLE `historial`
   ADD PRIMARY KEY (`id_historial`),
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
--- Indices de la tabla `invitados`
+-- Indexes for table `invitados`
 --
 ALTER TABLE `invitados`
   ADD PRIMARY KEY (`id_invitado`),
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
--- Indices de la tabla `modelo`
+-- Indexes for table `modelo`
 --
 ALTER TABLE `modelo`
   ADD PRIMARY KEY (`id_modelo`);
 
 --
--- Indices de la tabla `pertenece`
+-- Indexes for table `pertenece`
 --
 ALTER TABLE `pertenece`
   ADD PRIMARY KEY (`id_usuario`),
   ADD KEY `cod_establecimiento` (`cod_establecimiento`);
 
 --
--- Indices de la tabla `provincias`
+-- Indexes for table `provincias`
 --
 ALTER TABLE `provincias`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `regiones`
+-- Indexes for table `regiones`
 --
 ALTER TABLE `regiones`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `tipo_usuario`
+-- Indexes for table `tipo_usuario`
 --
 ALTER TABLE `tipo_usuario`
   ADD PRIMARY KEY (`id_tipoUsuario`);
 
 --
--- Indices de la tabla `tipo_vehiculo`
+-- Indexes for table `tipo_vehiculo`
 --
 ALTER TABLE `tipo_vehiculo`
   ADD PRIMARY KEY (`id_tipoVehiculo`);
 
 --
--- Indices de la tabla `usuarios`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id_usuario`),
@@ -906,131 +900,131 @@ ALTER TABLE `usuarios`
   ADD KEY `run` (`run`);
 
 --
--- Indices de la tabla `vehiculos`
+-- Indexes for table `vehiculos`
 --
 ALTER TABLE `vehiculos`
   ADD PRIMARY KEY (`id_vehiculo`),
   ADD KEY `fk_vehiculos_usuarios` (`id_usuario`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `casetas`
+-- AUTO_INCREMENT for table `casetas`
 --
 ALTER TABLE `casetas`
   MODIFY `id_caseta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `color`
+-- AUTO_INCREMENT for table `color`
 --
 ALTER TABLE `color`
   MODIFY `id_color` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT de la tabla `comunas`
+-- AUTO_INCREMENT for table `comunas`
 --
 ALTER TABLE `comunas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=347;
 
 --
--- AUTO_INCREMENT de la tabla `encuestas`
+-- AUTO_INCREMENT for table `encuestas`
 --
 ALTER TABLE `encuestas`
   MODIFY `id_encuesta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de la tabla `establecimiento`
+-- AUTO_INCREMENT for table `establecimiento`
 --
 ALTER TABLE `establecimiento`
   MODIFY `cod_establecimiento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT de la tabla `guardias`
+-- AUTO_INCREMENT for table `guardias`
 --
 ALTER TABLE `guardias`
   MODIFY `id_guardia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT de la tabla `historial`
+-- AUTO_INCREMENT for table `historial`
 --
 ALTER TABLE `historial`
   MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT de la tabla `invitados`
+-- AUTO_INCREMENT for table `invitados`
 --
 ALTER TABLE `invitados`
   MODIFY `id_invitado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `modelo`
+-- AUTO_INCREMENT for table `modelo`
 --
 ALTER TABLE `modelo`
   MODIFY `id_modelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT de la tabla `provincias`
+-- AUTO_INCREMENT for table `provincias`
 --
 ALTER TABLE `provincias`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
--- AUTO_INCREMENT de la tabla `regiones`
+-- AUTO_INCREMENT for table `regiones`
 --
 ALTER TABLE `regiones`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT de la tabla `tipo_usuario`
+-- AUTO_INCREMENT for table `tipo_usuario`
 --
 ALTER TABLE `tipo_usuario`
   MODIFY `id_tipoUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT de la tabla `tipo_vehiculo`
+-- AUTO_INCREMENT for table `tipo_vehiculo`
 --
 ALTER TABLE `tipo_vehiculo`
   MODIFY `id_tipoVehiculo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `usuarios`
+-- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
--- AUTO_INCREMENT de la tabla `vehiculos`
+-- AUTO_INCREMENT for table `vehiculos`
 --
 ALTER TABLE `vehiculos`
   MODIFY `id_vehiculo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `guardias`
+-- Constraints for table `guardias`
 --
 ALTER TABLE `guardias`
   ADD CONSTRAINT `guardias_ibfk_1` FOREIGN KEY (`id_caseta`) REFERENCES `casetas` (`id_caseta`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `invitados`
+-- Constraints for table `invitados`
 --
 ALTER TABLE `invitados`
   ADD CONSTRAINT `invitados_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `pertenece`
+-- Constraints for table `pertenece`
 --
 ALTER TABLE `pertenece`
   ADD CONSTRAINT `pertenece_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `pertenece_ibfk_3` FOREIGN KEY (`cod_establecimiento`) REFERENCES `establecimiento` (`cod_establecimiento`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `vehiculos`
+-- Constraints for table `vehiculos`
 --
 ALTER TABLE `vehiculos`
   ADD CONSTRAINT `fk_vehiculos_usuarios` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
