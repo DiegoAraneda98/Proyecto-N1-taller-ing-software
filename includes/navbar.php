@@ -1,10 +1,10 @@
 <?php
 $page = isset($_GET['p']) ? $_GET['p'] : '';
 
-session_start();    
+session_start();
 
 if ($navbarType === 'type1') {
-  if (!isset($_SESSION['tipo_usuario'])){
+  if (!isset($_SESSION['tipo_usuario'])) {
     header("Location: index.php?p=auth/login");
   }
   echo ' <div class="container-fluid"> <!-- nav bar inicio(Centrado)-->
@@ -55,7 +55,7 @@ if ($navbarType === 'type1') {
       </div>
   </div>';
 } elseif ($navbarType === 'type2') {
-  if (!isset($_SESSION['tipo_usuario'])){
+  if (!isset($_SESSION['tipo_usuario'])) {
     header("Location: index.php?p=auth/login");
   }
   echo ' <div class="container-fluid"> <!-- nav bar home-->
@@ -88,7 +88,7 @@ if ($navbarType === 'type1') {
       </div>
   </div>';
 } elseif ($navbarType === 'type3') {
-  if (!isset($_SESSION['tipo_usuario'])){
+  if (!isset($_SESSION['tipo_usuario'])) {
     header("Location: index.php?p=auth/login");
   }
   echo ' <div class="container-fluid fondo-perfil"> <!-- extenso, con foto-->
@@ -105,9 +105,7 @@ if ($navbarType === 'type1') {
                   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                       <ul class="navbar-nav nav-underline ms-auto mb-2 mb-lg-0">
                       
-                      <li class="nav-item"> 
-                      <a class="nav-link ' . ($page === 'inicio' ? 'active' : '') . '" href="index.php?p=inicio">Inicio</a> 
-                    </li> ';
+                    ' ;
 
   if ($_SESSION['tipo_usuario'] !== 'admin') {
     echo '<li class="nav-item"> 
@@ -117,6 +115,15 @@ if ($navbarType === 'type1') {
               <a class="nav-link ' . ($page === 'perfil/perfil' ? 'active' : '') . '" href="index.php?p=perfil/perfil">Perfil</a> 
             </li>';
   } else {
+    echo '<li class="nav-item dropdown"> 
+    <a class="nav-link dropdown-toggle" href="#" id="mantenedoresDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Modo cuarentena
+  </a>
+  <div class="dropdown-menu drop" aria-labelledby="mantenedoresDropdown">
+    <a class="dropdown-item" href="index.php?p=admin/actions/activarCuarentena">Activar cuarentena</a>
+    <a class="dropdown-item" href="index.php?p=admin/actions/desactivarCuarentena">Desactivar cuarentena</a>
+    </div>
+</li>';
     echo '<li class="nav-item dropdown"> 
     <a class="nav-link dropdown-toggle" href="#" id="mantenedoresDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Mantenedores
@@ -148,7 +155,7 @@ if ($navbarType === 'type1') {
       </div>
   </div>';
 } elseif ($navbarType === 'type4') {
-  if (!isset($_SESSION['tipo_usuario'])){
+  if (!isset($_SESSION['tipo_usuario'])) {
     header("Location: index.php?p=auth/login");
   }
   echo ' <div class="container-fluid">   <!-- arreglado-->
@@ -202,7 +209,7 @@ if ($navbarType === 'type1') {
   </div>
 </div>';
 } elseif ($navbarType === 'type5') {
-  if (!isset($_SESSION['tipo_usuario'])){
+  if (!isset($_SESSION['tipo_usuario'])) {
     header("Location: index.php?p=auth/login");
   }
 
@@ -234,7 +241,7 @@ if ($navbarType === 'type1') {
       </div>
   </div>';
 
-}elseif ($navbarType === 'default') {
+} elseif ($navbarType === 'default') {
   echo ' <div class="row bg-light">  </div> <!-- nav bar vacio-->';
 }
 

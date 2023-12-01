@@ -16,11 +16,6 @@
                         <input type="text" name="nombre_guardia" id="nombre_guardia" class="form-control"  >
                     </div>
 
-                    <div class="mb-3">
-                        <label for="contraseña" class="form-label">Contraseña:</label>
-                        <input type="text" name="contraseña" id="contraseña" class="form-control"  >
-                    </div>
-
                     
                     <div class="mb-3">
                         <label for="caseta" class="form-label">Casetas:</label>
