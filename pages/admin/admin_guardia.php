@@ -11,6 +11,7 @@
                             <thead class="table-dark">
                                 <tr>
                                     <th scope="col">ID guardia</th>
+                                    <th scope="col">Rut</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Contraseña</th>
                                     <th scope="col">Id caseta</th>
@@ -29,6 +30,7 @@
 
                                     echo "<tr id='{$row["id_guardia"]}'>";
                                     echo "<td data-target='id_tipoUsuario'>" . $row["id_guardia"] . "</td>";
+                                    echo "<td data-target='run'>" . $row["run"] . "</td>";
                                     echo "<td data-target='nombre'>" . $row["nombre"] . "</td>";
                                     echo "<td data-target='contraseña'>" . $row["contraseña"] . "</td>";
                                     echo "<td data-target='id_caseta'>" . $row["id_caseta"] . "</td>";
