@@ -201,7 +201,7 @@ if ($navbarType === 'type1') {
                       <a class="nav-link hidden ' . ($page === 'guardia/vista_guardia' ? 'active' : '') . '" href="index.php?p=guardia/vista_guardia">Admin</a> 
                     </li> 
                     <li class="nav-item"> 
-                    <a class="nav-link ' . ($page === 'auth/actions/controlador_logout' ? 'active' : '') . '" href="index.php?p=auth/actions/controlador_logout">Cerrar sesión</a>
+                    <a class="nav-link ' . ($page === 'auth/actions/controlador_logout' ? 'active' : '') . '" href="index.php?p=auth/actions/controlador_logout_guardia">Cerrar sesión</a>
                     </li> 
                    
                   </ul> 
