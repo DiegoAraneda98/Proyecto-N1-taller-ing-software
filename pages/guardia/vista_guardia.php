@@ -46,8 +46,8 @@
                             <h4>Historial de acceso vehicular</h4>
                         </form>
                         <div style="border-radius: 5px; padding:10px; background:#fff; margin-top: 10px;" id="divvideo">
-                            <table id="miTabla" class="table table-bordered">
-                                <thead>
+                            <table id="miTabla" class="table table-hover table-bordered border-dark  table-striped text-center">
+                                <thead class="table-dark">
                                     <tr>
                                         <td>Rut</td>
                                         <td>Nombre</td>

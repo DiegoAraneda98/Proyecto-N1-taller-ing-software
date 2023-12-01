@@ -50,32 +50,5 @@ $(document).ready(function() {
 
 
 
-$(document).ready(function() {
-  $('#miTabla2').DataTable( {    
-      paging: true,
-      scrollCollapse: true,
-      scrollY: '250px',
-
-      "language": {
-          "lengthMenu": "Mostrar _MENU_ registros por pagina",
-          "zeroRecords": "No se encuentra el registro buscado - Lo lamentamos",
-          "info": "Mostrando pagina _PAGE_ de _PAGES_",
-          "infoEmpty": "No hay registros disponibles",
-          "infoFiltered": "(filtrado de un total de _MAX_ registros)",
-          "search":"Buscador",
-          "paginate": {
-            "first": "Primero",
-            "last": "Ultimo",
-            "next": "Siguiente",
-            "previous": "Anterior"
-        }
-      },
-
-  } );
-  
-} );
-
-
-
 
 

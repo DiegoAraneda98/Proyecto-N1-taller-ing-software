@@ -6,7 +6,7 @@
                     <div class="h2 p-3 text-secondary ">Guardias</div>
                     <hr class="border border-danger border-1 opacity-50">
                     <div class="table-responsive shadow p-3" >
-                        <table class="table table-hover table-bordered border-dark  table-striped text-center" id="miTabla2">
+                        <table class="table table-hover table-bordered border-dark  table-striped text-center" id="miTabla">
                             
                             <thead class="table-dark">
                                 <tr>

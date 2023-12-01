@@ -34,7 +34,7 @@ if (isset($_POST['id']) && isset($_POST['patente'])) {
             $conexion->query($updateQuery);
         } else {
             // Si no hay registro, insertar uno nuevo
-            $consultaUsuarios = "SELECT run, nombre, correo FROM usuarios WHERE id_usuario = '$idUsuario'";
+            $consultaUsuarios = "SELECT run, nombre, correo, cuarentena FROM usuarios WHERE id_usuario = '$idUsuario' AND  cuarentena = '0'";
             $resultadoUsuarios = $conexion->query($consultaUsuarios);
 
             if ($resultadoUsuarios->num_rows > 0) {
@@ -48,7 +48,9 @@ if (isset($_POST['id']) && isset($_POST['patente'])) {
                 $horaActual = date("Y-m-d H:i:s");
                 $consultaHistorial = "INSERT INTO historial (run, nombre, correo, patente, hora_ingreso, id_usuario) VALUES ('$run', '$nombre', '$correo', '$patente', '$horaActual', '$idUsuario')";
                 $conexion->query($consultaHistorial);
-            }
+            }else{
+                http_response_code(400);
+        }
         }
     } else {
         http_response_code(400);
