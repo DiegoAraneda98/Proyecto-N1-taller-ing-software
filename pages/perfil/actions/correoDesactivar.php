@@ -40,8 +40,8 @@ $mail = new PHPMailer(true);
                 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
                 $mail->send();
-                echo 'Message has been sent'; 
-                header ('index.php?p=perfil/perfil');
+               /*  echo 'Message has been sent';  */
+                header ("Location:index.php?p=auth/actions/controlador_logout");
             } catch (Exception $e) {
                 echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"; 
             }

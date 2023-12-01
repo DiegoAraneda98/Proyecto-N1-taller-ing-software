@@ -54,7 +54,7 @@ try {
                 
                 -Haz clic en el siguiente enlace para acceder a la página de reactivación de cuenta: <a href="localhost/xampp/Proyecto-N1-taller-ing-software/index.php?p=auth/asignacion_salud&token=' . $token . '">Reactiva tu cuenta</a><br>
                 
-                -En la página, se te solicitará contentar una breve encuesta sobre el COVID-19.<br>
+                -En la página, se te solicitará contestar una breve encuesta sobre el COVID-19.<br>
                 
                 -Una vez terminada el proceso de reactivación de la cuenta estara terminado.<br><br>
                 

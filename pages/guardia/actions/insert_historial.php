@@ -34,7 +34,7 @@ if (isset($_POST['id']) && isset($_POST['patente'])) {
             $conexion->query($updateQuery);
         } else {
             // Si no hay registro, insertar uno nuevo
-            $consultaUsuarios = "SELECT run, nombre, correo, cuarentena FROM usuarios WHERE id_usuario = '$idUsuario' AND  cuarentena = '0'";
+            $consultaUsuarios = "SELECT run, nombre, correo, cuarentena, salud FROM usuarios WHERE id_usuario = '$idUsuario' AND  cuarentena = '0' AND salud = 'negativo'";
             $resultadoUsuarios = $conexion->query($consultaUsuarios);
 
             if ($resultadoUsuarios->num_rows > 0) {

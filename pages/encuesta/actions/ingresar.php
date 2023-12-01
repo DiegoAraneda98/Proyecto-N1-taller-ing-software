@@ -6,4 +6,5 @@ $accesibilidad = $_POST["estrellas3"];
 $query = "INSERT INTO encuestas(rapidez, interfaz, accesibilidad) VALUES ('$rapidez','$interfaz','$accesibilidad');";
 $result = mysqli_query($conexion,$query);
 
+header("Location: index.php?p=auth/login");
 ?>

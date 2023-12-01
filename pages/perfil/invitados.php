@@ -18,7 +18,7 @@
             </div>
             <div class="mt-3 text-start">Correo invitado:
                 <div class="input-group mt-3 w-75">
-                    <input name="correo_invitado" id="correo_invitado" type="text"
+                    <input name="correo_invitado" id="correo_invitado" type="email"
                         class="form-control rounded-0 mb-4" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
             </div>
@@ -41,7 +41,7 @@
 
     </div>
     <div class="col-4">
-        <div class="table table-hover table-bordered border-dark  table-striped text-center overflow-y-auto" style="max-height: 310px;">
+        <div class="table table-hover   table-striped text-center overflow-y-auto" style="max-height: 310px;">
             <table class="table table-hover text-center">
                 <?php require __DIR__ . '/../auth/actions/controlador_login.php'; ?>
                 <thead class="table-dark">
