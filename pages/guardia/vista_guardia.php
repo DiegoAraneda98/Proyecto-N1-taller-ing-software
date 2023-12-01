@@ -1,6 +1,5 @@
 <div class="container-fluid">
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <div>
         <div class="row">
             <div class="col-12">
@@ -55,6 +54,7 @@
                                         <td>Correo</td>
                                         <td>Patente</td>
                                         <td>Hora ingreso</td>
+                                        <td>Hora salida</td>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -99,6 +99,9 @@
                                             </td>
                                             <td>
                                                 <?php echo $row['hora_ingreso']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['hora_salida']; ?>
                                             </td>
                                         </tr>
                                     <?php
@@ -206,7 +209,7 @@
                                         });
                                         setTimeout(function() {
                                             window.location.href = 'index.php?p=guardia/vista_guardia';
-                                        }, 3000);
+                                        }, 1500);
 
                                     },
                                     error: function(error) {
