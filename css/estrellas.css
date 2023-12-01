@@ -1,0 +1,38 @@
+
+
+
+.estrellas {
+  width: 250px;
+  margin: 0 auto;
+  height: 50px;
+}
+
+.estrellas p {
+  text-align: center;
+}
+
+.clasificacion label {
+  font-size: 40px;
+}
+
+.estrellas input[type="radio"] {
+  display: none;
+}
+
+.clasificacion label {
+  color: grey;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+.clasificacion label:hover,
+.clasificacion label:hover ~ label {
+  color: gold;
+}
+
+.clasificacion input[type="radio"]:checked ~ label {
+  color: gold;
+}
