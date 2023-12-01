@@ -56,35 +56,10 @@
 </div>
 
 
-<div class="row">
-<div class="col-6 offset-1">
-  <div id='calendar'></div>
+<div class="row mt-5">
+<div class="col-6 offset-1 ">
+  <div id='calendar' class=" border border-secondary p-1"></div>
 </div>
-
-
-<div class="col-4">
-  <div class="mb-3">
-    <label for="eventName" class="form-label">Nombre del evento:</label>
-    <input type="text" class="form-control" id="eventName" placeholder="Example input placeholder">
-  </div>
-
-  <div class="mb-3">
-    <label for="eventDate" class="form-label">Fecha del evento:</label>
-    <input type="text" class="form-control" id="eventDate" placeholder="Another input placeholder">
-  </div>
-
-  <div class="mb-3">
-    <label for="eventColor" class="form-label">Color del evento:</label>
-    <input type="color" class="form-control" id="eventColor" placeholder="Another input placeholder">
-  </div>
-
-  <button class="btn custom-btn border-secondary rounded-0 text-black d-flex justify-content-center fw-semibold   mb-4" onclick="agregarEvento()">Agregar Evento</button>
-
-</div>
-</div> 
-
-
-
 
 
 

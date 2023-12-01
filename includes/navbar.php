@@ -14,6 +14,8 @@ if ($navbarType === 'type1') {
               <div class="container-fluid">
                   <img src="img/main-logo.svg" class="img-fluid logo" alt="logo">
                   <button onclick="cambiarTema()" class="btn rounded-fill ml-4"><i id="dl-icon" class="bi bi-moon-fill"></i></button>
+                  <button onclick="cambiarTamanioLetra(\'aumentar\')" class="btn rounded-fill ml-4"><i id="dl-icon2" class="bi bi-universal-access"></i>Aumentar</button>
+                  <button onclick="cambiarTamanioLetra(\'disminuir\')" class="btn rounded-fill ml-4"><i id="dl-icon3" class="bi bi-universal-access"></i>Disminuir</button>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                       data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
                       aria-expanded="false" aria-label="Toggle navigation">

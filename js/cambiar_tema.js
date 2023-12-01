@@ -21,25 +21,56 @@ const cambiarTema = () =>{
 
 
 
-
-
-
 const aumentarTamanioLetra = () => {
-    const elementosConLetra = document.querySelector("body"); // Reemplaza "cambiar-letra" con la clase de los elementos cuyo tamaño de letra quieres cambiar
+    const elementosConLetra = document.querySelectorAll("body"); 
 
     elementosConLetra.forEach(elemento => {
         let fontSize = window.getComputedStyle(elemento, null).getPropertyValue('font-size');
-        fontSize = parseFloat(fontSize) * 1.2; // Puedes ajustar el factor de aumento según tus necesidades
+        fontSize = parseFloat(fontSize) * 1.2; 
         elemento.style.fontSize = `${fontSize}px`;
     });
 }
 
 const disminuirTamanioLetra = () => {
-    const elementosConLetra = document.querySelectorAll("body"); // Reemplaza "cambiar-letra" con la clase de los elementos cuyo tamaño de letra quieres cambiar
+    const elementosConLetra = document.querySelectorAll("body"); 
 
     elementosConLetra.forEach(elemento => {
         let fontSize = window.getComputedStyle(elemento, null).getPropertyValue('font-size');
-        fontSize = parseFloat(fontSize) / 1.2; // Puedes ajustar el factor de disminución según tus necesidades
+        fontSize = parseFloat(fontSize) / 1.2; 
+        elemento.style.fontSize = `${fontSize}px`;
+    });
+}
+
+const cambiarTamanioLetra = (accion) => {
+    // Función para cambiar el tamaño de la letra en respuesta a un botón
+    if (accion === 'aumentar') {
+        aumentarTamanioLetra();
+    } else if (accion === 'disminuir') {
+        disminuirTamanioLetra();
+    }
+}
+
+// Asignar las funciones a los eventos de clic de los botones correspondientes
+document.querySelector("#dl-icon2").addEventListener("click", () => cambiarTamanioLetra('aumentar'));
+document.querySelector("#dl-icon3").addEventListener("click", () => cambiarTamanioLetra('disminuir'));
+
+/* 
+const aumentarTamanioLetra = () => {
+    const elementosConLetra = document.querySelectorAll("body"); 
+
+    elementosConLetra.forEach(elemento => {
+        let fontSize = window.getComputedStyle(elemento, null).getPropertyValue('font-size');
+        fontSize = parseFloat(fontSize) * 1.2; 
+        elemento.style.fontSize = `${fontSize}px`;
+    });
+}
+
+const disminuirTamanioLetra = () => {
+    const elementosConLetra = document.querySelectorAll("body"); 
+
+    elementosConLetra.forEach(elemento => {
+        let fontSize = window.getComputedStyle(elemento, null).getPropertyValue('font-size');
+        fontSize = parseFloat(fontSize) / 1.2; 
         elemento.style.fontSize = `${fontSize}px`;
     });
 }
@@ -50,4 +81,5 @@ const cambiarTamanioLetra = () => {
 }
 
 // Asigna estas funciones al evento de clic del botón correspondiente
-document.querySelector("#letra-icon").addEventListener("click", cambiarTamanioLetra);
+document.querySelector(".btn").addEventListener("click", cambiarTamanioLetra);
+ */
