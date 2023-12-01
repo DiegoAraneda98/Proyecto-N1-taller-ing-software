@@ -7,9 +7,10 @@ require __DIR__ . '/../../auth/actions/controlador_login.php';
 if (!($_POST['añadir'])) {
     $nombreInvitado = $_POST['nombreInvitado'];
     $rutInvitado = $_POST['rutInvitado'];
+    $correo_invitado = $_POST['correo_invitado'];
     $id_usuario = $_SESSION['id_usuario'];
     
-    $insert = "INSERT INTO invitados( run, nombre, id_usuario) VALUES ('$rutInvitado','$nombreInvitado' , '$id_usuario')";
+    $insert = "INSERT INTO invitados( run, nombre, correo_invitado, id_usuario) VALUES ('$rutInvitado','$nombreInvitado' , '$correo_invitado', '$id_usuario')";
 
     $resultado = mysqli_query($conexion, $insert);
 

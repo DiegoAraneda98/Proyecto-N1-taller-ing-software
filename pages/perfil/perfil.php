@@ -12,6 +12,7 @@ if ($row = mysqli_fetch_array($resultado)) {
     $nombre = $row["nombre"];
     $apellido = $row["apellido"];
     $correo = $row["correo"];
+    $correo_secundario = $row["correo_secundario"];
     $telefono = $row["telefono"];
     $contraseña = $row["contraseña"];
 }
@@ -33,7 +34,7 @@ if ($row = mysqli_fetch_array($resultado)) {
 
                 <button class="nav-link btn btn-custom active mt-3 " id="v-pills-home-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
-                    aria-selected="true"><i class="bi bi-person-fill"></i>  Informacion personal</button>
+                    aria-selected="true"><i class="bi bi-person-fill"></i>  Información personal</button>
 
                 <button class="nav-link btn btn-custom mt-3" id="v-pills-profile-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
@@ -45,7 +46,7 @@ if ($row = mysqli_fetch_array($resultado)) {
 
                 <button class="nav-link btn btn-custom mt-3" id="v-pills-settings-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
-                    aria-selected="false">Invitados</button>
+                    aria-selected="false"><i class="bi bi-person-fill-add"></i> Invitados</button>
             </div>
         </div>
 
@@ -68,7 +69,8 @@ if ($row = mysqli_fetch_array($resultado)) {
                 </div>
                 <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"
                     tabindex="0">
-                    extra
+                    <?php include('invitados.php')?>
+                    
                 </div>
             </div>
         </div>
@@ -77,10 +79,14 @@ if ($row = mysqli_fetch_array($resultado)) {
 </div>
 
 
+<?php include 'eliminarmodal.php'; ?>
 <script src="js/verificaciones.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="js/editar_Contraseña.js"></script>
+<script src="js/eliminar_invitado.js"></script>
+
+
 
 <script>
 function guardarDatos() {
@@ -89,7 +95,6 @@ function guardarDatos() {
     var nombre = document.getElementById('nombre').value;
     var apellido = document.getElementById('apellido').value;
     
-   
     // Crea un objeto con los datos a enviar al servidor
     var datos = {
         rut : rut,
@@ -108,7 +113,7 @@ function guardarDatos() {
             if (response.success) {
                 // Los datos se han guardado correctamente, muestra una alerta
                 Swal.fire({
-                    position: "top-end",
+                    
                     icon: "success",
                     title: "Los datos se han guardado correctamente",
                     showConfirmButton: false,

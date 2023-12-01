@@ -22,5 +22,5 @@ if ($resultado) {
 } else {
     echo json_encode(array("success" => false));
 } 
- 
+
 ?>

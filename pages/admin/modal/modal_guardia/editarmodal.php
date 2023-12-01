@@ -10,10 +10,20 @@
             <div class="modal-body">
                 <form action="#" method="post" enctype="multipart/form-data">
 
+                    <div class="mb-3">
+                        <label for="run" class="form-label">Rut:</label>
+                        <input type="text" name="run" id="run" class="form-control"  minlength="8"
+                            maxlength="8">
+                    </div>
 
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre:</label>
                         <input type="text" name="nombre" id="nombre" class="form-control"  >
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="contraseña" class="form-label">Contraseña:</label>
+                        <input type="text" name="contraseña" id="contraseña" class="form-control"  >
                     </div>
 
   
