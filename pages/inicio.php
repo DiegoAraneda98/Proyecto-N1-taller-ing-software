@@ -71,7 +71,7 @@ $row = mysqli_fetch_assoc($resultado);
     <div class="card" style="width: 100%;">
       <?php
       if ($row['salud'] == 'negativo') {
-        echo '<img src="img/acceso_permitido.webp" class="card-img-top" alt="acceso permitido">';
+        echo '<img src="img/acceso_permitido.webp" class="card-img-top opacity-75" alt="acceso permitido">';
       } else {
         echo '<img src="img/acceso_denegado.png" class="card-img-top" alt="acceso denegado">';
       }
@@ -81,7 +81,7 @@ $row = mysqli_fetch_assoc($resultado);
       <div class="card-body">
         <h5 class="card-title">Estado de cuenta y salud</h5>
         <p class="card-text">En este recuadro se mostrara el estado de su cuenta y su salud, en relación a su acceso a la universidad.</p>
-        <p class="card-text">Debido a que su salud esta en un estado es
+        <p class="card-text">Debido a que su salud esta en un estado 
           <?php echo $row['salud']; ?> usted tiene
           <?php
           if ($row['salud'] == 'negativo') {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-12-2023 a las 03:54:30
+-- Tiempo de generación: 01-12-2023 a las 06:55:48
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -38,8 +38,8 @@ CREATE TABLE `casetas` (
 --
 
 INSERT INTO `casetas` (`id_caseta`, `nombre`, `direccion`) VALUES
-(2, 'caseta1', 'direccion 1 '),
-(3, 'caseta 3', 'direccion 3 ');
+(2, 'caseta1', 'Entrada Lomas'),
+(3, 'caseta 3', 'Entrada Pedro osores');
 
 -- --------------------------------------------------------
 
@@ -495,6 +495,7 @@ INSERT INTO `establecimiento` (`cod_establecimiento`, `nombre_establecimiento`, 
 
 CREATE TABLE `guardias` (
   `id_guardia` int(11) NOT NULL,
+  `run` int(8) NOT NULL,
   `nombre` varchar(40) NOT NULL,
   `contraseña` varchar(80) NOT NULL,
   `id_caseta` int(11) NOT NULL
@@ -504,11 +505,8 @@ CREATE TABLE `guardias` (
 -- Volcado de datos para la tabla `guardias`
 --
 
-INSERT INTO `guardias` (`id_guardia`, `nombre`, `contraseña`, `id_caseta`) VALUES
-(2, 'asd', '', 3),
-(4, 'Diego', 'ddd', 2),
-(6, 'Nicolas', 'nicolas', 2),
-(7, 'sss', 'aaa', 2);
+INSERT INTO `guardias` (`id_guardia`, `run`, `nombre`, `contraseña`, `id_caseta`) VALUES
+(11, 33333333, 'Guardia', '333', 2);
 
 -- --------------------------------------------------------
 
@@ -536,7 +534,9 @@ INSERT INTO `historial` (`id_historial`, `patente`, `correo`, `nombre`, `run`, `
 (9, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '2023-11-30 23:24:55', NULL, 0),
 (10, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '2023-11-30 23:25:00', NULL, 0),
 (11, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '2023-11-30 23:25:05', NULL, 0),
-(12, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '2023-11-30 23:25:11', NULL, 0);
+(12, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '2023-11-30 23:25:11', NULL, 0),
+(13, 'ddss22', 'nparrac@ing.ucsc.cl', 'Usuario', 11111111, '2023-12-01 04:18:43', '2023-12-01 04:18:43', 27),
+(14, 'ddss22', 'nparrac@ing.ucsc.cl', 'Usuario', 11111111, '2023-12-01 04:19:12', '2023-12-01 04:19:12', 27);
 
 -- --------------------------------------------------------
 
@@ -775,8 +775,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `run`, `nombre`, `apellido`, `correo`, `correo_secundario`, `tipo_usuario`, `telefono`, `salud`, `foto`, `contraseña`, `estado`, `token`, `cuarentena`) VALUES
-(2, 20033016, 'admin1', NULL, 'admin1@ucsc.cl', '', 'Institucional', NULL, 'negativo', NULL, '999', 1, '', 0),
-(24, NULL, 'sss', NULL, NULL, NULL, 'Guardia', NULL, 'negativo', NULL, 'aaa', 1, NULL, 0);
+(25, 20033016, 'admin', '1', 'admin1@ucsc.cl', NULL, 'admin', NULL, 'negativo', NULL, 'admin', 1, NULL, 0),
+(26, 19816480, 'admin', '2', 'admin2@ucsc.cl', NULL, 'admin', NULL, 'negativo', NULL, 'admin', 1, NULL, 0),
+(30, 11111111, 'Usuario', 'Institucional', 'nparrac@ing.ucsc.cl', NULL, 'Institucional', 982775211, 'negativo', NULL, '111', 1, NULL, 0),
+(33, 33333333, 'Guardia', NULL, NULL, NULL, 'Guardia', NULL, 'negativo', NULL, '333', 1, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -799,7 +801,7 @@ CREATE TABLE `vehiculos` (
 --
 
 INSERT INTO `vehiculos` (`id_vehiculo`, `patente`, `modelo`, `color`, `tipo_vehiculo`, `fecha_ingreso`, `id_usuario`) VALUES
-(38, 'DDEE33', 'Ford', 'Plata', 'Auto', '2023-11-30', 2);
+(40, 'SSDD33', 'Chevrolet', 'Verde', 'Auto', '2023-12-01', 30);
 
 --
 -- Índices para tablas volcadas
@@ -841,7 +843,8 @@ ALTER TABLE `establecimiento`
 --
 ALTER TABLE `guardias`
   ADD PRIMARY KEY (`id_guardia`),
-  ADD KEY `id_caseta` (`id_caseta`);
+  ADD KEY `id_caseta` (`id_caseta`),
+  ADD KEY `run` (`run`);
 
 --
 -- Indices de la tabla `historial`
@@ -898,7 +901,9 @@ ALTER TABLE `tipo_vehiculo`
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id_usuario`);
+  ADD PRIMARY KEY (`id_usuario`),
+  ADD UNIQUE KEY `run_2` (`run`),
+  ADD KEY `run` (`run`);
 
 --
 -- Indices de la tabla `vehiculos`
@@ -945,19 +950,19 @@ ALTER TABLE `establecimiento`
 -- AUTO_INCREMENT de la tabla `guardias`
 --
 ALTER TABLE `guardias`
-  MODIFY `id_guardia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_guardia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `historial`
 --
 ALTER TABLE `historial`
-  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `invitados`
 --
 ALTER TABLE `invitados`
-  MODIFY `id_invitado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_invitado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `modelo`
@@ -993,13 +998,13 @@ ALTER TABLE `tipo_vehiculo`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de la tabla `vehiculos`
 --
 ALTER TABLE `vehiculos`
-  MODIFY `id_vehiculo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_vehiculo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- Restricciones para tablas volcadas
