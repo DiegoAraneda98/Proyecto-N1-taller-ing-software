@@ -5,13 +5,19 @@ require __DIR__ . '/../../../../modelo/conexion.php';
 
 
 $nombre = $conexion->real_escape_string($_POST["nombre_guardia"]);
+$contraseña = $conexion->real_escape_string($_POST["contraseña"]);
 $id_caseta = $conexion->real_escape_string($_POST["caseta"]);
 
-$sql = "INSERT INTO guardias (nombre, id_caseta) VALUES ('$nombre', '$id_caseta')";
+$sql = "INSERT INTO guardias (nombre,contraseña,id_caseta) VALUES ('$nombre','$contraseña','$id_caseta')";
 
 if ($conexion->query($sql)) {
     echo "EXITO";
 }
+
+
+$sql2 = "INSERT INTO usuarios(nombre, tipo_usuario, salud, contraseña, estado) VALUES ('$nombre','Guardia','negativo','$contraseña','1')";
+$resul = mysqli_query($conexion, $sql2);
+
 header('Location: index.php?p=admin/admin_guardia');
 
 ?>
