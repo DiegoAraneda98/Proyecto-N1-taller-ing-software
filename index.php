@@ -10,10 +10,6 @@ switch ($pagina) {
         $navbarType = 'type1';
         break;
 
-    case 'home':
-        $navbarType = 'type2';
-        break;
-
     case 'vehiculos/mis_vehiculos':
         $navbarType = 'type3';
         break;

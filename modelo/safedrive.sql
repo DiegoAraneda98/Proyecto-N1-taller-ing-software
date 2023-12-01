@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-11-2023 a las 07:25:29
+-- Tiempo de generación: 01-12-2023 a las 03:54:30
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -496,6 +496,7 @@ INSERT INTO `establecimiento` (`cod_establecimiento`, `nombre_establecimiento`, 
 CREATE TABLE `guardias` (
   `id_guardia` int(11) NOT NULL,
   `nombre` varchar(40) NOT NULL,
+  `contraseña` varchar(80) NOT NULL,
   `id_caseta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -503,8 +504,11 @@ CREATE TABLE `guardias` (
 -- Volcado de datos para la tabla `guardias`
 --
 
-INSERT INTO `guardias` (`id_guardia`, `nombre`, `id_caseta`) VALUES
-(2, 'asd', 3);
+INSERT INTO `guardias` (`id_guardia`, `nombre`, `contraseña`, `id_caseta`) VALUES
+(2, 'asd', '', 3),
+(4, 'Diego', 'ddd', 2),
+(6, 'Nicolas', 'nicolas', 2),
+(7, 'sss', 'aaa', 2);
 
 -- --------------------------------------------------------
 
@@ -518,7 +522,8 @@ CREATE TABLE `historial` (
   `correo` varchar(50) NOT NULL,
   `nombre` varchar(30) NOT NULL,
   `run` int(10) NOT NULL,
-  `hora_ingreso` time NOT NULL,
+  `hora_ingreso` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `hora_salida` timestamp NULL DEFAULT NULL,
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -526,12 +531,12 @@ CREATE TABLE `historial` (
 -- Volcado de datos para la tabla `historial`
 --
 
-INSERT INTO `historial` (`id_historial`, `patente`, `correo`, `nombre`, `run`, `hora_ingreso`, `id_usuario`) VALUES
-(8, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '20:24:13', 0),
-(9, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '20:24:55', 0),
-(10, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '20:25:00', 0),
-(11, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '20:25:05', 0),
-(12, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '20:25:11', 0);
+INSERT INTO `historial` (`id_historial`, `patente`, `correo`, `nombre`, `run`, `hora_ingreso`, `hora_salida`, `id_usuario`) VALUES
+(8, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '2023-11-30 23:24:13', NULL, 0),
+(9, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '2023-11-30 23:24:55', NULL, 0),
+(10, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '2023-11-30 23:25:00', NULL, 0),
+(11, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '2023-11-30 23:25:05', NULL, 0),
+(12, 'aabb22', 'test@ucsc.cl', 'test', 11111111, '2023-11-30 23:25:11', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -750,10 +755,10 @@ INSERT INTO `tipo_vehiculo` (`id_tipoVehiculo`, `nombre`) VALUES
 
 CREATE TABLE `usuarios` (
   `id_usuario` int(11) NOT NULL,
-  `run` int(10) NOT NULL,
+  `run` int(10) DEFAULT NULL,
   `nombre` varchar(50) NOT NULL,
   `apellido` varchar(30) DEFAULT NULL,
-  `correo` varchar(30) NOT NULL,
+  `correo` varchar(30) DEFAULT NULL,
   `correo_secundario` varchar(30) DEFAULT NULL,
   `tipo_usuario` text NOT NULL,
   `telefono` int(10) DEFAULT NULL,
@@ -761,15 +766,17 @@ CREATE TABLE `usuarios` (
   `foto` varchar(70) DEFAULT NULL,
   `contraseña` varchar(80) NOT NULL,
   `estado` tinyint(1) NOT NULL,
-  `token` varchar(255) NOT NULL
+  `token` varchar(255) DEFAULT NULL,
+  `cuarentena` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `run`, `nombre`, `apellido`, `correo`, `correo_secundario`, `tipo_usuario`, `telefono`, `salud`, `foto`, `contraseña`, `estado`, `token`) VALUES
-(2, 20033016, 'admin1', NULL, 'admin1@ucsc.cl', '', 'admin', NULL, 'negativo', NULL, '999', 1, '');
+INSERT INTO `usuarios` (`id_usuario`, `run`, `nombre`, `apellido`, `correo`, `correo_secundario`, `tipo_usuario`, `telefono`, `salud`, `foto`, `contraseña`, `estado`, `token`, `cuarentena`) VALUES
+(2, 20033016, 'admin1', NULL, 'admin1@ucsc.cl', '', 'Institucional', NULL, 'negativo', NULL, '999', 1, '', 0),
+(24, NULL, 'sss', NULL, NULL, NULL, 'Guardia', NULL, 'negativo', NULL, 'aaa', 1, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -792,8 +799,7 @@ CREATE TABLE `vehiculos` (
 --
 
 INSERT INTO `vehiculos` (`id_vehiculo`, `patente`, `modelo`, `color`, `tipo_vehiculo`, `fecha_ingreso`, `id_usuario`) VALUES
-(35, 'ddss22', 'Chevrolet', 'Lavanda', 'Motocicleta', '0000-00-00', 2),
-(36, 'DDSS22', 'Honda', 'Morado', 'Motocicleta', '2023-11-21', 2);
+(38, 'DDEE33', 'Ford', 'Plata', 'Auto', '2023-11-30', 2);
 
 --
 -- Índices para tablas volcadas
@@ -939,7 +945,7 @@ ALTER TABLE `establecimiento`
 -- AUTO_INCREMENT de la tabla `guardias`
 --
 ALTER TABLE `guardias`
-  MODIFY `id_guardia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_guardia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `historial`
@@ -987,13 +993,13 @@ ALTER TABLE `tipo_vehiculo`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `vehiculos`
 --
 ALTER TABLE `vehiculos`
-  MODIFY `id_vehiculo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_vehiculo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- Restricciones para tablas volcadas
